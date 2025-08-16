@@ -1,0 +1,436 @@
+
+Que 1-  What is HTML?
+
+⬤ HTML stands for HyperText Markup Language.
+⬤ HyperText refers to link other pages using hyperlinks, and Markup Language is used to "mark up" text so that a browser knows how to display it.
+⬤ It is standard language used to create and design the structure of web pages. 
+⬤ HTML use tags and elements to show the content on a webpage, such as headings, paragraphs, images, links, and tables.
+⬤ HTML files saved with .html extension.
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Page</title>
+  </head>
+  <body>
+    <p>This is my first webpage.</p>
+  </body>
+</html>
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+Que 2- What are semantic Tag/elements?
+
+⬤ Semantic Tag/elements which clearly describe the meaning and role in the browser . It provide information about the content.
+⬤ It Makes code easier to read and understand .
+
+Common Semantic elements-
+<header>  – Defines the top section or heading of a page .
+<main>    – Represents the main content area of a document.
+<footer> – Represents the footer of a page or section.
+<nav>     – Defines a navigation block with links
+<section> – Defines a section in a document
+
+Exp:
+<article>
+  <header>
+    <h2>Interview Tips</h2>
+  </header>
+  <section>
+    <p>Always prepare your basics well.</p>
+  </section>
+  <footer>
+    <p>Posted by Alok Kumar</p>
+  </footer>
+</article>
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+Que 3 -  Difference between <div> and <span> Tag? 
+___________________________________________________________________________
+|             <div>                  |             <span>                 |
+|------------------------------------|------------------------------------|
+| 1. Block-level element             | Inline element                     |
+| 2. Takes full width of container   | Takes only required width          |
+| 3. Creates new line before/after   | No line break                      |
+| 4. Can set width and height        | Cannot set width/height (default)  |
+| 5. For larger sections/containers  | For small parts of text            |
+| 6. Has margin, takes full width    | No margin, flows with text         |
+| 7. Can contain block & inline      | Should only contain inline elements|
+|____________________________________|____________________________________|
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+Que 4- What are meta tags and why are they important?
+
+⬤ Meta tags provide information about a webpage to browsers and search engines.  
+⬤ They are placed inside the <head> section of an HTML document.  
+⬤ Meta tags are not displayed on the page, but they affect how the page is understood .  
+⬤ Meta tags are instructions that improve SEO, accessibility, and responsive design.
+⬤ Common uses of meta tags:  
+    <meta charset="UTF-8"> → Defines character encoding.  
+    <meta name="description" content="Page summary"> → Improves SEO by describing the page.  
+    <meta name="keywords" content="HTML, CSS, Web"> → Adds keywords (less used today).  
+    <meta name="author" content="John Doe"> → Defines page author.  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> → Makes websites responsive.  
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+Que 5- What is the difference between <id> and <class> attributes? 
+
+⬤  Both id and class are attributes used to target and style HTML elements, The differences are:-  
+____________________________________________________________________________________
+|         id                                |           class                        |
+|-------------------------------------------|----------------------------------------|
+| Must be unique in a page (used only once) | Can be reused across multiple elements |
+| Target a single specific element          | target  multiple elements together     |
+| Selected by    # (example: #header)       | Selected by    . (example: .menu)      |
+| Used with getElementById()                | Used with getElementsByClassName()     |
+| Has higher specificity in CSS             | Lower specificity than id              |
+| <div id="header">...</div>                | <div class="menu">...</div>            |
+|___________________________________________|________________________________________|
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+Que 6-  What are global attributes in HTML?
+
+⬤ Global attributes can be used on any HTML element.  
+⬤ They provide common functionality and are not limited to specific tags. 
+⬤ These attributes help in styling, scripting, and accessibility of web pages. 
+⬤ Examples of global attributes:  
+    id → gives a unique identifier to an element.  
+    class → groups elements for styling and scripting.  
+    style → applies inline CSS to an element.  
+    title → shows extra information as a tooltip.  
+    lang → defines the language of the element’s content.  
+    hidden → hides the element from display.  
+    tabindex → controls the tab order of elements.  
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+Que 7 - What is the difference between HTML elements and HTML tags?
+
+⬤ HTML Tag → The Tag which tells the browser about content.  
+             Tags are written inside angle brackets < >.   Exp- <p>, </p>, <h1>, <div>.  
+⬤ HTML Element → The complete structure, which is - start tag, content, and end tag.  
+                 Exp- <p>Hello World</p> is an element.  
+                 Some elements are empty (self-closing) called Empty Tag , like <br> or <img>.  
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+Que 8- What are HTML attributes? Give examples of commonly used attributes.
+
+⬤ HTML attributes provide additional information about an element.  
+⬤ They are written in the start tag 
+⬤ Usually come in name/value pairs (name="value").  
+⬤ Attributes control the behavior, appearance, or identification of elements.  
+⬤ Attributes add properties to HTML elements, making them more useful and meaningful.
+⬤ Commonly used attributes:  
+   id → gives a unique identifier to an element.         Example: <div id="header"> 
+   class → groups elements for styling or scripting.     Example: <p class="text">     
+   style → applies inline CSS styles.                    Example: <h1 style="color:red;">   
+   href → specifies the URL for links.                   Example: <a href="https://example.com">    
+   src → defines the source of an image or media.        Example: <img src="image.jpg"> 
+   alt → provides alternative text for images.           Example: <img src="logo.png" alt="Company Logo">     
+   title → shows extra information as a tooltip.         Example: <abbr title="HyperText Markup Language">HTML</abbr>
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+Que 9- What are  Empty tag/element  or self-closing/void elements in HTML? Give examples
+
+⬤ Empty or Self-closing (or void) elements are HTML elements that do not have any content and therefore do not need a closing tag.  
+⬤ They are used to insert something into the page without wrapping any inner text or elements.  
+⬤ In HTML5, they are usually written without a separate closing tag.  
+⬤ Void elements are empty tags
+⬤ Examples:  
+    <br> → Inserts a line break.  
+    <hr> → Inserts a horizontal rule (divider).  
+    <img> → Embeds an image.  
+    <input> → Creates input fields (text, checkbox, radio, etc.).  
+    <meta> → Defines metadata in the document head.  
+    <link> → Links external resources like CSS files.  
+    <source> → Specifies media resources for <audio> and <video>.  
+    <area> → Defines areas inside an image map.  
+    <col> → Defines column properties in a table.  
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+Que 10- What is the difference between <head> and <body> sections?
+
+⬤ <head> section:- Defines document settings and metadata .
+    Contains information  and  metadata about the document.  
+    Includes elements like <title>, <meta>, <link>, <style>, <script>.  
+    Content inside <head> is not displayed directly on the webpage.  
+    Purpose: To provide instructions to the browser, search engines, and external resources.  
+⬤ <body> section:   Displays the main content to the user 
+    Contains the actual visible content of the webpage.  
+    Includes text, images, videos, links, forms, tables, etc.  
+    Everything inside <body> is what the user sees in the browser.  
+    Purpose: To display the page’s main content to the user.  
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+Que 10- What are HTML forms and what are the different input types?
+
+⬤ An HTML form is used to collect user input and send it to a server .  
+⬤ Forms are created using the <form> tag, which can contain input fields, checkboxes, radio buttons, buttons, etc.  
+⬤ The form works with attributes like action (URL to submit data) and method (GET or POST).  
+⬤ Forms collect user input, and different input types allow different kinds of data entry.
+⬤ Common input types in HTML:  
+    text → Single-line text input.  
+    password → Password field (characters hidden).  
+    email → Validates email format.  
+    number → Accepts numeric input.  
+    tel → For telephone numbers.  
+    url → For website addresses.  
+    date, month, week, time, datetime-local → For date and time inputs.  
+    radio → Select one option from a group.  
+    checkbox → Select multiple options.  
+    file → Upload files.  
+    hidden → Stores data not visible to the user.  
+    color → Select color from a color picker.  
+    range → Slider for numeric input.  
+    submit → Button to submit the form.  
+    reset → Button to reset form values.  
+    button → General-purpose button.  
+    search → Input field optimized for search.  
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+Que 11- What is the difference between <ol>, <ul>, and <dl> lists?
+
+⬤ <ol> (Ordered List) - Displays list in numbered/lettered in a specific order.  
+        Items are numbered (1, 2, 3) or lettered (a, b, c).  
+           Example:  
+            <ol>  
+               <li>First</li>  
+               <li>Second</li>  
+            </ol>  
+⬤ <ul> (Unordered List)  - Displays list bullets with no specific order      
+        Items are marked with bullets (•, ○, etc.).  
+           Example:  
+            <ul>  
+              <li>Apple</li>  
+              <li>Banana</li>  
+            </ul>  
+⬤ <dl> (Description List)   -  (term + definition).   
+        Used for terms and their descriptions.  
+        Contains <dt> (definition term) and <dd> (definition description).  
+           Example:  
+            <dl>  
+              <dt>HTML</dt>  
+              <dd>HyperText Markup Language</dd>  
+           </dl>  
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+Que 12- What are HTML tables and when should you use them?
+
+⬤ An HTML table is used to display data in rows and columns.  
+⬤ It is created using the <table> tag along with <tr> (table row), <td> (table data), and <th> (table header).  
+⬤ Tables can also use attributes like border, cellpadding, cellspacing, and modern styling with CSS.  
+⬤ HTML tables are meant for data representation, not for designing page structure. 
+⬤ When to use tables:  
+     To represent structured data like reports, schedules, productlists, pricecharts.  
+     Best for tabular data presentation where relationships between rows and columns matter.  
+     Not recommended for general webpage layouts (use CSS instead).  
+⬤ Example:  
+   <table border="1">  
+     <tr>  
+       <th>Name</th>  
+       <th>Age</th>  
+     </tr>  
+     <tr>  
+       <td>John</td>  
+       <td>25</td>  
+     </tr>  
+   </table>  
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+Que 13- What is the difference between inline, block, and inline-block elements?
+
+⬤ Inline Elements  - Do not start on a new line.                      
+                     Take only the space required by the content.  
+                     Width and height cannot be set (by default).                      
+                     Examples: <span>, <a>, <strong>, <em>.  
+⬤ Block Elements  -  Take up the full width of the container.  
+                     Always start on a new line.     
+                     Width, height, margin, and padding can be applied.  
+                     Examples: <div>, <p>, <h1>–<h6>, <section>.  
+⬤ Inline-Block Elements - Behave like inline elements (don’t force a new line).  
+                          But allow setting width and height like block elements.  
+                          Useful for creating layouts with inline items that need dimensions.  
+                          Examples: <img>, <button>, (can apply display:inline-block via CSS).  
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+Que 14- What is the difference between localStorage, sessionStorage, and cookies?
+
+⬤ localStorage  → Permanent, Large, client-side storage.  
+                  Stores data with no expiration (persists even after closing the browser).
+                  Storage limit ~5–10 MB.   
+                  Data is stored only in the browser (client-side).  
+                  Example use: Saving user preferences or theme settings.  
+⬤ sessionStorage → Temporary, per-session storage. 
+                   Stores data for the current browser session only.  
+                   Data is lost when the tab or browser is closed.  
+                   Storage limit ~5 MB.  
+                   Example use: Storing temporary form data while filling a page.  
+⬤ cookies → Small, can be sent to server, used for auth/tracking.
+            Small pieces of data stored in the browser and sent with every HTTP request.  
+            Can be set to expire at a specific time.  
+            Storage limit ~4 KB.  
+            Used for authentication, tracking, and server communication.  
+⬤ Comparison Table:
+_________________________________________________________________________________________________________
+| Feature        | localStorage              | sessionStorage           | cookies                       |
+|----------------|---------------------------|--------------------------|-------------------------------|
+| Lifetime       | Permanent until cleared   | Until tab/browser closes | Configurable (set by server)  |
+| Capacity       | ~5–10 MB                  | ~5 MB                    | ~4 KB                         |
+| Accessible by  | Client-side only          | Client-side only         | Client & server (sent in HTTP)|
+| Use cases      | Preferences, themes       | Temporary form data      | Authentication, tracking      |
+|________________|___________________________|__________________________|_______________________________|
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+Que 15- What is the difference between <script> and <noscript>?
+
+⬤ <script> tag is used to include JavaScript code in an HTML page.  
+⬤ It can be written inline or linked externally using the src attribute.  
+⬤ Defines JavaScript code to be executed.
+⬤ Example: <script src="app.js"></script>  
+
+⬤ <noscript> tag is used to provide alternative content for users whose browsers do not support JavaScript or have it disabled.  
+⬤ It displaye only when scripts cannot run.  
+⬤ Example: <noscript>Your browser does not support JavaScript!</noscript>  
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+Que 16- What is the use of the <!DOCTYPE html> declaration?
+
+⬤ The <!DOCTYPE html> declaration tells browser the document is written in which version of HTML .  
+⬤ It ensures the browser renders the page in standards-compliant mode instead of quirks mode.  
+⬤ In HTML5, the declaration is very simple:-  <!DOCTYPE html>  
+⬤ It is not an HTML tag, but an instruction to the browser.  
+⬤ It helps to achieve consistent rendering across different browsers and environments.  
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+Que 17- How do you insert an image in HTML?
+
+⬤ We insert an image using the <img> tag. This tag is self-closing and it does not require a closing tag.
+⬤ The most important attributes used with the <img> tag are:
+                src (Source):- Specifies the path to the image file.It can be a relative path (within the project folder) or an absolute URL.
+                alt (Alternative Text):- Describes the image if it cannot be displayed.
+              Exp-    <img src="images/logo.png" alt="Company Logo" />
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+Que 18- How to link one page to another using HTML?
+Answer-
+⬤ We link one page to another using the <a> (anchor) tag. This tag defines a hyperlink, which allows users to click and navigate from the current page to another web page or location.
+        href Attribute:-The href (Hypertext REFerence) attribute specifies the destination URL or file path.
+         Another page in the same website (internal link)     - <a href="about.html">About Us</a> 
+         An external website                                  - <a href="https://www.google.com" target="_blank">Visit Google</a>
+         A specific section in the same page (using anchors)  - <a href="#contact">Contact Section</a>
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+Que 19- What are HTML entities? Give examples.
+
+⬤ HTML entities are special codes used to display reserved and special symbols/characters safely in HTML.  
+⬤ Some characters (like <, >, &, ") have special meanings in HTML and cannot be used directly.  
+⬤ Entities start with an ampersand (&) and end with a semicolon (;).  
+⬤ They ensure browsers display characters correctly without confusing them with HTML tags.    
+⬤ Common examples:  
+    &lt;   → <  
+    &gt;   → >  
+    &amp;  → &  
+    &quot; → "  
+    &apos; → '  
+    &nbsp; → non-breaking space  
+    &copy; → ©  
+    &reg;  → ®  
+    &euro; → €  
+    &hearts; → ♥  
+
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
