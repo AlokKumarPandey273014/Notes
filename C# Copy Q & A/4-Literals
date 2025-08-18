@@ -1,0 +1,17 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Question: What is a Literal?
+Answer:
+A literal is a constant values or fixed value that we write directly in the code.  
+It does not change while the program runs.  
+We use literals to give values to variables.
+
+Examples:
+• Number: 10, 3.14  
+• Text (string): "Hello", "C#"  
+• Character: 'A', 'Z'  
+• Boolean: true, false
+
+Example in C#:
+int age = 25;        // 25 is a literal  
+string name = "John"; // "John" is a literal
