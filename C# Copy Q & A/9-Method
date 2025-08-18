@@ -1,0 +1,292 @@
+Question - What is a Method in C#?
+Answer -
+• A method in C# is a block of code that performs a specific task.
+• It may/may not take parameters 
+• It may or may not return a value.
+• Methods are also called functions in C#.
+• A method is used to perform specific operations.
+• Methods are declared inside a class.
+• Methods can be reused — define once and call multiple times.
+• Every C# program has at least one method called Main().
+• Methods help organize code, improve reusability, and simplify debugging.
+• Every C# program has a Main method as the entry point 
+
+Syntax of a Method:
+AccessSpecifier  ReturnType   MethodName(Parameter List)
+{
+   Method Body
+}
+
+Examples:
+
+1) Method with no parameters and no return value:
+   public void Greet()
+   {
+       Console.WriteLine("Hello!");
+   }
+
+2) Method with parameters and a return value:
+   private int Add(int a, int b)
+   {
+       return a + b;
+   }
+
+Method Naming Rules:
+• Cannot - C# keywords.
+• Cannot contain spaces/start with a digit.
+• It cannot have spaces.
+• It Can begin with a letter, underscore (_) or the @ symbol.
+• It should be meaningful and describe the purpose of the method.
+  Examples: Add(), sum_Add(), @Add()
+
+Complete Example:
+
+using System;
+namespace Method
+{
+    class Program
+    {
+        static void MyMethod()
+        {
+            Console.WriteLine("My name is ALOK KUMAR PANDEY.");
+        }
+
+        static void Main(string[] args)
+        {
+            MyMethod();
+        }
+    }
+}
+Output:
+My name is ALOK KUMAR PANDEY.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Question - How to Call a Method?
+Answer -
+• To call a method, write the method's name followed by parentheses () and a semicolon ;  
+  Example: MyMethod();
+
+Key Points:
+• A method can be called multiple times as needed.  
+• Each time it is called, the code inside the method will run.  
+• Method calls must be made from inside another method, such as Main().
+
+Example Program:
+using System;
+namespace Method
+{
+    class Program
+    {
+        static void MyMethod()
+        {
+            Console.WriteLine("My name is ALOK KUMAR PANDEY.");
+        }
+
+        static void Main(string[] args)
+        {
+            MyMethod();
+            MyMethod();
+            MyMethod();
+        }
+    }
+}
+
+Output:
+My name is ALOK KUMAR PANDEY.  
+My name is ALOK KUMAR PANDEY.  
+My name is ALOK KUMAR PANDEY.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔷 Question: What is the Main Method in C#?
+Answer:  
+• `Main()` is the entry point and exit point of a C# application  
+• It is the first method that runs when the program starts  
+• The .NET compiler looks for `Main()` to begin execution  
+• You can have multiple `Main()` methods in different classes, but only one is used to start the program  
+• `Main()` can take input using `string[] args` (used for command-line arguments)
+
+🔸 Structure of Main Method:
+class Program  
+{  
+    public static void Main(string[] args)  
+    {  
+        // code starts running from here  
+    }  
+}
+
+🟢 Easy to speak:  
+"Main method is where the program starts and ends.  
+It tells the computer, 'Start running code from here.'  
+Only one Main method is the real starting point.  
+We can also pass inputs to it if needed."
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔷 Question: How many types of methods are there in C#?
+Answer:
+• There are two types of methods in C#:
+  ▪ Static Method  
+  ▪ Instance Method (Non-static Method)
+
+🔸 Static Method:
+• Belongs to the class  
+• Called using the class name  
+• Declared using `static` keyword  
+• No object is required to call it
+
+Example1:-
+class Program  
+{  
+    public static void Hi()  
+    {  
+        Console.WriteLine("Hello from Static Method");  
+    }  
+    static void Main(string[] args)  
+    {  
+        Program.Hi();  
+    }  
+}  
+
+Output:  
+Hello from Static Method
+
+Example2:- Calling a static method from another class
+class A
+{
+    public static void Hello()
+    {
+        Console.WriteLine("Hello from Class A");
+    }
+}
+class B
+{
+    static void Main(string[] args)
+    {
+        A.Hello(); 
+    }
+}
+
+
+
+🔸 Instance Method (Non-static Method):
+• Belongs to the object  
+• Requires object creation to call  
+• Can access non-static members
+
+Example:
+class Program  
+{  
+    public void Hi()  
+    {  
+        Console.WriteLine("Hello from Instance Method");  
+    }  
+
+    static void Main(string[] args)  
+    {  
+        Program obj = new Program();  
+        obj.Hi();  
+    }  
+}  
+
+Output:  
+Hello from Instance Method
+
+🔸 Summary Table of Method Types in C#
++------------------------+-----------------------+-------------------------------+------------------------+
+|     Method Type        |    Keyword Used       |         How to Call           |   Object Required      |
++------------------------+-----------------------+-------------------------------+------------------------+
+| Static Method          | static                | ClassName.MethodName()        | No                     |
+| Instance Method        | (no static keyword)   | object.MethodName()           | Yes                    |
++------------------------+-----------------------+-------------------------------+------------------------+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔷 Question: What is Method Signature?
+Answer:
+• A method signature defines the uniqueness of a method in C#.  
+• It includes:
+  ▪ Method Name  
+  ▪ Parentheses `()`  
+  ▪ Parameters (number, type, and order)
+
+• Return type is **not** part of the method signature.
+
+public static void Hi(int x)
+
+Method Signature:  
+Hi(int x)
+
+Important?
+• It is used to differentiate methods in **method overloading**  
+• Multiple methods can have the same name but must have different signatures
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔷 Question: What is `string[] args`?
+Answer:
+• `string[] args` is a parameter of the Main() method  
+• It allows passing command-line arguments at runtime  
+• It is an array of strings  
+• Each word passed through the command line is stored as an element in the array
+
+🔸 Example:
+If we run the program like this:  
+> myprogram.exe Hello World  
+
+Then:  
+args[0] = "Hello"  
+args[1] = "World"
+
+• Used when we want to provide input to the program at the time of starting it
+ये program को run time पर external input देने के लिए होता है, और इसका use optional होता है।
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔷 Question: What is `void` and `static` keyword?
+Answer:
+• void → It means the method does NOT return any value  
+• Used when we just want to perform actions, not send any result back  
+• In Main(), we use void because no value is returned to the system  
+
+• static → It means the method belongs to the CLASS itself, not to any object  
+• This allows the method to be called WITHOUT creating an object  
+• The Main() method is static so the program can start directly from it
+
+🔸 Structure Example:
+class Program  
+{  
+    public static void Main(string[] args)  
+    {  
+        // statements  
+    }  
+}
+
+
+"void method सिर्फ task perform करता है और कुछ return नहीं करता, जबकि return method result वापिस करता है जिसे हम आगे कहीं भी use या store कर सकते हैं।"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
