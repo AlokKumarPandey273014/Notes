@@ -1,0 +1,62 @@
+
+Question:    What is Type Casting?
+Answer:
+Type casting means converting one data type into another.  
+Example: converting an int to double, or a double to int.  
+
+
+There are 3 types of Type Casting in C#:
+
+
+1) Implicit Casting (Automatic)
+
+      •   Performed automatically by the compiler           
+      •   Converts smaller data types to larger data types   
+      •   No data loss occurs                                
+      •   No special syntax is needed                        
+      •   Safe and simple                                    
+      •   Happens in order:  char → int → long → float → double  
+
+      Example:                                                
+            int a = 9;                                        
+            double b = a;         // b = 9.0                  
+
+
+
+2) Explicit Casting (Manual)
+
+      •   Done manually by the programmer                    
+      •   Converts larger data types to smaller data types    
+      •   May cause data loss                                 
+      •   Uses (type) before the value                        
+      •   Useful when you're sure about the conversion        
+
+      Example:                                                
+            double a = 9.78;                                  
+            int b = (int)a;      // b = 9                     
+
+
+
+3) Using Convert Class
+
+      •   Uses built-in methods to convert between types      
+      •   Can handle null and default values safely           
+      •   Works with strings, numbers, booleans, etc.         
+      •   Provides readable and reusable code                
+
+      Common Methods:                                         
+            Convert.ToString()                                
+            Convert.ToDouble()                                
+            Convert.ToInt32()                                 
+            Convert.ToBoolean()                               
+
+      Example:                                                
+            int a = 10;                                       
+            double b = 5.25;                                  
+            bool c = true;                                    
+
+            Console.WriteLine(Convert.ToString(a));       // "10"
+            Console.WriteLine(Convert.ToDouble(a));       // 10.0
+            Console.WriteLine(Convert.ToInt32(b));        // 5
+            Console.WriteLine(Convert.ToString(c));       // "True"
+
