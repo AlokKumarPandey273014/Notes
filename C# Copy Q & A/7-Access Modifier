@@ -1,0 +1,54 @@
+
+Question - What is Access Specifier/Modifier?
+Answer-
+Access Specifiers (or Access Modifiers) define where you can access classes, methods, and variables from in a C# program.
+Access Modifiers control visibility and accessibility of class members to enforce encapsulation and protect data from outside access.
+
+C# 4 main Access Modifiers-
+ 1. public  -  Accessible from anywhere (within or outside the class, project, or assembly)
+ 2. private  -  Accessible only inside the same class  , Default access modifier for class members (if not specified)
+ 3. protected  - Accessible within the same class and its derived/child classes
+ 4. internal  -  Accessible only within the same assembly/project
+
+➕ Combinations=
+ protected internal – accessible in same assembly + derived classes.
+ private protected  – accessible in same class or derived class within the same assembly.
+
+
+Example:
+class MyClass
+{
+    public                int publicValue = 10;             // Accessible anywhere
+    private               int privateValue = 20;            // Only inside  same Class
+    protected             int protectedValue = 30;          // same Class + derived classes
+    internal              int internalValue = 40;           // Only within the same project
+    private protected     int priProt = 60;                 // Same class or child class in the same project
+    protected internal    int protInt = 50;                 // Same project or child classes from other projects
+    
+}
+
+
+
+📌 Access Modifier Comparison Table:
+
++----------------------+-------------------------+----------------+----------------+------------------------+-------------------------------+
+|      Modifier        | Applicable To           | Current Class  | Derived Class  | Other Assembly/Class   | Derived (Other Project)       |
++----------------------+-------------------------+----------------+----------------+------------------------+-------------------------------+
+| public               | Class, Method, Field    | ✅ Yes         | ✅ Yes         | ✅ Yes                 | ✅ Yes                        |
+| private              | Method, Field           | ✅ Yes         | ❌ No          | ❌ No                  | ❌ No                         |
+| protected            | Method, Field           | ✅ Yes         | ✅ Yes         | ❌ No                  | ✅ Yes (if inherited)         |
+| internal             | Class, Method, Field    | ✅ Yes         | ✅ Yes         | ✅ Yes (same assembly) | ❌ No                         |
+| protected internal   | Method, Field           | ✅ Yes         | ✅ Yes         | ✅ Yes (same assembly) | ✅ Yes (if inherited)         |
+| private protected    | Method, Field           | ✅ Yes         | ✅ Yes         | ❌ No                  | ❌ No                         |
++----------------------+-------------------------+----------------+----------------+------------------------+-------------------------------+
+
+
+
+✅ Why use Access Modifiers?
+
+ To achieve Encapsulation (data hiding)
+ Code visibility control
+ Code security को improve 
+ Code readable and  maintainable 
+
+
