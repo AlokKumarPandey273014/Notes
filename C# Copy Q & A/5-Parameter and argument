@@ -1,0 +1,229 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Question - What is Parameter List?
+Answer -
+
+• The parameter list is written inside parentheses () in a method definition.  
+• It is used to pass and receive data into a method.  
+• It includes the data type and name of each parameter.  
+• The order of parameters matters.  
+• A method can have no parameters (non-parameterized method).  
+• A method can have one or more parameters (parameterized method).  
+• Parameters make a method reusable for different values.  
+• The number and type of parameters must match when calling the method.
+
+Example 1: Method with Parameters
+
+int Add(int a, int b)
+{
+    return a + b;
+}
+
+int a and int b are part of the parameter list
+
+Example 2: Method without Parameters
+
+void ShowMessage()
+{
+    Console.WriteLine("Hello!");
+}
+ No parameters 
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔷 Question: What is Default Parameterized Value?
+Answer:
+• A default parameter value allows a method to run even if not all arguments are passed.  
+• If an argument is missing during method call, the default value is used instead.  
+• Default values are assigned using `=` in the method definition.
+
+
+📌 Example 1: Single Default Value
+
+using System;  
+namespace defaultParameter  
+{  
+  class Program  
+  {  
+    static void MyMethod(string country = "Norway")  
+    {  
+      Console.WriteLine(country);  
+    }  
+
+    static void Main(string[] args)  
+    {  
+      MyMethod("India");    // Output: India  
+      MyMethod("Nepal");    // Output: Nepal  
+      MyMethod();           // Output: Norway (default used)  
+    }  
+  }  
+}  
+
+
+📌 Example 2: Mixed Parameters (With and Without Defaults)
+
+using System;  
+namespace defaultParameter  
+{  
+  class Program  
+  {  
+    public static void name(string fname, string lname = "Kumar")  
+    {  
+      string fullname = fname + " " + lname;  
+      Console.WriteLine("Your name is: " + fullname);  
+    }  
+
+    static void Main(string[] args)  
+    {  
+      name("Alok", "Singh");     // Output: Alok Singh  
+      name("Vinay");             // Output: Vinay Kumar (default used)  
+    }  
+  }  
+}  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔷 Question: What is Multiple Parameter?
+Answer:
+• In C#, a method can accept multiple parameters.  
+• Parameters are written inside the parentheses, separated by commas.  
+• The number and type of arguments passed during method call must match the method definition.
+
+
+📌 Example: Method with Multiple Parameters
+
+using System;  
+namespace name  
+{  
+  class Program  
+  {  
+    static void MyMethod(string fname, int age)  
+    {  
+      Console.WriteLine(fname + " is " + age + " years old.");  
+    }  
+
+    static void Main(string[] args)  
+    {  
+      MyMethod("Vikas", 25);  
+      MyMethod("Vinay", 55);  
+    }  
+  }  
+}  
+
+🔸 Output:
+Vikas is 25 years old.  
+Vinay is 55 years old.  
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔷 Question: What is Named Arguments?
+Answer:
+• Named arguments let you pass values to method parameters using the parameter **name**.  
+• This improves code **readability**.  
+• You can pass arguments **in any order** using the `parameterName: value` format.
+
+
+📌 Syntax:  
+MethodName(parameter1: value1, parameter2: value2);
+
+📌 Example:
+
+using System;  
+namespace NamedArgs  
+{  
+  class Program  
+  {  
+    public static void NameAge(string name, int age)  
+    {  
+      Console.WriteLine("Your name is: " + name);  
+      Console.WriteLine("Your age is: " + age);  
+    }  
+
+    static void Main(string[] args)  
+    {  
+      // Named arguments used (order doesn't matter)
+      NameAge(age: 25, name: "Vikas");  
+    }  
+  }  
+}  
+
+🔸 Output:
+Your name is: Vikas  
+Your age is: 25
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔷 Question: What is Parameter and Argument?
+Answer:
+• Information can be passed to a method using **parameters**.  
+• A parameter is like a **placeholder variable** declared inside the method definition.  
+• When calling the method, the value you pass to that parameter is called an **argument**.
+
+
+🔸 Key Difference:
+• Parameter → Declared in method definition  
+• Argument → Actual value passed during method call
+
+
+📌 Example 1: String Parameter
+
+using System;  
+namespace MyMethod  
+{  
+  class Program  
+  {  
+    static void MyMethod(string fname)  
+    {  
+      Console.WriteLine(fname);  
+    }  
+
+    static void Main(string[] args)  
+    {  
+      MyMethod("Alok");     // Argument = "Alok"  
+      MyMethod("Kumar");    // Argument = "Kumar"  
+    }  
+  }  
+}  
+
+▶ Output:
+Alok  
+Kumar  
+
+• `fname` → Parameter  
+• `"Alok"` and `"Kumar"` → Arguments
+
+
+📌 Example 2: Integer Parameters (Addition)
+
+using System;  
+namespace Integer  
+{  
+  class Program  
+  {  
+    static void Add(int x, int y)  
+    {  
+      int z = x + y;  
+      Console.WriteLine("The Result is: " + z);  
+    }  
+
+    static void Main(string[] args)  
+    {  
+      Add(10, 20);   // Arguments: 10, 20  
+      Add(50, 60);   // Arguments: 50, 60  
+    }  
+  }  
+}  
+
+▶ Output:
+The Result is: 30  
+The Result is: 110  
+
+
+
+
+
+
