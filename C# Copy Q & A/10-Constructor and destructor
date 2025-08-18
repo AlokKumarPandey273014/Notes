@@ -1,0 +1,610 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━        Constructor                ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+🔷 Question: What is Constructor?
+Answer:
+• A constructor is a special method in a class that gets called automatically when an object is created.  
+• It is used to initialize the fields (data members) of the class.  
+• It has the same name as the class and no return type — not even `void`.
+
+
+📌 Example:
+using System;  
+namespace ConstructorExample  
+{  
+  class Test  
+  {  
+    int i;  
+    string s;  
+    bool b;  
+
+    public Test()  
+    {  
+      i = 10;  
+      s = "Alok";  
+      b = false;  
+    }  
+
+    public void Display()  
+    {  
+      Console.WriteLine("i = " + i);  
+      Console.WriteLine("s = " + s);  
+      Console.WriteLine("b = " + b);  
+    }  
+
+    static void Main()  
+    {  
+      Test obj = new Test(); // Constructor is automatically called  
+      obj.Display();  
+    }  
+  }  
+}  
+
+🔸 Output:  
+i = 10  
+s = Alok  
+b = False
+
+
+📌 Important Points:
+
+• Constructor name = class name.  
+• No return type .
+. access modifiers allowed.  
+• Constructors are automatically invoked when an object is created.  
+• You can define multiple constructors (constructor overloading).    
+• Static constructors = No parameters.
+. only one static constructor per class.  
+• Constructors cannot be abstract, final, or synchronized.
+• You can use access modifiers (like public, private) with constructors.
+
+
+📌 Types of Constructors:
+
+• Default Constructor  
+• Parameterized Constructor  
+• Copy Constructor  
+• Private Constructor  
+• Static Constructor  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔷 Question: What is Default Constructor?
+Answer:
+• A default constructor is a constructor that has **no parameters**.  
+• It is called automatically when an object is created.  
+• If no constructor is defined in a class, C# provides one automatically.  
+• It assigns **default values** to class fields:  
+• Numeric types (int, float, etc.) → 0  
+• Reference types (string, objects) → null  
+
+
+📌 Example 1:
+using System;  
+namespace DefaultConstructor  
+{  
+  class Show  
+  {  
+    int a;  
+    string name;  
+
+    public Show()  
+    {  
+      Console.WriteLine("Default Constructor");  
+    }  
+
+    static void Main(string[] args)  
+    {  
+      Show obj = new Show();  
+      Console.WriteLine(obj.a);       // 0  
+      Console.WriteLine(obj.name);    // null  
+    }  
+  }  
+}  
+
+🔸 Output:  
+Default Constructor  
+0  
+
+📌 Example 2:
+
+using System;  
+namespace DefaultConstructor  
+{  
+  class Person  
+  {  
+    public string Name;  
+    public int Age;  
+
+    public Person()  
+    {  
+      Name = "Unknown";  
+      Age = 0;  
+    }  
+  }  
+
+  class Program  
+  {  
+    static void Main()  
+    {  
+      Person person1 = new Person();  
+      Console.WriteLine("Name: " + person1.Name);  
+      Console.WriteLine("Age: " + person1.Age);  
+    }  
+  }  
+}  
+
+🔸 Output:  
+Name: Unknown  
+Age: 0  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔷 Question: What is Parameterized Constructor?
+Answer:
+• A parameterized constructor is a constructor that has one or more parameters.  
+• It allows you to pass values when creating an object.  
+• It is used to initialize class fields with **specific values** provided during object creation.  
+• Each object can hold different data using this constructor.
+
+📌 Example 1:
+
+using System;  
+namespace ParameterizedConstructor  
+{  
+  class Show  
+  {  
+    public string Name;  
+    public int Id;  
+
+    // Parameterized constructor  
+    public Show(string name, int id)  
+    {  
+      this.Name = name;  
+      this.Id = id;  
+    }  
+
+    public void Display()  
+    {  
+      Console.WriteLine("Name is " + Name);  
+      Console.WriteLine("Id is " + Id);  
+    }  
+
+    static void Main()  
+    {  
+      Show obj = new Show("Alok", 10);  
+      obj.Display();  
+    }  
+  }  
+}  
+
+🔸 Output:  
+Name is Alok  
+Id is 10  
+
+
+📌 Example 2:
+
+using System;  
+namespace ParameterizedConstructor  
+{  
+  class Program  
+  {  
+    public string EmpName;  
+    public int EmpId;  
+    public int EmpAge;  
+
+    // Parameterized constructor  
+    public Program(string name, int id, int age)  
+    {  
+      EmpName = name;  
+      EmpId = id;  
+      EmpAge = age;  
+
+      Console.WriteLine("Employee Name: " + EmpName);  
+      Console.WriteLine("Employee Id: " + EmpId);  
+      Console.WriteLine("Employee Age: " + EmpAge);  
+    }  
+
+    static void Main(string[] args)  
+    {  
+      Program obj = new Program("Alok", 10, 25);  
+    }  
+  }  
+}  
+
+🔸 Output:  
+Employee Name: Alok  
+Employee Id: 10  
+Employee Age: 25  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔷 Question: What is Copy Constructor?
+Answer:
+• A **copy constructor** is a special constructor that creates a new object by copying values from an existing object.  
+• It is a type of parameterized constructor that takes an object of the same class as a parameter.  
+• It is useful when you want to duplicate or clone an object’s data into another object.
+
+
+📌 Example 1:
+
+using System;  
+namespace CopyConstructor  
+{  
+  class Program  
+  {  
+    public string name;  
+    public int age;  
+
+    // Parameterized constructor  
+    public Program(string name, int age)  
+    {  
+      this.name = name;  
+      this.age = age;  
+    }  
+
+    // Copy constructor  
+    public Program(Program obj)  
+    {  
+      this.name = obj.name;  
+      this.age = obj.age;  
+    }  
+
+    static void Main(string[] args)  
+    {  
+      Program obj = new Program("Alok", 25);  
+      Console.WriteLine(obj.name);  
+      Console.WriteLine(obj.age);  
+
+      Program obj1 = new Program(obj);  
+      Console.WriteLine(obj1.name);  
+      Console.WriteLine(obj1.age);  
+    }  
+  }  
+}  
+
+🔸 Output:  
+Alok  
+25  
+Alok  
+25  
+
+
+📌 Example 2:
+
+using System;  
+namespace CopyConstructor  
+{  
+  class Program  
+  {  
+    public string name;  
+    public int age;  
+
+    // Parameterized constructor  
+    public Program(string name, int age)  
+    {  
+      this.name = name;  
+      this.age = age;  
+    }  
+
+    // Copy constructor  
+    public Program(Program e)  
+    {  
+      this.name = e.name;  
+      this.age = e.age;  
+    }  
+
+    public void Get()  
+    {  
+      Console.WriteLine("My name is: " + name);  
+      Console.WriteLine("My age is: " + age);  
+    }  
+
+    static void Main(string[] args)  
+    {  
+      Program obj = new Program("Alok", 25);  
+      obj.Get();  
+
+      Program obj1 = new Program(obj);  
+      obj1.Get();  
+    }  
+  }  
+}  
+
+🔸 Output:  
+My name is: Alok  
+My age is: 25  
+My name is: Alok  
+My age is: 25  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔷 Question: What is Private Constructor?
+Answer:
+• A private constructor is a constructor that is declared with the `private` access modifier.  
+• It restricts object creation from outside the class.  
+• It is commonly used in classes with only static members or for singleton pattern implementation.
+
+📌 Key Points:
+
+• Prevents object creation from other classes  
+• Can only be accessed within the same class  
+• Compiler won’t provide a default public constructor if a private constructor exists  
+• Used in utility/helper classes or singleton classes  
+• Can have parameters  
+• A class with only a private constructor cannot be inherited
+
+📌 Example:
+
+using System;  
+namespace PrivateConstructorDemo  
+{  
+  class Show  
+  {  
+    public static string name;  
+    public static int age;  
+
+    // Private constructor  
+    private Show()  
+    {  
+      Console.WriteLine("This is a private constructor");  
+    }  
+
+    // Public constructor  
+    public Show(string a, int b)  
+    {  
+      name = a;  
+      age = b;  
+      Console.WriteLine("This constructor is invoked");  
+    }  
+  }  
+
+  class Program  
+  {  
+    static void Main()  
+    {  
+      Show obj = new Show("Alok", 25);  
+      Console.WriteLine(Show.name);  
+      Console.WriteLine(Show.age);  
+    }  
+  }  
+}  
+
+🔸 Output:  
+This constructor is invoked  
+Alok  
+25  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Question: What is Static Constructor?
+Answer:
+• A static constructor is used to initialize static variables of a class.  
+• It executes automatically once when the class is loaded for the first time.  
+• It prepares static data before any object is created or static member is accessed.  
+• It is commonly used for tasks like setting default configuration or connecting to a database (once).  
+• Only one static constructor is allowed per class  
+• It does not have any parameters  
+• It does not have any access modifier (no public/private)  
+• It is automatically called by CLR (Common Language Runtime)  
+• It cannot be called manually  
+• It runs before any instance or static member is accessed  
+• Useful for initializing static fields, logging setup, configuration values, etc.  
+• Executes only once in the entire program lifetime for that class  
+• Cannot use `this` or access instance members  
+• It improves control over static data initialization  
+
+Example:
+
+using System;
+
+namespace StaticConstructorDemo
+{
+  class Show
+  {
+    public static string name;
+    public static int age;
+
+    static Show()
+    {
+      name = "Alok";
+      age = 25;
+      Console.WriteLine("Static Constructor Called");
+    }
+
+    public Show()
+    {
+      Console.WriteLine("Default Constructor Called");
+    }
+
+    public static void Greet()
+    {
+      Console.WriteLine(name);
+      Console.WriteLine(age);
+    }
+  }
+
+  class Program
+  {
+    static void Main()
+    {
+      Show obj1 = new Show();
+      Show obj2 = new Show();
+      Show.Greet();
+    }
+  }
+}
+
+Output:
+Static Constructor Called  
+Default Constructor Called  
+Default Constructor Called  
+Alok  
+25
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Question: What is Constructor Overloading?
+Answer:
+• Constructor Overloading means having **multiple constructors** in the same class with the **same name** but **different parameters**.  
+• It is similar to method overloading.  
+• Useful when you want to create objects in different ways with different initial values.
+
+Constructors can differ by:
+1. Type of parameters  
+2. Number of parameters  
+3. Order of parameters  
+
+Examples:
+• public Show(string a)  
+• public Show(int a)  
+• public Show(int x, int y)  
+• public Show(int x, int y, int z)  
+• public Show(string a, int b)  
+• public Show(int b, string a)  
+
+Program Example:
+
+using System;
+
+namespace ConstructorOverloaded
+{
+    class Show
+    {
+        // Default constructor
+        public Show()
+        {
+            Console.WriteLine("This is the first constructor.");
+        }
+
+        // Constructor with int and string
+        public Show(int a, string b)
+        {
+            Console.WriteLine("This is the second constructor: {0}", a);
+            Console.WriteLine("This is my name: " + b);
+        }
+
+        // Constructor with string and int
+        public Show(string a, int b)
+        {
+            Console.WriteLine("This is my name: " + a);
+            Console.WriteLine("This is the third constructor: " + b);
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Show obj = new Show();
+            Show obj1 = new Show(25, "Alok");
+            Show obj2 = new Show("Alok", 25);
+        }
+    }
+}
+
+
+Output:
+This is the first constructor.  
+This is the second constructor: 25  
+This is my name: Alok  
+This is my name: Alok  
+This is the third constructor: 25
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Question: What is Destructor?
+Answer:
+• A **Destructor** is a special method in C# that is used to clean up resources or memory when an object is no longer needed.  
+• It has the **same name as the class**, but starts with a **tilde (~)**.  
+• Destructors are called automatically by the **Garbage Collector**.
+
+Key Points:
+- A class can have only one destructor.
+- A destructor has no parameters and no access modifiers.
+- It cannot be overloaded or inherited.
+- It cannot be called directly by the code.
+- It is used mostly to release unmanaged resources.
+
+
+Syntax:
+~ClassName()
+{
+   // cleanup code
+}
+
+
+
+Program Example:
+
+using System;
+
+namespace DestructorExample
+{
+    class Show
+    {
+        public string name;
+        public int id;
+
+        // Constructor
+        public Show(string a, int b)
+        {
+            name = a;
+            id = b;
+        }
+
+        // Method
+        public void ABC()
+        {
+            Console.WriteLine("My name is: " + name);
+            Console.WriteLine("My ID is: " + id);
+        }
+
+        // Destructor
+        ~Show()
+        {
+            Console.WriteLine("Destructor has been invoked.");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Show obj = new Show("Alok", 25);
+            obj.ABC();
+
+            // Forcing garbage collection (optional)
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
+    }
+}
+
+Output:
+My name is: Alok  
+My ID is: 25  
+Destructor has been invoked.
+
+
+
