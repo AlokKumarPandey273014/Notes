@@ -1,0 +1,777 @@
+
+
+Question: What is Abstraction in C#?
+
+Abstraction: Abstraction is one of the main pillars of Object-Oriented Programming (OOP).
+             It means showing only the necessary information and hiding the complex implementation details.
+             In simple words:
+             "Show what to do — hide how to do it."
+
+Key Points:
+1. In abstraction, internal implementation is hidden, and only functionality is exposed.
+2. This is mainly achieved by keeping members private and exposing methods as public.
+3. In C#, abstraction can be achieved using:
+   - Access Modifiers (private, public)
+   - Abstract Classes
+   - Interfaces
+
+Exp:- Abstraction using regular class
+
+using System;
+
+namespace AbstractionExample
+{
+    class Person
+    {
+        public string EmpName;
+        public int EmpId;
+        public double EmpGrossPay;
+
+        private double taxDeduction = 1000;  // Hidden internal detail
+        private double netSalary;
+
+        public Person(string name, int id, double grossPay)
+        {
+            this.EmpName = name;
+            this.EmpId = id;
+            this.EmpGrossPay = grossPay;
+        }
+
+        private void CalculateNetSalary()  // Internal method - hidden
+        {
+            netSalary = EmpGrossPay - taxDeduction;
+            Console.WriteLine("Employee net salary is: " + netSalary);
+        }
+
+        public void ShowEmpDetails()  // Public method - exposed to user
+        {
+            Console.WriteLine("Employee name is: " + EmpName);
+            Console.WriteLine("Employee ID is: " + EmpId);
+            CalculateNetSalary();  // Calculation happens internally, user only sees the result
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Person obj = new Person("Alok", 11, 5000);
+            obj.ShowEmpDetails();  // Only necessary details are displayed
+        }
+    }
+}
+
+Output:
+Employee name is: Alok
+Employee ID is: 11
+Employee net salary is: 4000
+
+Summary:
+Abstraction focuses on what an object does, rather than how it does it.
+It makes code simple, clear, and secure.
+
+Real-life Example:-  Mobile interface: You press buttons and get output, but the internal circuits and working remain hidden.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+
+Question: What is Abstract in C#?
+
+Abstract: The word "Abstract" means something incomplete, which cannot have a direct object.
+
+In programming, an Abstract Class is used when:
+- The base class should only define a structure
+- The class should not be instantiated (no direct object can be created)
+
+In simple terms:
+- An Abstract Class cannot be instantiated.
+- It can only be inherited.
+
+Abstract Class Rules:
+1. An abstract class is defined using the `abstract` keyword.
+2. It can contain fields, properties, constructors, non-abstract methods, and abstract methods.
+3. If a class has even one abstract method, the class must also be abstract.
+4. An abstract method does not have a body (only declaration).
+   - It must be overridden in the derived class.
+5. Abstract classes are only used as base classes.
+6. Abstract classes can have constructors, properties, and access modifiers.
+
+Exp:-
+
+using System;
+
+namespace AbstractClass
+{
+    // Abstract base class
+    abstract class Person
+    {
+        public string Name;
+        public int Age;
+        public long Mobile;
+
+        public abstract void Details();  // abstract method
+    }
+
+    // Derived class: Student
+    class Student : Person
+    {
+        public int RollNo;
+        public string ClassName;
+
+        public override void Details()
+        {
+            Console.WriteLine("Student Name is: " + Name);
+            Console.WriteLine("Student Roll No is: " + RollNo);
+            Console.WriteLine("Student Class is: " + ClassName);
+            Console.WriteLine("Student Age is: " + Age);
+            Console.WriteLine("Student Mobile No is: " + Mobile);
+        }
+    }
+
+    // Derived class: Teacher
+    class Teacher : Person
+    {
+        public string Qualification;
+        public int Salary;
+
+        public override void Details()
+        {
+            Console.WriteLine("Teacher Name is: " + Name);
+            Console.WriteLine("Teacher Qualification is: " + Qualification);
+            Console.WriteLine("Teacher Salary is: " + Salary);
+            Console.WriteLine("Teacher Age is: " + Age);
+            Console.WriteLine("Teacher Mobile No is: " + Mobile);
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Student studentObj = new Student();
+            studentObj.Name = "Amit";
+            studentObj.Age = 20;
+            studentObj.Mobile = 9876543210;
+            studentObj.RollNo = 101;
+            studentObj.ClassName = "10th";
+            studentObj.Details();
+
+            Console.WriteLine();
+
+            Teacher teacherObj = new Teacher();
+            teacherObj.Name = "Ms. Sharma";
+            teacherObj.Age = 35;
+            teacherObj.Mobile = 9123456789;
+            teacherObj.Qualification = "M.Sc, B.Ed";
+            teacherObj.Salary = 45000;
+            teacherObj.Details();
+        }
+    }
+}
+
+Output:
+Student Name is: Amit
+Student Roll No is: 101
+Student Class is: 10th
+Student Age is: 20
+Student Mobile No is: 9876543210
+
+Teacher Name is: Ms. Sharma
+Teacher Qualification is: M.Sc, B.Ed
+Teacher Salary is: 45000
+Teacher Age is: 35
+Teacher Mobile No is: 9123456789
+
+Summary (for Interview):
+An Abstract Class is a base class whose object cannot be created.
+It is only inherited, and its abstract methods must be implemented in the derived classes.
+
+Important Point:
+- Abstract class can have both implemented and unimplemented methods.
+- Interface contains only unimplemented methods (except from C# 8 onward).
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+Question: What is an Abstract Property in C#?
+
+Abstract Property: 
+"Abstract" means a member that does not have any body or implementation.
+When you declare a property inside a class with `get;` and `set;` accessors but without any body, it is called an abstract property.
+
+Key Points:
+1. An abstract property is declared using the `abstract` keyword.  
+2. It can only be declared inside an abstract class.  
+3. It only contains the declaration of `get; set;`, no logic.  
+4. Any class inheriting the abstract class must override and provide implementation for it.  
+5. Abstract properties enforce implementation in derived classes.
+
+Exp:-
+
+using System;
+namespace AbstractProperties
+{
+    // Abstract base class
+    abstract class Person
+    {
+        public abstract string Name { get; set; }  // Abstract Property
+        public abstract int Id { get; set; }       // Abstract Property
+    }
+
+    // Derived class implementing the abstract properties
+    class Student : Person
+    {
+        private string stdName;
+        private int stdId;
+
+        public override string Name
+        {
+            get { return stdName; }
+            set { stdName = value; }
+        }
+
+        public override int Id
+        {
+            get { return stdId; }
+            set { stdId = value; }
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Student obj = new Student();
+            obj.Name = "Amit";
+            obj.Id = 101;
+
+            Console.WriteLine("Student Name: " + obj.Name);
+            Console.WriteLine("Student ID: " + obj.Id);
+        }
+    }
+}
+
+Output:
+Student Name: Amit
+Student ID: 101
+
+Summary (for Interview):
+An abstract property is a property that is only declared (without body), and it must be overridden in the derived class.  
+This ensures that every derived class provides its own implementation.
+
+Extra Points:
+- If an abstract property is not overridden, a compile-time error occurs.  
+- Access modifiers (like public/protected) can be used with abstract properties.  
+- In advanced C#, you can override only `get;` or only `set;` separately for an abstract property.
+
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+Question: What are Properties in C#?
+
+Definition:
+In C#, properties are special class members that provide controlled access to fields (variables).  
+They look like variables but internally behave like methods.
+
+Property = Variable + get/set logic  
+They are the best way to implement encapsulation.
+
+Types of Properties:
+1. Read/Write Property  
+2. Read-Only Property  
+3. Write-Only Property  
+4. Auto-Implemented Property  
+
+---------------------------------------------------
+
+1. Read and Write Property (both get and set)
+
+Example:
+using System;
+namespace Property
+{
+    class Employee
+    {
+        private string Name;
+        private int Id;
+
+        public string EmpName
+        {
+            get { return Name; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    Console.WriteLine("Please enter the name");
+                else
+                    Name = value;
+            }
+        }
+
+        public int EmpID
+        {
+            get { return Id; }
+            set
+            {
+                if (value <= 0)
+                    Console.WriteLine("Employee ID cannot be negative or zero");
+                else
+                    Id = value;
+            }
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            Employee E = new Employee();
+            E.EmpName = "Vikas Chouhan";
+            E.EmpID = 10;
+
+            Console.WriteLine("Employee Name is: " + E.EmpName);
+            Console.WriteLine("Employee ID is: " + E.EmpID);
+        }
+    }
+}
+
+Output:
+Employee Name is: Vikas Chouhan
+Employee ID is: 10
+
+---------------------------------------------------
+
+2. Read-Only Property (only get)
+
+Example:
+using System;
+namespace ReadOnlyProperty
+{
+    class RollNo
+    {
+        private readonly int Roll_NO = 242;
+
+        public int Student
+        {
+            get { return Roll_NO; }
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            RollNo ab = new RollNo();
+            Console.WriteLine("My Roll No is: " + ab.Student);
+        }
+    }
+}
+
+Output:
+My Roll No is: 242
+
+---------------------------------------------------
+
+3. Write-Only Property (only set)
+
+Example:
+using System;
+namespace WriteOnlyProperty
+{
+    class Person
+    {
+        private int Deposit_Bal;
+        private int Balance = 50000;
+
+        public int Deposit
+        {
+            set { Deposit_Bal = value; }
+        }
+
+        public void Show()
+        {
+            int Total = Balance + Deposit_Bal;
+            Console.WriteLine("Your Total Balance is: " + Total);
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            Person p = new Person();
+            p.Deposit = 10000;
+            p.Show();
+        }
+    }
+}
+
+Output:
+Your Total Balance is: 60000
+
+---------------------------------------------------
+
+4. Auto-Implemented Property (short syntax, no logic)
+Introduced in C# 3.0
+
+Example:
+using System;
+namespace AutoImplementedProperty
+{
+    class Person
+    {
+        public string Name { get; set; }
+        public int Id { get; set; }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            Person obj = new Person();
+            obj.Name = "Vikas Chouhan";
+            obj.Id = 111;
+
+            Console.WriteLine("My Name is: " + obj.Name);
+            Console.WriteLine("My ID is: " + obj.Id);
+        }
+    }
+}
+
+Output:
+My Name is: Vikas Chouhan
+My ID is: 111
+
+---------------------------------------------------
+
+Summary:
+- Properties allow controlled access to private fields.
+- They implement encapsulation.
+- Use 'get' for reading values and 'set' for assigning values.
+- Auto-properties provide a shortcut for clean property declarations without custom logic.
+
+Interview Tip:
+A property is a "smart field" in C#, which provides validation, logic, and encapsulation while still behaving like a variable from outside.
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Question: What is Interface in C#?
+
+Interface: An interface in C# is a blueprint of a class. 
+           It is similar to an abstract class, but all methods inside an interface are abstract (without body).
+           The main purpose of an interface is:
+            To achieve full abstraction (100% abstract methods).
+            To enable multiple inheritance (not possible with classes, but possible through interfaces).
+
+Characteristics of Interface:
+ Methods in an interface do not have a body (only declaration).
+ Objects of an interface cannot be created.
+ Interface only declares members, it does not provide implementation.
+ Interfaces can include methods, properties, events, and indexers.
+ Interfaces cannot contain fields or variables.
+ All members of an interface are public and abstract by default.
+ Access modifiers (public, private, protected) are not allowed inside interfaces.
+
+Exp:-
+
+using System;
+
+namespace InterfaceDemo
+{
+    interface ICheck
+    {
+        void Show();   // Only declaration
+    }
+
+    class Student : ICheck
+    {
+        public void Show()  // Implementation of interface method
+        {
+            Console.WriteLine("This is an interface....");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ICheck obj = new Student();  // Interface reference pointing to derived class object
+            obj.Show();
+        }
+    }
+}
+
+Output:
+This is an interface....
+
+Uses of Interface:
+ To achieve multiple inheritance.
+ To implement 100% abstraction.
+ To support dependency injection and loose coupling.
+ To design plug-in or extensible architectures.
+
+Summary for Interview:
+ Interface is a fully abstract class.
+ Declared using the `interface` keyword.
+ Cannot create objects of an interface.
+ All members are abstract and public by default.
+ Implementation must be provided in the derived class.
+ An interface works like a contract: any class that implements it must provide definitions for all declared members.
+
+
+
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+
+Question: What is Interface Inheritance in C#?
+
+Interface Inheritance: In C#, an interface can inherit from one or more other interfaces. 
+                       When a class implements the derived interface, it must provide implementation for 
+                       all the methods from the entire interface chain (base + derived).
+                       This allows multiple interface contracts to be combined into one.
+
+Exp:-
+
+using System;
+
+namespace InterfaceInheritance
+{
+    // Base Interface 1
+    interface I1
+    {
+        void Print1();
+    }
+
+    // Base Interface 2
+    interface I2
+    {
+        void Print2();
+    }
+
+    // Derived Interface inheriting from I1 and I2
+    interface I3 : I1, I2
+    {
+        void Print3();
+    }
+
+    // Class implementing derived interface (I3)
+    class MyClass : I3
+    {
+        public void Print1()
+        {
+            Console.WriteLine("This is a method of Interface 1...");
+        }
+
+        public void Print2()
+        {
+            Console.WriteLine("This is a method of Interface 2...");
+        }
+
+        public void Print3()
+        {
+            Console.WriteLine("This is a method of Interface 3...");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            I3 obj = new MyClass();   // Interface reference
+            obj.Print1();             // From I1
+            obj.Print2();             // From I2
+            obj.Print3();             // From I3
+        }
+    }
+}
+
+Output:
+This is a method of Interface 1...
+This is a method of Interface 2...
+This is a method of Interface 3...
+
+Real-life Example:
+Agreement I3 → Combines Agreement I1 + Agreement I2
+Any class that agrees to follow I3 must follow all the rules of I1 and I2 as well.
+
+Summary for Interview:
+ One interface can inherit from another (or multiple) interface(s).
+ A class implementing that derived interface must implement all methods from the interface chain.
+ Enables modular, extensible, and scalable design.
+ Provides multiple inheritance safely (without ambiguity like in class-based multiple inheritance).
+
+
+
+Question: How many types of implementations of interfaces?
+
+Answer:
+In C#, interfaces can be implemented in two ways:
+1. Implicit Interface Implementation
+2. Explicit Interface Implementation
+
+------------------------------------------------------------
+
+1. Implicit Interface Implementation
+(When method names are different across interfaces)
+
+Explanation:
+- When two or more interfaces have methods with different names, they can be implemented directly.
+- Methods must be declared public in the class.
+- These methods can be accessed using both the class object and the interface reference.
+
+Example:
+
+using System;
+
+namespace Implicit_Interface
+{
+    interface I1
+    {
+        void Print();
+    }
+
+    interface I2
+    {
+        void Show();
+    }
+
+    class Geek : I1, I2
+    {
+        public void Print()
+        {
+            Console.WriteLine("This is a method of Interface Print");
+        }
+
+        public void Show()
+        {
+            Console.WriteLine("This is a method of Interface Show");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Geek obj = new Geek();
+            obj.Print();     // Access through class object
+            obj.Show();
+
+            I1 obj1 = new Geek();   // Access through interface reference
+            obj1.Print();
+
+            I2 obj2 = new Geek();
+            obj2.Show();
+        }
+    }
+}
+
+Output:
+This is a method of Interface Print
+This is a method of Interface Show
+This is a method of Interface Print
+This is a method of Interface Show
+
+------------------------------------------------------------
+
+2. Explicit Interface Implementation
+(When method names are the same in multiple interfaces)
+
+Explanation:
+- When two or more interfaces have methods with the same name, explicit implementation is used.
+- In this case, the interface name must be prefixed before the method.
+- These methods cannot have access modifiers (public/private).
+- They can only be accessed through interface reference or by type-casting.
+
+Example:
+
+using System;
+
+namespace Explicit_Interface
+{
+    interface I1
+    {
+        void Show();
+    }
+
+    interface I2
+    {
+        void Show();
+    }
+
+    class Check : I1, I2
+    {
+        void I1.Show()
+        {
+            Console.WriteLine("This is interface 1...");
+        }
+
+        void I2.Show()
+        {
+            Console.WriteLine("This is interface 2...");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Check obj = new Check();
+
+            ((I1)obj).Show();   // Access using type casting
+            ((I2)obj).Show();
+
+            I1 obj1 = new Check();   // Access using interface reference
+            obj1.Show();
+
+            I2 obj2 = new Check();
+            obj2.Show();
+        }
+    }
+}
+
+Output:
+This is interface 1...
+This is interface 2...
+This is interface 1...
+This is interface 2...
+
+------------------------------------------------------------
+
+Similarities between Abstract Classes and Interfaces:
+- Both can declare methods without implementation.
+- Both require derived classes to provide implementation for abstract methods.
+- Both can be used as reference types.
+- Multiple inheritance can be achieved using interfaces.
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+Question: What is the difference between Abstract Class and Interface?
+
++-------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+|                               ABSTRACT CLASS                                        |                                 INTERFACE                                          |
++-------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+| An abstract class can inherit from another class and can also implement interfaces. | An interface can only inherit from other interfaces, not from a class.             |
++-------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+| Methods in an abstract class are implemented in derived classes using 'override'.   | Methods in an interface are implemented directly, no 'override' keyword needed.    |
++-------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+| Use abstract class when some methods need implementation and others should remain   | Use interface when all methods are only declarations with no implementation.       |
+| abstract.                                                                           |                                                                                    |
++-------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+| Abstract class can declare constructors and destructors.                            | Interface cannot declare constructors or destructors.                              |
++-------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+| To declare an abstract member, the 'abstract' keyword must be used.                 | All interface members are abstract and public by default, no keyword required.     |
++-------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
