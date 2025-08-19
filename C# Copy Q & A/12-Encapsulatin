@@ -1,0 +1,144 @@
+Question: What is Encapsulation in C#?
+
+Encapsulation: It is one of the important pillars of Object-Oriented Programming (OOP).
+               It is the process of wrapping data and methods into a single unit (class) and restricting direct access to data using private fields and public methods/properties              
+               It means hiding the data (variables) of a class from outside code and controlling access to it.
+               In Encapsulation, we bind the data (fields) and the methods/properties that operate on that data into a single unit called a class.
+               It is also known as Data Hiding.
+
+
+Why Encapsulation is Needed:
+- To protect data from accidental modification.
+- To control access to fields.
+- To increase security and maintainability of code.
+
+How Encapsulation is Achieved:
+1. Declare class variables as private.
+2. Provide public methods or properties to access and modify them.
+
+Exp 1: Access using Methods
+
+using System;
+
+namespace EncapsulationExample
+{
+    class Account
+    {
+        private string ac_Name;
+        private int bank_Amount;
+
+        public void SetName(string name)
+        {
+            if (string.IsNullOrEmpty(name))
+                Console.WriteLine("Name is required");
+            else
+                ac_Name = name;
+        }
+
+        public void GetName()
+        {
+            if (!string.IsNullOrEmpty(ac_Name))
+                Console.WriteLine("Your Name is: " + ac_Name);
+        }
+
+        public void SetAmount(int amount)
+        {
+            if (amount > 0)
+                bank_Amount = amount;
+            else
+                Console.WriteLine("Amount is negative or zero");
+        }
+
+        public void GetAmount()
+        {
+            if (bank_Amount > 0)
+                Console.WriteLine("Your Current Balance is: " + bank_Amount);
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Account obj = new Account();
+            obj.SetName("Alok");
+            obj.GetName();
+            obj.SetAmount(10000);
+            obj.GetAmount();
+        }
+    }
+}
+
+Output:
+Your Name is: Alok
+Your Current Balance is: 10000
+
+Exp 2: Access using Properties
+
+using System;
+
+namespace EncapsulationWithProperties
+{
+    class Account
+    {
+        private string ac_Name;
+        private int bank_Amount;
+
+        public string Name
+        {
+            get { return ac_Name; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    Console.WriteLine("Name is required");
+                else
+                    ac_Name = value;
+            }
+        }
+
+        public int Balance
+        {
+            get { return bank_Amount; }
+            set
+            {
+                if (value > 0)
+                    bank_Amount = value;
+                else
+                    Console.WriteLine("Amount is negative or zero");
+            }
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            Account obj = new Account();
+            obj.Name = "Alok";
+
+            if (!string.IsNullOrEmpty(obj.Name))
+                Console.WriteLine("Your Name is: " + obj.Name);
+
+            obj.Balance = 10000;
+
+            if (obj.Balance > 0)
+                Console.WriteLine("Your Amount is: " + obj.Balance);
+        }
+    }
+}
+
+Output:
+Your Name is: Alok
+Your Amount is: 10000
+
+Benefits of Encapsulation:
+ Data remains safe because fields are private.
+ Provides access control (read/write can be restricted).
+ Validation logic can be applied while setting values.
+ Code becomes modular, clean, and maintainable.
+ Improves reusability and flexibility.
+
+Extra Interview Tip:
+Encapsulation vs Abstraction
+ Encapsulation: Hides implementation details (data hiding), achieved using access modifiers.
+ Abstraction: Shows only necessary information, achieved using abstract classes or interfaces.
