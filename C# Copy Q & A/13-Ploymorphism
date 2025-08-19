@@ -1,0 +1,568 @@
+
+Question: What is Polymorphism and how many types of polymorphism?
+
+Polymorphism: It is one of the important pillars of Object-Oriented Programming (OOP).
+              The word Polymorphism comes from two Greek words:
+              • Poly = many
+              • Morphi = form
+              Meaning: "One object behaving in many different forms."
+
+Example:
+A man can play multiple roles in life – as a son, as a husband, and as a father.
+Similarly, in OOP, polymorphism allows one object to exhibit different behaviors.
+
+Types of Polymorphism in C#:
+There are two types of polymorphism in C#:
+1. Static Polymorphism (Compile Time Polymorphism)
+2. Dynamic Polymorphism (Run Time Polymorphism)
+
+Static Polymorphism (Compile Time Polymorphism):
+i) Achieved at compile time.
+ii) When a function is linked with an object at compile time, it is called static polymorphism or early binding.
+iii) In C#, static polymorphism is achieved in two ways:
+     a) Method Overloading (Function Overloading)
+     b) Operator Overloading
+
+Dynamic Polymorphism (Run Time Polymorphism):
+i) Achieved at run time.
+ii) When a function is linked with an object at run time, it is called dynamic polymorphism or late binding.
+iii) In C#, dynamic polymorphism is achieved using Method Overriding.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+
+
+Question: What is Method Overloading?
+
+Method Overloading: When multiple methods in the same class have the same name but differ in the number of parameters, 
+                    the type of parameters, or the order of parameters, it is called Method Overloading.
+                    It is an example of Compile-time Polymorphism because the decision of which method to call 
+                    is made at compile time.
+
+Important Note:
+Method Overloading depends only on parameters.
+Changing only the return type does not constitute overloading.
+
+Exp:-
+
+class Example
+{
+    void Display()
+    {
+        Console.WriteLine("No parameters");
+    }
+
+    void Display(int a)
+    {
+        Console.WriteLine("Integer parameter: " + a);
+    }
+
+    void Display(double a)
+    {
+        Console.WriteLine("Double parameter: " + a);
+    }
+
+    void Display(int a, float b)
+    {
+        Console.WriteLine("Integer and Float parameters: " + a + ", " + b);
+    }
+
+    void Display(float a, int b)
+    {
+        Console.WriteLine("Float and Integer parameters: " + a + ", " + b);
+    }
+
+    static void Main()
+    {
+        Example obj = new Example();
+
+        obj.Display();
+        obj.Display(10);
+        obj.Display(12.5);
+        obj.Display(5, 3.2f);
+        obj.Display(2.5f, 7);
+    }
+}
+
+Output:
+No parameters
+Integer parameter: 10
+Double parameter: 12.5
+Integer and Float parameters: 5, 3.2
+Float and Integer parameters: 2.5, 7
+
+Ways to Achieve Method Overloading:
+1. By changing the number of parameters
+2. By changing the data type of parameters
+3. By changing the order of parameters
+
+----------------------------------------------------------------------------------
+
+i) By Changing Number of Parameters:
+
+using System;
+
+namespace MethodOverload
+{
+    class Program
+    {
+        void Display(int a)
+        {
+            Console.WriteLine("Argument: " + a);
+        }
+
+        void Display(int a, int b)
+        {
+            Console.WriteLine("Arguments: " + a + ", " + b);
+        }
+
+        static void Main(string[] args)
+        {
+            Program obj = new Program();
+            obj.Display(100);          // 1 parameter
+            obj.Display(100, 200);     // 2 parameters
+        }
+    }
+}
+
+Output:
+Argument: 100
+Arguments: 100, 200
+
+Explanation:
+One method has one parameter, another has two parameters.
+Because the number of parameters is different, method overloading is achieved.
+
+
+----------------------------------------------------------------------------------
+
+ii) By Changing Data Type of Parameters:
+
+using System;
+
+namespace MethodOverload
+{
+    class Program
+    {
+        void Display(int a)
+        {
+            Console.WriteLine("int type: " + a);
+        }
+
+        void Display(string a)
+        {
+            Console.WriteLine("string type: " + a);
+        }
+
+        static void Main(string[] args)
+        {
+            Program obj = new Program();
+            obj.Display(100);        // int
+            obj.Display("Alok");     // string
+        }
+    }
+}
+
+Output:
+int type: 100
+string type: Alok
+
+Explanation:
+One method accepts an int parameter, another accepts a string parameter.
+Because the data types are different, method overloading is valid.
+
+
+----------------------------------------------------------------------------------
+
+iii) By Changing Order of Parameters:
+
+using System;
+
+namespace MethodOverload
+{
+    class Program
+    {
+        void Display(int a, string b)
+        {
+            Console.WriteLine("int: " + a);
+            Console.WriteLine("string: " + b);
+        }
+
+        void Display(string a, int b)
+        {
+            Console.WriteLine("string: " + a);
+            Console.WriteLine("int: " + b);
+        }
+
+        static void Main(string[] args)
+        {
+            Program obj = new Program();
+            obj.Display(100, "Programming");   // int, string
+            obj.Display("Alok", 30);           // string, int
+        }
+    }
+}
+
+Output:
+int: 100
+string: Programming
+string: Alok
+int: 30
+
+Explanation:
+Both methods use the same parameter types (int and string), 
+but the order of parameters is different. Therefore, overloading is valid.
+
+
+----------------------------------------------------------------------------------
+
+Final Summary:
+
+✔ Method Overloading means having multiple methods with the same name in a class.  
+✔ The difference must be in the number of parameters, the type of parameters, or the order of parameters.  
+✔ Return type alone does not constitute method overloading.  
+✔ It is resolved at compile-time, so it is also called Static Polymorphism.
+
+
+
+
+
+
+
+
+
+
+
+🔶 Question: What is Operator Overloading?
+
+🧾 Answer:
+
+★ Operator Overloading (ऑपरेटर ओवरलोडिंग)
+
+• Operator Overloading compile-time polymorphism का example है।  
+• इसका मतलब है कि हम C# में operators जैसे `+`, `-`, `*`, `/` को redefine कर सकते हैं ताकि वो user-defined data types (class/struct) पर काम करें।  
+• इससे हम अपने objects पर उसी तरह operations कर सकते हैं जैसे primitive types (int, string, etc.) पर करते हैं।
+
+👉 इसका syntax होता है:
+    public static <ClassName> operator <symbol>(<ClassName> obj1, <ClassName> obj2)
+
+----------------------------------------------------------------------------------
+
+✅ Example Code:
+
+using System;
+
+namespace OperatorOverloading
+{
+    class Abc
+    {
+        public string Str;
+        public int Num;
+
+        // '+' Operator Overloading
+        public static Abc operator +(Abc obj1, Abc obj2)
+        {
+            Abc obj3 = new Abc();
+            obj3.Str = obj1.Str + " " + obj2.Str;
+            obj3.Num = obj1.Num + obj2.Num;
+            return obj3;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Abc obj1 = new Abc { Str = "Alok", Num = 10 };
+            Abc obj2 = new Abc { Str = "Kumar", Num = 20 };
+
+            Abc obj3 = obj1 + obj2;  // '+' operator का overloaded version call होगा
+
+            Console.WriteLine(obj3.Str);
+            Console.WriteLine(obj3.Num);
+        }
+    }
+}
+
+🖨️ Output:
+Alok Kumar  
+30
+
+🧾 Explanation:
+यहाँ दो objects को '+' operator से जोड़ा गया है। '+' operator internally एक static method call कर रहा है जिसे हमने overload किया है।
+
+----------------------------------------------------------------------------------
+
+📌 Notes (महत्वपूर्ण बातें):
+
+• Operator overloading compile-time polymorphism का हिस्सा है।  
+• हम एक ही operator को अलग-अलग कामों के लिए use कर सकते हैं।  
+• हम सिर्फ predefined operators को ही overload कर सकते हैं।  
+• Overloaded operator एक static method होता है और `operator` keyword से define होता है।
+
+----------------------------------------------------------------------------------
+
+🔸 Table: कौन-कौन से Operators Overload किए जा सकते हैं?
+
+| Operator                | Description                                           | Overloadable? |
+|------------------------|-------------------------------------------------------|---------------|
+| +, -, *, /, %          | Arithmetic Operators (binary)                         | ✅ Yes        |
+| ++, --, !, ~           | Unary Operators                                       | ✅ Yes        |
+| ==, !=, <, >, <=, >=   | Comparison Operators                                   | ✅ Yes        |
+| &&, ||                 | Conditional Logical Operators                         | ❌ No         |
+| =, +=, -=, *=, /=, %=  | Assignment Operators                                  | ❌ No         |
+
+----------------------------------------------------------------------------------
+
+🎯 Summary (निचोड़):
+
+✔ Operator overloading से हम operator को user-defined object types के लिए customize कर सकते हैं।  
+✔ इसका उपयोग करके आप readable और meaningful code लिख सकते हैं।  
+✔ Operator overloading static method के रूप में implement होती है।  
+✔ कुछ operators जैसे `=`, `+=`, `||` आदि को overload नहीं किया जा सकता।
+
+👍 अगर आप चाहें तो मैं Comparison भी बना सकता हूँ — Operator Overloading vs Method Overloading।
+
+
+
+
+
+
+
+
+
+
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+
+
+🔷 Question: What is Dynamic or Run-Time Polymorphism?
+
+🧾 Answer:
+
+• जब किसी program में किसी method को run-time पर select किया जाता है, उसे **Run-Time Polymorphism** या **Dynamic Polymorphism** कहते हैं।  
+• इसे achieve किया जाता है **Method Overriding** के ज़रिए।
+
+🧠 Key Point:
+- Base class में method को `virtual` declare किया जाता है  
+- Derived class में उसी method को `override` किया जाता है
+
+----------------------------------------------------------------------------------
+
+🔷 Question: What is Method Overriding?
+
+🧾 Answer:
+
+• जब derived class में base class के किसी method को **same name और same parameter** के साथ redefine किया जाता है, तो उसे Method Overriding कहते हैं।  
+• यह runtime polymorphism को achieve करता है।
+
+✅ Method Overriding के Rules:
+- Base class method → `virtual` keyword से mark होना चाहिए  
+- Derived class method → `override` keyword से implement होना चाहिए  
+- Signature (method name + parameter list) दोनों जगह same होना चाहिए
+
+----------------------------------------------------------------------------------
+
+✅ Example 1:
+
+using System;
+
+namespace Overriding
+{
+    class Parent
+    {
+        public virtual void Print()
+        {
+            Console.WriteLine("This is a parent class");
+        }
+    }
+
+    class Child : Parent
+    {
+        public override void Print()
+        {
+            Console.WriteLine("This is a child class");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Parent p = new Child();
+            p.Print();
+        }
+    }
+}
+
+🖨️ Output:
+This is a child class
+
+➡️ यहाँ Parent class में `Print()` method virtual है  
+➡️ Child class उसे override कर रही है  
+➡️ जब हम `Parent p = new Child()` करके `p.Print()` call करते हैं — तब output आता है **"This is a child class"**
+
+----------------------------------------------------------------------------------
+
+✅ Example 2:
+
+using System;
+
+namespace MethodOverriding
+{
+    class Animal
+    {
+        public virtual void Eat()
+        {
+            Console.WriteLine("Eating...");
+        }
+    }
+
+    class Dog : Animal
+    {
+        public override void Eat()
+        {
+            Console.WriteLine("Eating Bread");
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            Dog d = new Dog();
+            d.Eat();
+        }
+    }
+}
+
+🖨️ Output:
+Eating Bread
+
+➡️ यहाँ Animal class में `Eat()` method को virtual किया गया है  
+➡️ Dog class ने इसे override करके अपनी implementation दी है
+
+----------------------------------------------------------------------------------
+
+📊 Summary Table – Static vs Dynamic Polymorphism:
+
+| Type                 | Binding Time | Implemented Using                        | Example                     |
+|----------------------|--------------|------------------------------------------|-----------------------------|
+| Static Polymorphism  | Compile-Time | Method Overloading, Operator Overloading | `Display(int)` `+ operator` |
+| Dynamic Polymorphism | Run-Time     | Method Overriding                        | `virtual/override`          |
+
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+
+🔷 What is Method Hiding in C#?
+
+✅ Definition (हिंदी + English):
+Method Hiding C# का एक inheritance concept है जिसमें **derived (child) class** एक ऐसा method define करती है जो base (parent) class के method से **same name और signature** रखता है, लेकिन उसे **override नहीं करती** — बल्कि उसे **hide** कर देती है।
+
+✔ इसे `new` keyword से किया जाता है।  
+✔ ये **compile time पर resolve होता है**।  
+✔ ये **polymorphism का हिस्सा नहीं है**।  
+✔ ये **inheritance से related** है।
+
+---
+
+📌 Syntax:
+```csharp
+public new void MethodName() { }
+```
+
+---
+
+🧪 Example: Method Hiding
+
+```csharp
+using System;
+
+class Parent
+{
+    public void Show()
+    {
+        Console.WriteLine("Parent Show Method");
+    }
+}
+
+class Child : Parent
+{
+    public new void Show()  // hides the Parent's Show method
+    {
+        Console.WriteLine("Child Show Method");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Parent p = new Child();  // Base class reference to derived object
+        p.Show();                // Output: Parent Show Method (method hiding)
+
+        Child c = new Child();   // Derived class reference
+        c.Show();                // Output: Child Show Method
+    }
+}
+```
+
+---
+
+🎯 Output:
+```
+Parent Show Method
+Child Show Method
+```
+
+
+📌 Key Points (महत्वपूर्ण बातें):
+- `new` keyword बताता है कि child class का method, base class का method **hide कर रहा है**।
+- अगर हम object को **parent class type** से call करेंगे → parent का method चलेगा।
+- अगर हम object को **child class type** से call करेंगे → child का method चलेगा।
+- ये **method overriding नहीं है**, इसलिए ये **runtime polymorphism** का हिस्सा नहीं है।
+
+---
+
+📌 Comparison: Method Hiding vs Method Overriding
+
+| Feature               | Method Hiding              | Method Overriding           |
+|-----------------------|-----------------------------|------------------------------|
+| Keyword used          | `new`                      | `override`                  |
+| Base method required  | Any access modifier         | Must be `virtual`, `abstract`, or `override` |
+| Resolution time       | Compile-time               | Runtime                      |
+| Polymorphism?         | ❌ No                      | ✅ Yes                       |
+| Purpose               | Hide base method           | Extend/Replace base method   |
+
+---
+
+✅ Summary (सारांश):
+- Method Hiding तब होता है जब derived class same नाम का method define करती है, और उसे `new` से hide करती है।
+- यह inheritance का feature है लेकिन polymorphism का हिस्सा नहीं।
+- Method hiding compile time पर decide होता है कि कौन सा method call होगा — reference type के base पर।
+
+🧠 Interview Tip:
+"Method hiding is a compile-time concept in C# that hides a base class method using `new` keyword instead of overriding it."
+
+
+
+
+
+
+
+
+
+
+
+
+
