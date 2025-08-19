@@ -1,0 +1,259 @@
+
+Que- What is Inheritance in C#?
+
+ Inheritance is onle of the important pillar Object-Oriented Programming .
+ In this there is a Child Class ( Derived Class )  and second is Parent Class ( Base Class ) from which we  inherit  properties + methods .
+ In Inheritance We can Reuse , extend , Organise Code .
+ In Base Class (Parent Class) in which we inherit members .
+ In Derived Class (Child Class) which takes Inheritance and can access member of Base class.
+
+Exp-
+class BaseClass  
+{
+    // fields, properties, methods
+}
+
+class DerivedClass : BaseClass  
+{
+    // can access Public abd Proctected member of base class .
+}
+
+
+
+🧪 Exp 2- Inheriting from Animal class
+
+using System;
+class Animal
+{
+    public void Eat()
+    {
+        Console.WriteLine("Animal is eating.");
+    }
+}
+class Dog : Animal
+{
+    public void Bark()
+    {
+        Console.WriteLine("Dog is barking.");
+    }
+}
+class Program
+{
+    static void Main()
+    {
+        Dog d = new Dog();
+        d.Eat();   // inherited method from Animal
+        d.Bark();  // Dog class method
+    }
+}
+
+Output:
+Animal is eating.  
+Dog is barking.
+
+
+
+✅ Use and Advantages of Inheritance:
+
+1.Code Reusability 
+2.Extensibility – Existing functionality को override या extend कर सकते हैं।
+3.Less redundancy – Repeat होने वाले code से बचाव।
+4.Better structure – Easy to organize Code in hierarchy 
+
+
+Question – How Many Types of Inheritance?
+
+Types of Inheritance in C#:
+
+1. Single Inheritance  - In it One base class and one derived class. 
+   class A { }
+   class B : A { }
+
+2. Multi-Level Inheritance  -  in it A derived class inherits from a base class, and another class inherits from that derived class.
+   class A { }
+   class B : A { }
+   class C : B { }
+
+3. Hierarchical Inheritance  - In it  Multiple derived classes inherit from a single base class.
+   class A { }
+   class B : A { }
+   class C : A { }
+
+4. Hybrid Inheritance  - In It A combination of multi-level and hierarchical inheritance. (Not directly supported in C#, only conceptual.)
+ 
+5. Multiple Inheritance   - A class cannot inherit from more than one base class in C#. However, multiple inheritance can be achieved using interfaces.
+   
+   
+Important Note:
+ Multiple inheritance with classes is not supported in C# because of the diamond problem.
+ Multiple interfaces can be implemented by a single class, which provides a similar result.
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+
+
+
+Question: What is Single Inheritance in C#?
+
+Single Inheritance : In this One Derived/Child class exists , which inherits fields, properties, methods from only one Base (Parent) class.
+                     This means the derived class can access the public and protected members of the base class.
+                     Single Inheritance means one child class inherits from one parent class.
+                     It allows code reuse and feature extension from base class to derived class.
+                     In C#, the colon (:) symbol is used for inheritance.
+Exp:-
+
+using System;
+public class Parent
+{
+    public void DisplayParent()
+    {
+        Console.WriteLine("This is Parent class.");
+    }
+}
+public class Child : Parent
+{
+    public void DisplayChild()
+    {
+        Console.WriteLine("This is Child class.");
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        Child obj = new Child();
+
+        obj.DisplayParent();  // Parent class method
+        obj.DisplayChild();   // Child class method
+    }
+}
+
+Output:
+This is Parent class.
+This is Child class.
+
+Real-life Examples:
+Parent → Child
+BankAccount → SavingAccount
+Vehicle → Car
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+
+Question: What is Multilevel Inheritance in C#?
+
+Multilevel Inheritance: In this, one class inherits from another derived class, which itself has already inherited from a base class.
+                        This means the chain of inheritance can go on at multiple levels.
+                        Example: Grandparent → Parent → Child
+                        It allows code reuse and feature extension across multiple levels of classes.
+                        In C#, the colon (:) symbol is used for inheritance.
+
+Exp:-
+
+using System;
+public class GrandParent
+{
+    public void Show1()
+    {
+        Console.WriteLine("This is Grandparent class.");
+    }
+}
+public class Parent : GrandParent
+{
+    public void Show2()
+    {
+        Console.WriteLine("This is Parent class.");
+    }
+}
+public class Child : Parent
+{
+    public void Show3()
+    {
+        Console.WriteLine("This is Child class.");
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        Child obj = new Child();
+
+        obj.Show1();  // Inherited from GrandParent
+        obj.Show2();  // Inherited from Parent
+        obj.Show3();  // Own method
+    }
+}
+
+Output:
+This is Grandparent class.
+This is Parent class.
+This is Child class.
+
+Real-life Examples:
+Vehicle → Car → ElectricCar
+Human → Employee → Manager
+Organism → Animal → Mammal
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Question: What is Hierarchical Inheritance in C#?
+
+Hierarchical Inheritance: In this, a single base class is inherited by multiple child classes.
+                          All derived classes share the common functionality of the base class.
+                          It is used when multiple classes need the same parent class behavior.
+                          In C#, the colon (:) symbol is used for inheritance.
+
+Exp:-
+
+using System;
+public class Parent
+{
+    public void ShowParent()
+    {
+        Console.WriteLine("This is Parent class.");
+    }
+}
+public class Child1 : Parent
+{
+    public void ShowChild1()
+    {
+        Console.WriteLine("This is Child1 class.");
+    }
+}
+public class Child2 : Parent
+{
+    public void ShowChild2()
+    {
+        Console.WriteLine("This is Child2 class.");
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        Child1 obj1 = new Child1();
+        obj1.ShowParent();    // Inherited method
+        obj1.ShowChild1();    // Own method
+
+        Child2 obj2 = new Child2();
+        obj2.ShowParent();    // Inherited method
+        obj2.ShowChild2();    // Own method
+    }
+}
+
+Output:
+This is Parent class.
+This is Child1 class.
+This is Parent class.
+This is Child2 class.
+
+Real-life Examples:
+Employee → Manager, Developer, Tester
+UniversityMember → Student, Teacher, Staff
+Shape → Circle, Rectangle, Triangle
