@@ -1,0 +1,265 @@
+✅ Question 1- What is CSS? Why is it used?
+• Stands for Cascading Style Sheets.
+• It Controls how HTML elements are displayed
+• It Manages layouts, colors, fonts and responsiveness
+• It Works with HTML to style web pages
+• External stylesheets use .css files
+• Saves time with reusable styles
+• Enables responsive designs
+• Separates content from presentation
+• Lightweight and fast-loading
+CSS is used to define styles and design for your web pages, layout and responsive for different devices and screen sizes.
+
+//--------------------------------------------------------------------------------------------------------------
+
+✅ Question 2- Difference between inline, internal, and external CSS?
+1. Inline CSS → style is written inside the HTML tag itself (using the style attribute).
+                         Example: <p style="color: red; font-size: 18px;">Hello World</p>
+
+2. Internal CSS → style is written inside a <style> tag within the <head> of HTML.
+           Example:
+             <head>
+               <style>
+                 p { color: blue; }
+               </style>
+            </head>
+
+3. External CSS → style is written in a separate .css file, then linked to the HTML.
+                  Example:
+                  <head>
+                      <link rel="stylesheet" href="styles.css">
+                  </head>
+                  (styles.css file → p { color: green; })
+
+Note- An inline style has  highest priority, and will override external and internal styles and browser defaults.
+
+//--------------------------------------------------------------------------------------------------------------
+
+✅ Question 3- What are CSS selectors? Name some types.
+Selector is used to target HTML elements so we can apply styles on them.  
+It tells the browser which elements the CSS rules should be applied .
+
+Types of selectors:
+1. Type Selector (element) → selects by tag name.                                    Example: p { color: blue; }
+2. Class Selector (.classname) → selects elements with a class.                      Example: .btn { background: green; }
+3. ID Selector (#idname) → selects an element with a specific id.                    Example: #header { font-size: 20px; }
+4. Group Selector (A, B, C) → applies same style to multiple elements.               Example: h1, h2, p { font-family: Arial; }
+5. Descendant Selector (A B) → selects elements inside another.                      Example: div p { color: red; }  
+6. Pseudo-classes (:hover, :first-child, etc.) → style elements in a special state.  Example: a:hover { color: orange; }
+7. Pseudo-elements (::before, ::after, etc.) → style parts of an element.            Example: p::first-letter { font-size: 30px; }
+8 Universal Selector (*) → selects all elements.                                     Example: * { margin: 0; padding: 0; }
+
+
+//--------------------------------------------------------------------------------------------------------------
+
+✅ Question 4- Difference between relative, absolute, fixed, and sticky positioning?
+1. Relative (`position: relative;`)
+ Positioned relative to its normal position.
+ Keeps its original space in the document flow.
+ `top`, `left`, `right`, `bottom` shift it visually.
+Example:  .box { position: relative; top: 20px; left: 30px; }
+
+2. Absolute (`position: absolute;`)
+ Positioned relative to the nearest positioned ancestor (not static).
+ If no ancestor is positioned, relative to `<html>`.
+ Removed from normal document flow.
+Example:   .box { position: absolute; top: 50px; left: 50px; }
+
+3. Fixed (`position: fixed;`)
+ Positioned relative to the viewport.
+ Does not move when the page is scrolled.
+ Removed from normal document flow.
+Example:   .navbar { position: fixed; top: 0; left: 0; width: 100%; }
+
+4. Sticky (`position: sticky;`)
+ Acts like `relative` until a given scroll position is reached, then acts like `fixed`.
+ Needs a parent with defined height to work properly.
+Example:.header { position: sticky; top: 0; background: yellow; }
+________________________________________________________________________________________________________
+| Position   | Relative To               | Moves with Scroll | Keeps Space | Common Use                |
+|------------|---------------------------|-------------------|-------------|---------------------------|
+| relative   | Its own original position | ✅ Yes            | ✅ Yes      | Fine-tuning placement     |
+| absolute   | Nearest positioned parent | ✅ Yes            | ❌ No       | Tooltips, icons, modals   |
+| fixed      | Viewport (browser window) | ❌ No             | ❌ No       | Navbars, floating buttons |
+| sticky     | Parent + scroll position  | ✅ Yes (until stuck) | ✅ Yes   | Sticky headers, sections  |
+|____________|___________________________|___________________|_____________|___________________________|
+
+//--------------------------------------------------------------------------------------------------------------
+
+✅ Question 5- What is the difference between id and class in CSS?
+ ____________________________________________________________________________
+| Feature         | ID                         | Class                       |
+|-----------------|----------------------------|-----------------------------|
+| Symbol          | `#`                        | `.`                         |
+| Uniqueness      | Unique per page            | Can be used multiple times  |
+| Specificity     | Higher                     | Lower                       |
+| Usage           | For one specific element   | For groups of elements      |
+|_________________|____________________________|_____________________________|
+
+//--------------------------------------------------------------------------------------------------------------
+
+✅ Question 6- What are pseudo-classes and pseudo-elements? Give examples.
+1. Pseudo-classes
+ Define the state or condition of an element.  
+ They target elements based on interaction or position.  
+ Syntax: selector:pseudo-class  
+Examples:
+a:hover { color: red; }        /* Link turns red on hover */
+input:focus { border: 2px solid blue; }  /* Highlight input on focus */
+p:first-child { font-weight: bold; }     /* First child <p> bold */
+
+2. Pseudo-elements
+ Define the part of an element to style.  
+ They allow styling of sub-elements or generated content.  
+ Syntax: selector::pseudo-element  
+Examples:
+p::first-line { color: green; }     /* First line of <p> green */
+p::first-letter { font-size: 30px; } /* First letter styled big */
+div::before { content: "👉 "; }     /* Add content before element */
+div::after { content: " ✅"; }      /* Add content after element */
+
+ Key Differences
+ ______________________________________________________________________________
+| Pseudo-class                          | Pseudo-element                       |
+|---------------------------------------|--------------------------------------|
+| Represents a state of an element      | Represents a part of an element      |
+| : (single colon)                      | :: (double colon, modern CSS)        |
+| a:hover, :nth-child(2)                | ::before, ::after, ::first-line      |
+|_______________________________________|______________________________________|
+
+Interview Tip:  
+ Pseudo-classes = state-based styling (hover, focus, first-child).  
+ Pseudo-elements = part/content styling (first-line, before, after).  
+
+//--------------------------------------------------------------------------------------------------------------
+
+✅ Question 7- Explain the difference between em, rem, px, % units.
+
+1. px (Pixels)  
+ Absolute unit, does not scale with parent or root element.  
+ Example: font-size: 16px; → Always 16px regardless of parent.  
+
+2. em (Relative to Parent)  
+ Relative to the font-size of the element’s parent.  
+ Example: if parent font-size = 16px → 2em = 32px.  
+ Caution: em can compound (nested elements may grow unexpectedly).  
+
+3. rem (Relative to Root)  
+ Relative to the root element’s (html) font-size.  
+ Example: if html font-size = 16px → 2rem = 32px, no matter the parent.  
+ Safer than em for consistent scaling across the page.  
+
+4. % (Percentage)  
+ Relative to the parent element’s size (width, height, padding, etc.).  
+ Example: width: 50%; → Takes 50% of parent’s width.  
+
+Quick Comparison
+ px → Fixed, absolute  
+ em → Relative to parent’s font-size  
+ rem → Relative to root’s font-size  
+ % → Relative to parent’s dimension  
+
+Interview Tip:  
+ Use px for pixel-perfect elements,  
+ em for scaling based on parent,  
+ rem for consistent global scaling,  
+ % for fluid layouts.  
+
+//--------------------------------------------------------------------------------------------------------------
+
+✅ Question 8- What is the difference between relative, em, and rem font sizes?
+1. relative (keyword like small, medium, large)  
+ Uses predefined sizes based on the browser’s default.  
+ Example: font-size: large; → Depends on browser settings.  
+ Not precise, less commonly used in modern responsive design.  
+
+2. em (Relative to Parent)  
+ Font size is relative to the parent element’s font-size.  
+ Example: if parent = 16px → font-size: 2em; = 32px.  
+ Can compound: nested em can grow unexpectedly.  
+
+3. rem (Relative to Root)  
+ Font size is relative to the root (html) font-size.  
+ Example: if html { font-size: 16px } → font-size: 2rem; = 32px.  
+ Consistent across all elements, avoids compounding.  
+
+Quick Comparison
+ relative → Based on browser-defined keywords (small, large, etc.)  
+ em → Relative to parent element  
+ rem → Relative to root element (html)  
+
+Interview Tip
+ Use rem for consistent scalable typography,  
+ Use em when you want sizing to adapt to parent,  
+ Avoid relative (keywords) for production unless accessibility requires it.  
+
+//--------------------------------------------------------------------------------------------------------------
+
+✅ Question 9- Difference between inline vs block vs inline-block elements?
+1. Inline Elements  
+ Do not start on a new line.  
+ Only take up as much width as the content.  
+ Cannot set width/height effectively (padding/margin works only horizontally).  
+ Examples: <span>, <a>, <strong>, <em>  
+
+2. Block Elements  
+ Always start on a new line.  
+ Take up the full width available (100% of parent by default).  
+ You can set width, height, margin, and padding on all sides.  
+ Examples: <div>, <p>, <h1>-<h6>, <section>  
+
+3. Inline-block Elements  
+ Behaves like inline (does not start on a new line).  
+ But you can set width, height, margin, and padding just like block elements.  
+ Useful for making inline elements behave like blocks without breaking the flow.  
+ Examples: <img> (by default inline-block), custom elements styled with display: inline-block;  
+
+Quick Comparison Table
+ _____________________________________________________________________
+| Inline               | Block              | Inline-block            |
+|----------------------|--------------------|-------------------------|
+| No                   | Yes                | No                      |
+| No                   | Yes                | Yes                     |
+| No                   | Yes                | No (only content width) |
+| <span>, <a>          | <div>, <p>         | <img>, styled <span>    |
+|______________________|____________________|_________________________|
+
+//--------------------------------------------------------------------------------------------------------------
+
+✅ Question 10- What are media queries in CSS?
+Media queries are a feature in CSS that allow you to apply styles based on conditions such as screen size, device type, or orientation.  
+They are commonly used to create **responsive designs** that adapt to different devices (mobile, tablet, desktop).
+Syntax
+@media (condition) {
+  /* CSS rules here */
+}
+
+Common Examples
+1. Apply styles when the screen width is 600px or less (mobile view):
+@media (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+2. Apply styles between 768px and 1024px (tablet view):
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+3. Apply styles only in landscape orientation:
+@media (orientation: landscape) {
+  body {
+    background-color: lightgreen;
+  }
+}
+
+Key Points
+ Helps in building responsive and mobile-friendly websites.
+ Conditions can be based on width, height, orientation, resolution, etc.
+ Often used with **mobile-first approach** (start small, scale up).
+
+
+//--------------------------------------------------------------------------------------------------------------
