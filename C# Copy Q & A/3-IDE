@@ -1,0 +1,20 @@
+Question: What is an IDE?
+Answer:
+• An IDE (Integrated Development Environment) is a software that helps to edit and compile code easily.
+• It puts everything a programmer needs in one place — like a code editor, compiler, and debugger.
+• It gives auto-complete suggestions.
+• It helps find errors quickly using a debugger.
+• It manage files and projects in an organized way.
+
+What an IDE includes:
+• Code editor (for writing code)
+• Compiler or interpreter (to run the code)
+• Debugger (to fix mistakes)
+• Project explorer (to manage files)
+
+Examples of IDEs:
+• Visual Studio (C#, .NET)
+• VS Code (multi-language support)
+• Eclipse (Java)
+• PyCharm (Python)
+• IntelliJ IDEA (Java/Kotlin)
