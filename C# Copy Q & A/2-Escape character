@@ -1,0 +1,29 @@
+Question: What is an Escape Character in C#?
+
+An escape character is used to represent special characters inside a string that cannot be written directly.  
+In C#, the escape character is the backslash (\).
+
+Common Escape Sequences:
+
+\'   → Single quote
+\"   → Double quote
+\\   → Backslash
+\n   → New line
+\t   → Tab space
+\b   → Backspace (removes previous character)
+
+Examples:
+
+Console.WriteLine("Hello\nWorld");
+// Output:
+// Hello
+// World
+
+Console.WriteLine("Name:\tAlok");
+// Output: Name:    Alok
+
+Console.WriteLine("It\'s okay");
+// Output: It's okay
+
+Console.WriteLine("\"Good\"");
+// Output: "Good"
