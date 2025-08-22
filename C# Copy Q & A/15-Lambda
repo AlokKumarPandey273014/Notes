@@ -1,0 +1,92 @@
+Question: What is Lambda Expression in C#?
+
+Lambda Expression: Introduced in C# 3.0, a lambda expression is a short and simplified version of an anonymous method.
+                   It allows writing inline functions without explicitly declaring a separate method.
+                   The compiler automatically infers the parameter types (type inference).
+                   The lambda operator `=>` is used to define lambda expressions.
+                   Lambda expression is a short and flexible way to define methods inline, providing a simpler and more readable syntax than anonymous methods.
+
+Syntax:
+(parameters) => expression_or_statement_block
+
+On the Left Side of `=>`: Input parameters  
+On the Right Side of `=>`: Expression or code block  
+
+Types of Lambda Expressions:
+
+1. Statement Lambda
+   - Syntax: (parameters) => { statements }
+   - Can contain multiple statements inside a block.
+   - Does not return implicitly; must use return keyword if needed.
+   
+   Example:
+   using System;
+
+   namespace LambdaStatement
+   {
+       public delegate void MyLambda(int a, int b);
+
+       class Program
+       {
+           static void Main(string[] args)
+           {
+               MyLambda obj = (a, b) =>
+               {
+                   int c = a + b;
+                   Console.WriteLine("The addition is: " + c);
+               };
+
+               obj(10, 15);  // Output: The addition is: 25
+           }
+       }
+   }
+
+   Output:
+   The addition is: 25
+
+
+2. Expression Lambda
+   - Syntax: (parameters) => expression
+   - Used for single-line expressions.
+   - Implicitly returns the result.
+
+   Example:
+   using System;
+
+   namespace LambdaExpression
+   {
+       public delegate int MyLambda(int num);
+
+       class Program
+       {
+           static void Main(string[] args)
+           {
+               MyLambda square = a => a * a;
+               int result = square(5);
+
+               Console.WriteLine("The square is: " + result);
+           }
+       }
+   }
+
+   Output:
+   The square is: 25
+
+
+Key Points to Remember:
+- Lambda expressions are shorthand for anonymous methods.
+- The operator `=>` is called the lambda operator.
+- Widely used in LINQ, delegates, and event handling.
+- Can be used with built-in generic delegates Func<> and Action<>.
+
+Advantages of Lambda Expressions:
+1. Less typing and reduced boilerplate code.
+2. More concise and readable code.
+3. Ideal for LINQ queries, events, and delegate logic.
+
+
+Bonus Tip:
+Difference between Anonymous Method and Lambda Expression:
+- Anonymous method uses the `delegate` keyword.
+- Lambda expression uses the `=>` operator.
+- Lambda expressions are more concise, modern, and readable.
