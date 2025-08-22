@@ -1,0 +1,3697 @@
+Question 1- What is C#?
+Answer -    C# ( Pronounced-C Sharp ) is a type-safe object oriented programming language developed by 'Microsoft' thats run on the .Net Framework. 
+            Andres Heilsberg is the developer of the c# language.
+            C# Programming language was created for the software development in the .Net Framework.
+            C# adopt almost all the features of the C,C++ and Java Programming language but there are some advanced features which are available only in C#. 
+            C# is a case Sencitive Language and .cs is the extention of the c sharp file.
+            C# is an object-oriented programming language. It is based on the concept of “objects” which have properties (data) and methods (functions).
+            C# runs on the .NET platform, which provides a runtime environment called the Common Language Runtime (CLR) to execute the code.
+            C# supports key programming concepts like encapsulation, inheritance, polymorphism, and interfaces.
+            C# widely used for building Mobile Application,Desktop Application,Web Services,web Sights,Games,Database Applications.
+
+   
+
+
+ 
+
+Question 2 - Features of the OOPs?
+Answer- Full form of OOPs is  Object Oriented Programming Language.
+        (OOPs)- It is Based on the concept of Object which can contain both data and the code , data in the form of the Fields and code in the form of the Procedures. 
+        first object oriented programming language - Smalltalk
+
+        The Feature of the oops is -
+         i-Object
+         ii-Classes
+         iii- Encapsulation
+         iV- Polymorphism
+         V- Abstraction
+         Vi- Inheritance
+
+
+
+Question - What Is Object?
+Answer-
+● Object is a real world Entity.
+● It has State Behaviour and Unique Identity 
+● Object is an instance of the class
+● Object Occupies Memory.
+● Object has Data (called fields or properties), like a name, color, or size.
+● Object Behaviors (called methods), like moving, speaking, or calculating.
+
+● For example, imagine a Car class:
+The class says every car has a color, brand, and a method to drive.
+When you create a real car using new Car(), that’s an object.
+Example- 
+Car myCar = new Car();
+myCar.Color = "Red";
+myCar.Drive();
+myCar is the object.
+
+It has its own color ("Red") and can perform actions like Drive().
+● In short, an object is a usable version of a class that holds information and can perform actions in your program.
+
+
+
+
+
+
+Question - What is Class?
+Answer-
+● Class is a collection of Objects or data Members.
+● Class is not a real world entity.
+● It is just a blueprint or Prototype/Template used to create objects.
+● classes  does not occupy memory.
+● It defines the data (called fields or properties) and behaviors (called methods) that the objects created from it will have.
+● A class does not occupy memory until an object is created from it.
+● Classes help organize code into modular, reusable, and structured units.
+
+🔹 Example:
+class Car {
+    public string Color;
+    public void Drive() {
+        Console.WriteLine("Driving...");
+    }
+}
+This Car class defines a property Color and a method Drive().
+You can then create an object from it:
+Car myCar = new Car();
+myCar.Color = "Red";
+myCar.Drive();
+● In short, a class is a definition, and an object is the real thing you create from that definition.
+
+
+
+Example - Animal is class. eat and run is Method.Dog and Cat Object .
+
+
+
+
+
+
+
+Question- What IDE ?
+Answer- An IDE(Intigrated Development Environment ) is used to edit and compile code.
+
+Question - What is Identifier?
+Answer- Identifier are User-Defined name of the program Components. In C# an identifier can be a class name ,method name ,variable name or a label.
+         Rule- start with a letter/Underscore(-).
+               it can not start with numbers.
+
+Question- What is Literals?
+Answer- These are also known as Constant.
+
+Question- What is operator?
+Answer- Operator are some Special Symbols that perform Operations on Operands. ex- +,-,*,/,**,<,> etc.
+
+Question- What is Punctuator and Separator?
+Answer- These are used to Punctaute our Programe where semi colon(;) denotes the end of statement & comma(,) work as Seperators.
+         Example-  int a = 10;  where int is keyword, a is identifier, = is operator, 10 is literal,; is punctuation.
+
+Question- What is Comments?
+Answer-   Comments are non-executable statement in C# . there are two type of comment.
+          i- Single line comment   -   //
+          ii- Multi line comment   -   /*      */
+
+Question- What is Variable ?
+Answer-   Variable are container for storing data values or a variable is a name of memory location, it is use to store data . this value can be changed and it can be reused many times. 
+
+
+
+Question- What is Datatypes?
+Answer-   A datatype specifies the size and type of variable values.
+            Datatype            Size       Example 
+             int              4 bytes     -2,47,787
+             long             8           -9,35,6564,6888
+             float            4            4.354,354.46
+             double           8            45.5656565
+             bool             1bit         true,false
+             char             2bytes       's','d','f' 
+             string           2bytes per character 'alok','vikash' etc
+
+            float stroe approximate value and 
+            double store exacet value 
+
+
+Question- What is Type Casting?
+Answer-   Type Casting is when you assign a  valuer of one datatype to another datatype. 
+          In C sharp there are two type of type casting .
+        i-Implicit Casting
+        ii- Explicit Casting
+  
+           Implicit Casting- Implicit casting is done by automatically when passing smaller size type to a larger size type.
+                             char>int >long>float>double.
+                        Example- int a=9;
+                                double b=a;   automatically casting int to double .
+          Explicit Casting- Explicit Casting must be done manually by placing the type in paranthesses in form of the value.
+                            It converting a larger type to a smaller size type.
+                             double>float>long>int>char.
+                       Example  double a=9.78;
+                                int b=a; wrong
+                                int b= (int)a;   a=9.78,b=9;
+
+               Type Conversion method- it is also possible to convert data types explicitly by using built-in method ,
+                such as- Convert.ToBoolean,Convert.ToDouble,Convert.ToString,Convert.ToInt32,Convert.Toint(long)
+                        example- int a=10;double b=5.25, bool c = true;
+                                 C
+onsole.WriteLine(Convert.ToString(a));
+                                 Console.WriteLine(Convert.ToDouble(a));
+                                 Console.WriteLine(Convert.ToInt32(b));
+                                 Console.WriteLine(Convert.ToString(c));
+
+
+Question- What is used for Input and Output ?
+Answer-   Input- Console.ReadLing()- Is Use to Get user input .
+          Output- Console.WriteLing() is use to Print the Output.
+
+
+Question- C Sharp Syntex? 
+         using System;
+         
+         namespace HelloWorld
+        {
+         class Program
+          {
+            static void Main( string[] args)
+             {
+                 Console.WriteLine("Hello World");
+             }
+          }
+       }
+
+          output- Hello World
+ 
+Question- What is Operator ? How many types?
+Answer-   Operator in the c sharp are some special  symbols that Perform some action on operands.
+          There are following types of operators to  Perform different types of operations in c sharp language .
+          i- Arithmetic Operators     ------------------------------
+          ii-Relational Operator/comparision Operators              |
+          iii- Boolian Logical Operators                            Binary Operator
+          iV- Assignment Operators                                  |
+          V-  Bitwise Operators       ------------------------------
+          Vi- Unary Operators
+          Vii- Ternary Operators 
+
+
+Question- What Arithmetic Operators ?
+Answer -  This operator is used to perform basic arithmetic calculation in our Program.
+           ex- +,_,*,%,/,**
+         ( % )- Modulus Operator(%)- This operator is used to give the reminder when a number is being divide by the diviser.
+               
+             example- 10%3=1
+                      10%7=3
+
+         ( / )- It divides the number once gives the result to the nearest round of value.
+               Example- 10/3=3  
+                        20/4=5
+
+         (**)-This operators is used to calculate the Base & Power of the value.
+   
+         Syntex - base ** Power 
+                - 5**2 = 25
+                   5^2 = 25  
+
+
+Question- What is Relational Operator ?
+Answer-   This operator is used to find the relationship between two values. It gives the result in the form of True or False.
+               >   -  Greater than
+               <   -  Less Then
+               >=  -  Greater than or Equal to
+               <=  - Less then or Equal to
+               ==  - Equal to 
+               !=  - Not Equal 
+
+
+
+
+Question- What is Boolean Logical Operator ?
+Answer- This Operator is used to Perform various Logical Operation in C sharp.
+           Example- And = &&  
+                    Or  = ||
+                    Not =  !
+
+              ❓ Boolean AND (&&) Truth Table
+                       A	B	A AND B (A && B)
+                       false	false	false
+                       false	true	false
+                       true	false	false
+                       true	true	true
+
+
+               ❓ Boolean OR (||) Truth Table
+                  A	B	A OR B (A || B)
+                 false	false	false
+                 false	true	true
+                 true	false	true
+                 true	true	true
+
+
+
+              ❓ Boolean NOT (!) Truth Table
+                 A	NOT A (!A)
+                false	true
+                true	false
+
+
+Question- What is Assignment Operator ?
+Answer-   This Operator is used to assign the RHS value to LHS of the variable. 
+           a=10
+           b=20 
+           c=a
+
+
+
+
+
+Question- 
+Question-
+
+
+
+Question- In C Sharp Math Various Operation .
+Answer-   The C# Math class has many method that allow you to perform mathematical task on Number.
+          (i)- Math.Max(x,y) - find highest value of x & Y.
+                               Exp- Math.Max(5,10);    - 10
+          (ii)- Math.Min(x,y) - find Lowest value of x & Y.
+                               Exp- Math.Max(5,10);    - 10
+          (iii)- Math.sqrt(x) - find Squre root of x .
+                               Exp- Math.Sqrt(64)  -    8
+          (iv) - Math.Abs(x)  - find Absolute Value of x.
+                               Exp-  Math.Abs(-4.7) -   4.7
+          (v)-   Math.Round(x) - find the round value of x
+                               Exp- Math.round(5.43)-   5
+
+     
+Question- C Sharp String.
+Answer-   String are used for storing text.A string variable contains a collection of characters surrounded by double quotes.
+           Exp- string greeting = 'Hello' ;
+
+         (i)- String Length = A string in the c sharp is acuually an object , which contain properties and methods that can perform the certain operations on string.
+                              Exp- string Text = "abcdefghijklmnopqrstuvwxyz";
+                                    Console.WriteLine("The Length of the Text is : " + Text.Length);
+                              Output- The Length of the Text is : 26
+
+         (ii) String ToUpper()-    string Text = "hello world";
+                                   Console.WriteLine(Text.ToUpper());
+         (iii)string ToLower()-    string Text = "HELLO WORLD";
+                                   Console.WriteLine(Text.ToLower());
+
+
+Question- What is String Concatenation? 
+Answer-   The + operator can be used between string to combine them . This is Called Concatination.
+           Exp-   string firstName ="Alok"
+                  string secondName -"Kumar"
+                  String name= firstName + secondName ;
+                  Console.WriteLine(name);
+                                             OR
+                  string name= string.concat(fristName,secondName);
+                  Console.WriteLine(name);
+                  
+Question- What is string Interpolation?
+Answer-   Another option of String Concatination is string Interpolation which substitutes value of Variable into Placeholder in a string.
+          Note- In this we need not to worry about space , like with Concatination.
+
+         string firstName ="Alok";
+         string secondName="Kumar"
+         string name=$"My Name is :{firstName}{lastName}
+          Console.WriteLine(name);
+
+
+
+Question- How to Access String?
+Answer-   We can Access the Character in a String by referring to its index number inside square bractes[].
+          Exp- string firstName = "Alok";
+               Console.WriteLine(firstName[0]) ;      = A
+ 
+          For Finding Index Position = IndexOf('')  
+          Console.WriteLine(firstName.IndexOf('O'));    - Position = 2
+ 
+
+Question- What is Escape Character?
+Answer-   string text= "Alok is a "Good" boy."   -- error.
+          for this we use escape character.   \
+          for single Quote   \'   result= '
+          for souble quote    \"  result="     
+          for  slash          \\  resutl= \      "It\'s alright. = It's already.
+          for new Line =  \n                      Hello \n World.
+          for  tab     =  \t                       
+          for  Backspace  = \b
+
+Question-  Difference between Addition and Cocatination?
+Answer-   Numbers are added and the result is the number  and Strings are Cocatenated  and the result is string concatinated.
+
+Question- C sharp Boolens?
+Answer-   Sometine we need datatype that can only have one of the two value, like- Yes/No  ,On/Off , True/False   , so for this c sharp has a bool datatype which can take true or false   
+          value to it . We often use boolian values in the the the comparision and conditional operator. 
+           Exp- x=9,y=10  so now condition=  X>y==False .
+ 
+Question- Write a programe to take two number and add them.
+Answer-   using system;
+          namespace Addition 
+          {
+           class Programe
+            {
+              static void Main(string[])
+               {
+                 console.WriteLine("Enter two Number");
+                  int a = int.Parse(console.ReadLine());
+                  int b = int.Parse(console.ReadLine());
+                  int c = a + b ;
+                  Console.WriteLine("The addition of the tw number is : " + c);
+               }
+            }
+          }
+
+                       Or 
+        console.WriteLine("Enter two number");
+        int a = 20;
+        int b = 10;
+        int c = a+b;
+        Console.WriteLine("The Addition of the two number is: "+ c);
+
+                 OUTPUT= The Addition of the two number is : 30  
+       
+Question- What is Arrays?
+Answer-   Array is a collection of similar datatype or Array is a group of similar types of elements.
+          It has Contiguous Memory location.
+          Array is an object of Base type System.Array
+          Array is a static Type
+          Array index start from 0 , and end to the (n-1). we can store only fix set of element in an array.
+            Exp-    declaration of Arrays  -  i)int[] data = {10,20,30,40,5,60,70,5,9,} 
+                                             ii)int[] a = new int[] {10,20,30,40,50,60,70,80}
+                                            iii)int[] a = new int[3]
+                                                    a[0]=10;
+                                                    a[1]=20;
+                                                    a[2]=30;
+                
+Question-   How many type of array is there?
+Answer-      There is two types of Array-
+            i)- Single Dimensional Array
+            ii) Multi Dimensional Array
+ 
+            
+Question- What is Single Dimensional Arrays?           
+Answer-   Single Dimensional Array- i) Element of single-dimensional array stores in a single row in allocated memory
+                                       ii)Elements indexed from '0' to 'n-1' , where n is the total number of element in the array.
+
+           Exp 1- using system;
+                  namespace Array
+                  {
+                   class Program
+                    {
+                      static void Main(string[] args)
+                       {
+                      static[] a = new string[4];
+                       a[0] = "Alok"
+                       a[1] = "Vikas"
+                       a[2] = "Surya"
+                       a[3] = "Sunil"
+                     
+                       Console.WriteLine(a[0]);    Output- Alok
+                       Console.WriteLine(a[1]);    Output- Vikas
+                       Console.WriteLine(a[2]);
+                       Console.WriteLine(a[3]);
+                       }
+                    }
+                 }
+ 
+          Exp 2- using For Loop-   using system
+                                   namespace Array
+
+                                   {
+                                    class Program
+                                     {
+                                       static void Main(string[] args)
+                                       int[] number = {10,20,30,40,50,60}
+                                       for(int i=0;i<number.Length;i++)
+                                      {
+                                       Console.WriteLine(number[i])
+                                      }
+                                      Console.ReadLine();
+                                     }
+                                  }
+                     OUTPUT- 10,20,30,40,50,
+                
+
+Question- Write a Program of Array of Foreach Loop.
+Answer-   using system
+          namespace Array
+          {
+           class Program
+            {   
+              static void Main(string [] arge)
+               {
+                string[] number= new string[]{"Alok","Vikas","Sandy"}
+                foreach(string item in number )
+                 {
+                  Console.WriteLine(item);
+                 }
+                  Console.ReadLine();
+               }
+            }
+          }
+
+Question- Write a Program of Merge two Array in a single Array?
+Answer-  using System;
+
+         class Program
+          {
+             static void Main()
+              {
+                int[] array1 = { 1, 2, 3, 4 };  
+                int[] array2 = { 5, 6, 7, 8 };
+                int[] mergedArray = new int[array1.Length + array2.Length];
+                    for (int i = 0; i < array1.Length; i++)
+                      {
+                        mergedArray[i] = array1[i];
+                      }
+                    for (int i = 0; i < array2.Length; i++)
+                      {
+                        mergedArray[array1.Length + i] = array2[i];
+                      }
+                   Console.WriteLine("Merged Array:");
+                   foreach (int item in mergedArray)
+                   {
+                     Console.Write(item + " ");
+                   }
+             }
+         } 
+        OUTPUT- 1 2  3  4  5  6  7  8   
+
+
+Question- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Question- What is OOPs?
+Answer    OOPs is a concept of modern Programming language that allow programmer to organize entities and object .It is based on the concept of Object that contain both data and method.data in the  
+          form of     and method in the form of    .
+          The feature of the oops are -
+          i) OOPs is faster and easier to execute.
+          ii) OOPs Provide a cleaner structure for the program.
+         iii) OOPs help to keep the C # code DRY(don't repeat yourself) and makes the code easier to maintain, modify and debugging.
+         iv)  OOPs make it possible to create full reusable applications with less code and shorter development time.
+
+Question- What is the Main Pillar of OOPs?
+Answer-   There are 4 main pillar of OOPs. these are-
+           i)  Polymorphism
+           ii) Abstraction
+          iii) Encapsulation
+          iv)  Inheritance
+Question-  Describe pillars of OOPs.
+Answer    Here is the Pillar of OOPs and its Decryption--
+        🧱 1. Encapsulation
+                      Definition: Bundling of data (variables) and methods (functions) that operate on the data into a single unit (class).
+                      Purpose: Restricts direct access to some components, which is a means of preventing accidental interference and misuse.
+                      Example: Making variables private and providing get and set methods.
+
+        🧱 2. Abstraction
+                      Definition: Hiding the complex implementation details and showing only the essential features of the object.
+                      Purpose: Reduces complexity and increases efficiency by focusing only on relevant data.
+                      Example: A car class where users interact with functions like start() or brake() without knowing how the engine works internally.
+
+        🧱 3. Inheritance
+                      Definition: A mechanism where one class (child/derived) inherits properties and behaviors (methods and fields) from another class (parent/base).
+                      Purpose: Promotes code reuse and establishes a natural hierarchy.
+                      Example: A Dog class inherits from a Animal class.
+
+        🧱 4. Polymorphism
+                      Definition: The ability of one function, method, or operator to behave differently based on the context.
+                      Types:
+                         Compile-time (Method Overloading)
+                         Run-time (Method Overriding)
+                      Purpose: Increases flexibility by allowing different classes to be treated through the same interface.
+                      Example: draw() method behaves differently for Circle, Square, etc.
+
+       Summary Table
+                        Pillar  	Description	                                 Benefit
+                    Encapsulation	Data hiding using access modifiers	        Security & modularity
+                    Abstraction 	Show only relevant details	                Simplifies code & reduces effort
+                    Inheritance 	Reuse existing code via class hierarchy	        Reusability
+                    Polymorphism	Same interface, different implementations 	Flexibility 
+
+
+Question- What is Methods?
+Answer-   i) Method is a block of code that can take parameter and may or may not return a value . It is also known as function.
+          ii)It is used to perform Specific Task.
+          iii)Method or function declared in a class and may be used to perform operation on class variable.
+          iv) Method are reusable, means define the code and we use it many times.
+          v) Every C# program has at least one class with a method named Main.
+               The  Syntax for defining a Method in  c# is as Follow-
+             <Access Specifier> < Return Type> <Method Name> (Parameters)
+               {
+                 // Method Body;
+               }
+         Exp-  i)  public void Greet()
+                      {
+                         Console.WriteLine("Hello!");
+                      }
+              ii)  private int Add(int a, int b)
+                    {
+                      return a + b;
+                    }
+
+         Method name can not be a Keyword,Cannot contain Spaces and cannot begin with digit.
+         Method name can begin with letter , underscore(_) or the @ character. Exp- Add(), sum_Add(), @Add()
+
+       Exp of Method    using System
+                        namespace Method
+                         {
+                           class Programe
+                            {
+                              static void MyMethod()
+                               {
+                                 Console.WriteLine("My name is ALOK KUMAR PANDEY.");
+                               }
+                              static void Main (string[] args)
+                               {
+                                 MyMethod();
+                               }
+                            }
+                          }                               OUTPUT- My name is ALOK KUMAR PANDEY.
+
+ 
+
+Question- How To call a Method?
+Answer-   To call(excute) a method write the method's name followed by two parantheses() and a semicolon ; . In the above method e.g.- MyMethod(); is used to Print a text (the action) , when it is  
+          called.
+          A mehtod can be called Multiple TImes as many as we need.  
+
+  Exp                 using System
+                        namespace Method
+                         {
+                           class Programe
+                            {
+                              static void MyMethod()
+                               {
+                                 Console.WriteLine("My name is ALOK KUMAR PANDEY.");
+                               }
+                              static void Main (string[] args)
+                               {
+                                 MyMethod();
+                                 MyMethod();
+                                 MyMethod();
+                               }
+                            }
+                          }       
+
+                   OUTPUT- My name is ALOK.
+                           My name is ALOK.
+                           My name is ALOK.
+
+Question- What is access specifier/modifier?
+Answer-   Access Modifier define access type of the method i.e. From where it can be accessed in your application . In c sharp there are Public, Protected, Private Access Modifier
+
+
+
+Question- What is return Type?
+Answer-   It define the datatype returned by the method. It depend upon User as it may also return void value i.e. return nothing.
+
+Question- What is Method Name?
+Answer-   It describe the name of the use defined method by which the user call it or refer it. Exp- MyMethod
+
+Question- What is Parameter List?
+Answer-   Enclosed between Parentheses the parameter are used to Pass and receive data from a method. The parameter list refer to the type order, and number of the parameters of a method.
+          Parameter are optional that is a method may contain Parameters known as no parameterize method.
+
+
+Question What is Method?
+Answer   This contain the set of instructions needed to complete the required activity.
+
+Question- What is the Main Method in C sharp?
+Answer-   Main()- Main() is an entry Point and also exit point of application.
+          In dot net, complier will find the first Main() method of the application and it will execute code from there first. 
+          In on application we can create more then one Main method in  different classes.  
+
+          Structure of Main method in c sharp-
+            class Program 
+            {
+              public static void Main(string[] args)
+               {
+                 // statements;
+               }
+            }
+
+Question- What is Void and Static Keyword?
+Answer-   class Program 
+            {
+              public static void Main(string[] args)
+               {
+                 // statements;
+               }
+            }
+
+          The Main method have the void keyword in the above program ,it means the Main method does not return any value.
+          Main() method declared with Static because it can not be called in another function/method.
+
+Question- what is String[] args?
+Answer-   If we want to pass the values to the Main() method through the command line or run time, we will use string[] args.
+Question- What is Public Access Specifier Keyword?
+Answer-   the public is a keyword it means the Main() method you can access anywhere in your application.
+          we have different type of access modifiers.
+            Like- Public Private Protected, Internal.
+
+Question- How many type of method is there?
+Answer-   there are two type of method 
+          i)  static Method 
+          ii) Instance Method (non-static method)
+  
+          Static Method-  we can call static method by simoly using class name and method name .
+                          Exp- class program 
+                               {
+                                public static void hi()
+                                 {
+                                  console.WriteLine("Hello world");
+                                 }
+                               static void Main (string[] args);
+                                 {
+                                   Programe.hi();
+                                 }
+                               }
+
+                                Output Hello world
+ 
+
+           Instance Method(Non-Static Method)- For calling instance method first we have to create its object then call it.
+                           Exp- 
+                              class program 
+                               {
+                                public static void hi()
+                                 {
+                                  console.WriteLine("Hello world");
+                                 }
+                               static void Main (string[] args);
+                                 {
+                                   Program obj1 = new Program();
+                                   obj.hi();
+                                 }
+                               }
+
+                                Output- Hello world
+Question- What is  Method signature?
+Answer-   Method signature consist of- 
+          i) Method Name 
+          ii) Paranthesis
+          iii) Parameters / Variables in () 
+
+           public static void hi(int x)   in this , hi(int x)  = method signature.
+           Notes- Method signature does not include return type.
+
+Question- What is Parameter and Argument?
+Answer-   Information can be passed to method as parameter . Parameter act as variables inside the method.
+          They are specified after the method name , inside the parentheses . you can add as many parameters as you want , just separate them with a comma.
+                  The following example has a method that takes a string called fname as parameter. when the method is called , we pass along a first name which is used inside the method to print 
+                  the full name.
+                  Exp- 
+                      using system
+                      namespace MyMethod
+                      {
+                        class Program
+                          {
+                            static void MyMethod( string fname)
+                             {
+                               Console.WriteLine(fname);
+                             }
+                            static void Main(string[] args)
+                             {
+                               MyMethod("Alok");
+                               MyMethod("Kumar");
+                             }
+                          }
+                       }
+
+                    Notes-  i) when a parameter is passed to the method , it is called argument. so , from the above example- fname is parameter and Alok Kumar are arguments.
+                   parameterize method for integer-
+                     Exp- 
+                      using system
+                      namespace integer
+                      {
+                        class Program
+                          {
+                            static void Add( int x , int y )
+                             {
+                               int z= x+y;
+                               Console.WriteLine("The Result is :" + z);
+                             }
+                            static void Main(string[] args)
+                             {
+                               Programe.Add(10,20);
+                               Programe.Add(50,60);                  
+                             }
+                          }
+                       }
+
+Question- What is Default Parametrize value?
+Answer-   when we call the method without an argument it uses the default value which we have declared.
+          we can use default parameterize value by using the equals sign(=).       
+              Exp-1 
+                      using system
+                      namespace defaultParameter
+                      {
+                        class Program
+                          {
+                            static void MyMethod( string country= "Norway" )
+                             {
+                             
+                               Console.WriteLine(country);
+                             }
+                            static void Main(string[] args)
+                             {
+                               MyMethod("India");
+                               MyMethod("Nepal");    
+                               MyMethod();              
+                             }
+                          }
+                       }
+
+
+                 Output- India , Nepal , Norway
+
+          Exp-2 
+                      using system
+                      namespace defaultParameter
+                      {
+                        class Program
+                          {
+                           public static void name( string fname, string lname= "Kumar" )
+                             {
+                               String fullname = fname + lname ;
+                               Console.WriteLine("Your name is : " + fullname);
+                             }
+                            static void Main(string[] args)
+                             {
+                               Program.name("Alok","Singh");                             
+                               Program.name("Vinay");            
+                             }
+                          }
+                       }
+
+
+                 Output- Alok Singh , Alok Kumar 
+
+
+
+
+
+Question-  What is Multiple Parameter?
+Answer-    We can have as many  parameter as we want.
+             Exp-1 
+                      using system
+                      namespace name
+                      {
+                        class Program
+                          {
+                            static void MyMethod( string fname, int age)
+                             {
+                               
+                               Console.WriteLine(fname + " is " + age);
+                             }
+                            static void Main(string[] args)
+                             {
+                               Program.MyMethod("vikas",25);                             
+                               Program.MyMethod("Vinay",55);            
+                             }
+                          }
+                       }
+
+
+Question- what is Named Arguments?
+Answer-   In Named Argument it is  possible to   send argument with the  Key: value   Syntax. In this order of the argument does not matter.
+          Exp-1 
+                      using system
+                      namespace NamedArgs
+                      {
+                        class Program
+                          {
+                            public static void NameAge( string Name, int age)
+                             {
+                               
+                               Console.WriteLine("your name is :" + name);
+                               Console.WriteLine("your age is :" + age);
+                             }
+                            static void Main(string[] args)
+                             {
+                               Program..name.age(Age:25,name:"vikas");                             
+                             }
+                          }
+                       }
+     
+
+Question- What is Return Value?
+Answer      The void keyword indicate that the method should not return a value . If we want the method to return a value we can use a Primitive datatype(such as int,float,double,  
+            strict... etc)  
+             instead of void, and use the return keyword inside the method. 
+       
+               Exp-1 
+                      using system
+                      namespace Returnvalue
+                      {
+                        class Program
+                          {
+                             static int MyMethod( int x)
+                             {
+                               
+                               return (5+x);   
+                             }
+                            static void Main(string[] args)
+                             {
+                               Console.WriteLine(MyMethod(3));                          
+                             }
+                          }
+                       }          output-   8
+
+
+               Exp-2 
+                      using system
+                      namespace Returnvalue
+                      {
+                        class Program
+                          {
+                             public static int Add( int x ,int y)
+                             {
+                               int z= x+y;
+                               return (z);   
+                             }
+                            static void Main(string[] args)
+                             {
+                               int a = Programe.Add(5,7);
+                               Console.WriteLine(a);                          
+                             }
+                          }
+                       }          output-   12
+               
+                                  OR
+              public static int Add(int x , int y)
+               {
+                  return x+y;
+               } 
+              Static void Main(string[] args)
+               {
+                 Console.WriteLine(Add(10,10));
+               }
+                   OUTPUT- 40
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Question- What is Constructor?
+Answer-   A constructor is a special method function of the class which get automatically invoked when ever and instance of the class is created
+          A constructor also contains the collection of instruction that are executed at the time of object creation it is used to assign initial value of the data members of the same 
+          class.
+
+            Exp-1  
+                      using system;
+                      namespace construcotr
+                      {
+                        class Test
+                          {
+                             int i ;string s; bool b;
+                             public Test()
+                              {
+                               i=10;
+                               s="Alok";
+                               b= false;
+                              }
+                          }
+                      }
+
+                Important Point to remember -
+           i)- Constructor of a class must have the same name as the class name in which is resides
+          ii)- A constructor cannot be abstract final and synchronised
+         iii)- Within a Class you can create only one static constructor  
+         iv)- A constructor doesn't have any return type not even void
+          v)-A static constructor cannot be a parameterized constructor
+          vi)- A class can have any number of constructors
+          vii)-Access modifier can be used in constructor declaration to control its access that is which other class can call the constructor.
+
+           types of Constructor-
+            i)  Default Constructor
+            ii)  Parameterize Constructor
+           iii)  Copy Constructor 
+            iv)  Private Constructor
+            v)  Static Constructore
+ 
+
+Question- What is Default Constructor?
+Answer-   A constructor with no Parameters is called a constructor. It initialise the same value of every instance  of class. The default constructor initialised all numeric field  to 0 
+          and all string and object its to null inside a class.
+
+        Exp-1 
+       using system ;
+       namespace defaultconstructor
+        {
+          class show
+            {
+              int a;
+              string name;
+               show()
+                {
+                 Console.WriteLine("Default Constructor");
+                }
+              static void Main(string[] args)
+               {
+                 show obj = new show();
+                 console.WriteLine(obj.a);
+                 Console.WriteLine(obj.name);
+               }
+           }
+        }
+                   OUTPUT= default constructor
+                           0
+                         
+          Exp-2
+               using System;
+               namespace defaultconstructor
+                {
+                class Person 
+                    {
+                      public string Name;
+                      public int Age;
+
+                      // Default constructor
+                        public Person()
+                      {
+                         Name = "Unknown";
+                         Age = 0;
+                      }
+                    }
+
+             class Program
+               {
+                static void Main()
+                   {
+                       // Create object using default constructor
+                       Person person1 = new Person();
+
+                      Console.WriteLine("Name: " + person1.Name);
+                      Console.WriteLine("Age: " + person1.Age);
+                   }
+                }
+              }   
+                       Name: Unknown 
+                       Age: 0
+
+
+
+Question- What is Parameterized Constructor?
+Answer- A constructor having at least one parameter is called parameterized  constructor. It can initialise each instance of the class to different value.
+        Exp-1
+               using System;
+               namespace parameterizedconstructor
+                {
+                class show 
+                    {
+                      public string Name;
+                      public int id;
+                       show(string name; int id)
+                      {
+                       this.name = name;
+                       this.id = id;
+                       }
+                    }
+             
+             
+                static void Main()
+                   {
+                      show obj = new show ("Alok",10);
+                      Console.WriteLine("Name is " + obj.name);
+                      Console.WriteLine("Id is " + obj.id); 
+                   }
+                }
+              }   
+                       Name is Alok 
+                       Id is 10
+
+              Exp-2
+               using System;
+               namespace parameterizedconstructor
+                {
+                class Program 
+                    {
+                      public string Empname;
+                      public int Empid;
+                      public int Empage;
+                   public Program(string name; int id, int age)
+                      {
+                       this.Empname = name;
+                       this.Empid =id;
+                       this.Empage = age;
+                       
+                       console.WriterLine("Employee name:" + Empname);
+                       Console.WriteLine("Employee Id :"+ Empid);
+                       Console.WriteLine("Employee age :"+ Empage);
+                       }
+
+                static void Main(string[] args)
+                   {
+                      program obj = new program ( "Alok",10,25); 
+                   }
+                }
+              }   
+                      OUTPUT= Employee name: Alok
+                              Employee Id : 10
+                              Employee age : 20
+     
+
+Question- What is Copy Constructor?
+Answer-   Copy constructor is a constructor that copies one objects Data into another object.
+          In c sharp copy constructor is parameterized constructor that contain a parameter of the same class type.
+          It main use to initialise a new instance  to the value of an existing instance.
+         Exp- 
+            using System;
+               namespace copyconstructor
+                {
+                class Program 
+                    {
+                      public string name;
+                      public int age;
+                    
+                   public Program(string name;  int age)
+                      {
+                       this.name = name;
+                       this.age = age;
+                      }
+                   public program(program obj)
+                      {
+                       this.name = obj.name;
+                       this.age = obj.age;
+                      }
+                     
+                static void Main(string[] args)
+                   {
+                      program obj = new program ( "Alok",25); 
+                      Console.WriteLine(obj.name);
+                      Console.WriteLine(obj.age);
+                
+                      program obj1 = new program (obj); 
+                      Console.WriteLine(obj1.name);
+                      Console.WriteLine(obj1.age);
+
+                   }
+                }
+              }   
+                      OUTPUT= Alok
+                              10 
+                             Alok
+                              10
+                  
+           Exp- 
+            using System;
+               namespace copyconstructor
+                {
+                class Program 
+                    {
+                      public string name;
+                      public int age;
+                    
+                   public Program(string name;  int age)
+                      {
+                       this.name = name;
+                       this.age = age;
+                      }
+                   public program(program e)
+                      {
+                       this.name = e.name;
+                       this.age = e.age;
+                      }
+                   public void Get()
+                      {
+                       Console.WriteLine("My name is :{0}",name);
+                       Console.WriteLine("My age is :{0}",age);                      }
+                      }
+                static void Main(string[] args)
+                   {
+                      program obj = new program ( "Alok",25); 
+                      obj.Get();
+                
+                      program obj1 = new program (obj); 
+                      obj.Get();
+                   }
+                }
+              }   
+                      OUTPUT= Alok
+                              25
+                             Alok
+                              25
+
+
+Question- What is Private Constructor?
+Answer-   Private Constructor- When a constructor is created with a private access specifier known as private constructor. 
+          It is not possible for other classes to derived from this class, neither is it possible to create an object of this. 
+          They are usually used in classes that contain static members only. 
+       
+            Some Key Points-
+            One of the use of a private constructor is when he have only static members.
+            Once we provide a constructor that is either private or public or any, the compiler will not add the parameter-less public constructor to the class.
+            In the presence of parameterless  private constructor you cannot create a default constructor.       
+            We cannot inherit the class in which we have a private constructor.
+            We Can have parameter in private constructor
+
+            Exp- 
+            using System;
+               namespace Privateconstructor
+                {
+                class Program 
+                    {
+                      public static string name;
+                      public static int age;
+                    
+                   private show()
+                      {
+                       Console.WriteLine("This is a private Constructor");                       
+                      }
+                   public show(string a , int b)
+                      {
+                       name = a;
+                       age = b;
+                        Console.WriteLine("This Constructor is invocked");
+                      }
+                    }
+                 class Program
+                   {
+                    static void main()
+                     {
+                      show obj = new show("Alok",25);
+                      Console.WriteLine(show.name);
+                      Console.WriteLine(show.age);                  
+                   }
+                }
+              }   
+                      OUTPUT= This constructor is invocked.
+                              
+                             Alok
+                              25
+
+Question- What is Static Constructor?
+Answer-   A static constructor is used to initialized static variables of the class and to perfoerm a perticular action only once.
+          static constructor is called only once ,no matter how many object you create.
+          static constructor is called before instance (default or parameterized ) constructor.
+          a static Constructor does not take any parameters and does not use any access modifiers.
+
+           Key Points-
+          i) only one static contructor can be created in a class.
+          ii) it is called automatically before the first instance of the class created.
+         iii) we can not call static constructor direclly.
+
+           Exp- 
+            using System;
+               namespace staticconstructor
+                {
+                class show 
+                    {
+                      public static string name;
+                      public static int age;
+                    
+                   static show()
+                      {
+                       name = "Alok";
+                       age = 25;
+                      Console.writeLine("This is static Constructor");                       
+                      }
+                    public show(string a , int b)
+                      {
+                       
+                        Console.WriteLine("This is default contructor.");
+                      }
+                   public static void Greek()
+                    {
+                     console.WriteLine(name);
+                     Console.WriteLine(age);
+                    }
+                  } 
+                   
+                 class Program
+                   {
+                    static void main()
+                     {
+                      show obj = new show();
+                     show ob = new show();
+                       show Greek();                
+                   }
+                }
+              }   
+                      OUTPUT= This is static constructor. 
+                              this is default constructor.
+                              this is default constructor.
+                             Alok
+                             25
+
+
+
+Question- What is Constructor Overloading?
+Answer-   it is quite similer to method overloading when more then one constructor with the same name is defined in the same class, they are called overloaded. If the parementer are 
+          different for each constructor. 
+          We can overload constructor in different way as follow:-
+          by using different type of parameters
+          by using different number of parameter
+          by using different order of parameter.  
+            
+         1-different type of parameter-  public show(string a)
+                                         public show(int a)
+         2- different number of parameter- public show( int x, int y)
+                                           public show(int x, int y, int z)
+         3- different order of parameter-  public show(string a, string b)
+                                           public show(int a , string b)
+           
+                
+          Exp- 
+            using System;
+               namespace constructoroverloaded
+                {
+                class show 
+                    {
+                      public show()
+                      {
+                        Console.WriteLine("This is first contructor.");
+                      }
+                     public show( int a, string b))
+                      {
+                        Console.WriteLine("This is second contructor:{0}" , a);
+                        Console.writeLine(" this is my name:" + b);
+                      }
+                    public show( string a , int b)
+                      {
+                        Console.writeLine(" this is my name:" + a);
+                        Console.WriteLine("this is 3rd constructor:"+ b);
+                      }
+
+                    } 
+                   
+                 class Program
+                   {
+                    static void main(string[] args)
+                     {
+                      show obj = new show();
+                     show obj1 = new show(25,"Alok");
+                     show obj2 = new show("Alok", 25);             
+                   }
+                }
+              }   
+                  OUTPUT- This is first constructor.
+                          This is 2nd constructor:25
+                          This is my name Alok.
+                          This is my name ALok
+                          this is 3rd constructor:25
+
+
+Question- What is Distructor?
+Answer-   A desturctor is a special method which has the same as the class but starts with this character' ~' before the class name and immidiately de allocate memory of the objects that 
+          are no longer required.
+          
+           Following are the features of the destructor 
+          . Destructor cannot be overloaded or inherited.
+          . Destructor cannot be explicitely invoked.
+          . Destructor can not specify access modifiers and can not take parameters.
+
+         Exp- 
+            using System;
+               namespace destructor
+                {
+                class show 
+                    {
+                      public string name;
+                      public int id;
+                     
+                 public show( string a, int b))
+                      {
+                        name=a;
+                        id=b;
+                      }
+                    public void ABC()
+                      {
+                        Console.writeLine("  my name is :" + name);
+                        Console.WriteLine("my id is :"+ id );
+                      }
+
+                     ~ show()
+                        {
+                          Console.WriteLine("Destructor has been invocked");
+                        }
+ 
+                    } 
+                   
+                 class Program
+                   {
+                    public static void main(string[] args)
+                     {
+                      show obj = new show("Alok",25);
+                      obj.ABC();           
+                   }
+                }
+              }   
+                  OUTPUT- My name is : Alok
+                          My id is : 25
+                          Destructor has been invocked;
+   
+Question- What is Delegates?
+Answer-   A Delegates is a reference type variable that holds the reference to a method , a delegate in c sharp is similer to a function pointer in c or c++.
+           Delegate signature should be as same as the method signature referencing by a delegate.
+          A delegate can point to a parameterized method or non parameterized method.
+          delegate has no implimentation means no body with {}.
+          We can use invoke () method with delegates 
+          Delegates are use to encapsulate methods and objects.
+          Using delegate , you can call any method , which indicate only at run time.
+          To associate a delegate with a particuler method , the method must have the same return type and parameter type as that of delegate.
+          Exp- 
+            using System;
+               namespace Delegates
+                {
+                class pograme 
+                  {
+                      
+                    public delegate void show( string a)
+                    public void name(string a)
+                      {
+                        Console.writeLine("  my name is :" + a);
+                     
+                      }
+                  } 
+                   
+                
+                    public static void main(string[] args)
+                     {
+                      program obj = new program();
+                       show obj1 = new show(obj.name);
+                      obj1.Invoke("Alok Kumar");
+                       Console.ReadLine();        
+                     }
+                
+                }   
+             OUTPUT- My name is Alok Kumar
+
+             Exp- 
+            using System;
+               namespace Delegates
+                {
+                public delegate void calculation(int a, int b);
+                class program
+                  {
+                      
+                    public static void add( int a , int b)
+                                       
+                      {
+                        int c = a+b;
+                       Console.writeLine(" the addition is : " + c)
+                      
+                      }
+                  Public static void sub(int a , int b)
+                     { 
+                      int c=a-b;
+                      console.WriteLine(" the subtraction is ; + c);
+                     }
+                   Public static void multiply(int a , int b)
+                     { 
+                      int c=a*b;
+                      console.WriteLine(" the multiplication is ; + c);
+                     }
+                   Public static void divide(int a , int b)
+                     { 
+                      int c=a/b;
+                      console.WriteLine(" the divide is ; + c);
+                     }                
+                }   
+            Class Greek
+                {
+                  static void Main(string[] args)
+                   { 
+                     program obj = new program();
+                     
+                      calculation obj1 = new calculation{programe.add);
+                      obj1.Invoke(8,4);
+
+                    calculation obj2 = new calculation{programe.sub);
+                      obj2.Invoke(8,4);
+
+
+                    calculation obj3 = new calculation{programe.multiplication);
+                      obj3.Invoke(8,4);
+
+
+                    calculation obj4 = new calculation{programe.divide);
+                      obj1.Invoke(8,4);
+
+                    Console.readline();
+                  }
+                }
+             }
+
+            OUtPUT = the addition is 12
+            OUtPUT = the subbtraction is 4
+            OUtPUT = the multiplication is 32
+            OUtPUT = the division is 2
+
+
+Question- How many type of Delegate?
+Answer-   There are 3 type of Delegate , these are as follows-
+          Single type delegate
+          multi cast Delegate
+          Multiple Delegate
+
+          i) - Single Cast Delegates- Single Cast Delegate point to single method at a time . In this the delegate is assigned to a single method at a time. They are derived from system. 
+                                      delegate class.
+                                      Exp- 
+                                          using System;
+                                          namespace single-cast-delegates
+                                            {
+                                              
+
+
+
+
+
+
+
+
+
+
+  Multi cast delegates - when a delegate is wrapped with one or more method that is known as a multicast delegate . In c sharp delegates are multicast , which means that they can 
+                                           point to move than one function at a time. they are derived from system.mutli cast delegate class.
+                                           we can use += and -= assignment operator to implement multi cast delegates.
+                        Exp-  
+                             using System;
+                             namespace multi_cast_delegates
+                             {
+                               public delegate void calculation(int a, int b)
+                               class Program
+                                 {
+                                   public static void Add(int a , int b)
+                                     {
+                                        int c= a+b;
+                                        Console.writeLine(" The Addition is : " + c);
+                                      }
+                                    public static void sub(int a , int b ) 
+                                     {
+                                       int c= a-b;
+                                       Console.WriteLine(" The subtraction is :" + c);
+                                     }
+                                    public static void multiply(int a , int b ) 
+                                     {
+                                       int c= a*b;
+                                       Console.WriteLine(" The multiplication is :" + c);
+                                     }
+                                    public static void divide(int a , int b ) 
+                                     {
+                                       int c= a/b;
+                                       Console.WriteLine(" The division is :" + c);
+                                     }
+                                   }
+                                class ABC
+                                   {
+                                     static void Main(string[] args)
+                                       {
+                                         calculation obj = new calculation(program.Add);
+                                         obj  += Program.sub;
+                                         obj  += Program.multiply;
+                                         obj  += Program.divide;
+                                         obj(8,4)
+
+                                         OR 
+                                       calculation obj - new calculation(Program.add);
+                                       obj(8,4);
+                                       obj=Program.sub;
+                                       obj(8,4);
+                                       obj = Program.multiplication;
+                                       obj(8,4);
+                                       obj = Program.divide;
+                                       obj(8,4)
+                                     } 
+                                   }
+                                 }
+                                               OUTPUT= the Addition is : 12
+                                                       The subtraction is 4
+                                                       The multiplication is 32
+                                                       The division is 2
+
+
+
+                iii)  Multiple Delegate  -  In c sharp a user can invoke multiple delegate within a single programe. Depending in the delegate name or the type of parameterpassed to the delegate 
+                                            the appropriate delegate is invoked.
+                                
+                                 Exp-  
+                                    using System;
+                                    namespace multiple_delegates
+                                     {
+                                      public delegate void show();
+                                      public delegate void Greel(int a);
+                                      public delegate boid Addition(int a , int b);
+                                      class Shadow
+                                       {
+                                         public void Name()
+                                          {
+                                            Console.writeLine("My name is Alok Kumar");
+                                          }
+                                         public void sqr(int a)
+                                          {
+                                           int c = a*a;
+                                          Console.WriteLine("Sqare of {0} " ,a ,c);
+                                          }
+                                        public void cube(int a)
+                                         {
+                                          int c = a*a*a;
+                                          Console.WriteLine("cube of {0} is {1} " ,a ,c);
+                                         }
+                                       public void Add(int a, int b)
+                                         {
+                                          int c = a+b;
+                                           Console.writeLine("the result of {0}+{1}= {2} " ,a ,b, c);
+                                          }
+                                       }
+                                    class program
+                                     {
+                                        static void Main(string[] args)
+                                         {
+                                           shadow ob= new shadow();
+                                           show obj new show(ob.name);
+                                           obj();
+                                           Greek obj1 new Greek(ob.sqr);
+                                           obj1(5);
+                                           Greek obj2 new Greek(ob,cube);
+                                           obj2(6);
+                                           Addition obj3 = new Addition(ob.Add);
+                                           obj3(4,6);
+                                         }
+                                     }   
+                              }
+ 
+                                    OUTPUT- My name is Alok Kumar 
+                                           Square of 5 is 25
+                                           cube of 6 is 216
+                                            the result of 4+5 = 9
+
+
+Question- What is Anonymous?
+Answer-   As delegate are usd to reffrece any method that has the same signature as that of the delegaets.
+          As the name suggests, a Anonymous methodis a mehod without a name jst the body
+          Anonymous ethod in  sharp  can e defined using the dlegate keyword
+          It is introused in C sharp 2.0 .
+          Anonymous method can be assigned to a variable of delegate type.
+          You need not to specfy he return type in an anonymous method  it is inferred from the return statement inide the method body.
+          We dont require to use acces modifier with anonymous like public , private etc..
+          We dont required to use reurn type like int string because its reurn type is se as same as delegate type.
+          We do Anonymous function is not a static and instance member.
+ 
+             Exp- 
+              using System;
+              namespace Anonymous
+               {
+                 public delegate void show(int a);
+                 class Program 
+                  {
+                    static void main(string[] args)
+                     {
+                       show obj = delegate (int a)
+                       { 
+                         a += 10
+                         Console.WriteLine(a);
+                       };
+                     obj.Invoke(s)
+                   }
+                }
+             } 
+                OUTPUT = 15
+   
+       
+
+      Exp2-   using System;
+              namespace Anonymous
+               {
+                 public delegate int show(int a);
+                 class Program 
+                  {
+                    static void main(string[] args)
+                     {
+                       show obj = delegate (int a)
+                       { 
+                         a += 10
+                         return a;                       };
+                     };
+                      Console.Writeline(obj.Invoke(5));
+                   }
+                }
+             } 
+                
+                    OUTPUT = 15
+
+            
+                Points to be Remember- 
+           Annymous mehod can be defined using the delegate keyword
+           Anonymos method must be assigned to a delegate
+           Anonymous methodcan access outer vaiables or functions
+          Anonymous method can be passdas a parameter
+          Exp- 
+              using System;
+              namespace Anonymous
+               {
+                 public delegate void show(int x);
+                 class Program 
+                  {
+                   static void Grek(int a , show del)
+                   {
+                     a+= 10;
+                     del(a);
+                   }
+                    public static void main()
+                     {
+                       program.greek(5,delegate(int x) x+=10);                     
+                       Console.Writeline(x);});
+                   }
+                }
+             } 
+                    OUTPUT- 25
+ 
+             Anonymous Method Limitations-----
+               	 It can not contain jump statement like - gate , break or continue..
+                 It can not access ref or out Parameter of an outer method
+            
+            Advantage of anonymous function
+                Lesser typing work because we dont required to write access modifier, return type and name of function.
+                Anonymous function are suggested when code values are less.
+
+Question- What is Lambda?
+Answer-   C sharp  3.0  introduce the lambda expression 
+          It is also works like an anonymous method 
+          The difference that is lambda expression you dont need to specify the type of the value that you input thus making it more flexible to use
+          It means Lambda expression simplifies the anonymous function or you can say lambda expression is short hand for an anonymous function 
+          The ' => ' operator is the lambda operator which is used in all lambda expression.
+          The Lambda expression is divided into 2 parts , the leftside is the input and riht side is the expression.
+
+          The lambda expression can be two type
+            i) Statement Lambda
+           ii) Expression Lambda
+
+        i) Statement Lambda- Consist of the input and a set of statement to be executed
+           
+                    synetex-    input =>  {statement};
+                    Note- Does not return an value implicitly
+                 Exp-    using System;
+                         namespace Lambd_Statement
+                         {
+                          public delegate void MyLambda(int a, int b);
+                          class Program
+                           {
+                             static void Main (string[] args)
+                              {
+                                myLambda obj (a,b) =>
+                                  {
+                                    int c= a+b;
+                                    Console.WritLine(" the addition is : " + c);
+                                  }
+                                 obj(10,20);
+                               }
+                           }
+                         }       
+                      OUTPUT= The Addition is : 25
+
+          ii) Expression Lambda : consist of the ionput and the expression.
+                                   Syntax:  inpt => expression;
+                                   Note: Return the evaluated value implicity
+                      Exp- 
+                         using System;
+                         namespace Lambd_Expression
+                         {
+                          public delegate void MyLambda(int num);
+                          class Program
+                           {
+                             static void Main (string[] args)
+                              {
+                                myLambda obj = (a) => a*a ;
+                                  {
+                                    int c= obj(5);
+                                    Console.WritLine(" the square is : " + c);
+                                  }
+                                 obj(10,20);
+                               }
+                           }
+                         }        Output- The Square is 25
+
+
+
+
+Question- What is Encapsulation?
+Answer-   Encapsulation is one of the four piller of the OOPs.
+          The meaning of the encapsulation is hiding sensitive data
+          Encapsulation in c sharp is a machanism of wrapping the data (variable) and code acting on the data(method or properties) together as a single unit.
+          In encapsulation the variable of a class will be hidden from other classes, and can be accessed only through the method or properties of their current class. therefore it is also known 
+          as data hiding .
+          Encapsulation is the procedure of encapsualting data and function into a single unit (called class).
+        
+          Encapsulation can be achived into 2 steps-
+           1-Declare the variable of a class as Private(data hiding).
+           2-Provide public setter and getter method to modify and view the variable values.     
+
+           Exp- variable access through the method. 
+                using System;
+                namespace Encapsulation
+                 {
+                    class Encaps
+                     {
+                       Private string Ac_Name;
+                       Private int Bank_Amount;
+                      public void setname(string name)
+                       {      
+                          if (string.IsNullOrEmpty(name)== true)
+                             {
+                               Console.Writeline("Name is Required");
+                             }
+                          else
+                             {
+                               Ac_Name = name;
+                             }
+                        }
+                      public void GetName()
+                          if (string.IsNullOrEmpty(Ac_name)== true)
+                             {
+                               
+                             }
+                          else
+                             {
+                              Console.Writeline(" Your Name is :" + Ac_Name);
+                             }
+                        }
+                      public void statement (int num)
+                        if (num>0)
+                         {
+                           Bank Amount = num;
+                         }
+                        else
+                         {
+                           Console.WriteLne("Amount is negative or Zero");
+                         }
+                      }
+                   public void Getamount()
+                       {
+                          if (Bank_Amount >0)
+                           {
+                              Console.WriteLne("Yourcurent blace is : " + bak_Amount);
+                           }
+                          else
+                           {
+                           }
+                       }
+                   class Program
+                     {
+                       static void Main (string[]args)
+                        {
+                          Encap obj = new Encap();
+                          obj.setname("Aok");
+                          obj.Getname();
+                          obj.setamount(10000);
+                          obj.Getamont();
+                        }
+                      }
+                   }
+                      OUTPUT= Your name is: Alok
+                              youe currentbalance is 10000
+ 
+
+              Exp- Variable access through the Properties:- 
+                   using System;
+                   namespace encapsulation
+                   {
+                     class Encaps
+                      {
+                        private string Ac_Name;
+                        private int Bank_Amount;
+                      
+                        public string Name 
+                        {
+                         set
+                           {
+                             if (string.IsNullOrEmpty(value)==true)
+                              {
+                                Console.Writeline("Name is required");
+                              }
+                             else
+                              {
+                                Ac_Name = value;
+                              }
+                           }
+                          get
+                           { 
+                             return Ac_Name;
+                           }
+                       public int Balance
+                        {
+                         set
+                           { 
+                             if(value>0)
+                              {
+                                Bank_Amount = value;
+                              }
+                            else
+                             {      
+                               Console.WriteLine("Amount is negative or Zero");
+                             }
+                          } 
+                        get
+                           { 
+                             return Bank_Amount;
+                           }
+                         }  
+                       }
+                     class Program
+                      { 
+                        static void Main()
+                          {
+                           Encaps obj = new Encap();
+                           obj.Name  "Alok";
+                           if(string.IsNullOrEmpty(obj.name)==false)
+                            {
+                             console.writeLine("Your name s :{0}", obj.name);
+                            }
+                            obj.Balance =10000;
+                            if (obj.Balance>0)
+                            {
+                             Console.Witeline("Your Amount is :{0}" , obj.Balance);
+                            }
+                        }
+                    }
+
+                    OUTPUT= Your Name is : Alok 
+                            Your Amount is : 10000
+
+                   Benifits of Encapsulation----
+                    i) the fields of a class can be made read only or write only.
+                   ii) A class can have total control ver what is stored in the class.
+                Note -  Need of Encasuation - The eed of encapsulation is to protect or preent the code(data)from accidentl corruption dur to the silly little error that we are all prone to make.
+
+                  
+
+Question- What is   Access Modifier/Specifier 
+Answer-   Access modifier or specifier - Acces modifier are eywordthat define he accessibility of a member , class or datatype in a program.
+          these ae mainl ued to restrit uwanted data manipulation by external pogrames or class
+          there are 4 access modifier-
+           Public ,Private,Protected,internal.
+              
+        Chart=
+       +---------------------+-------------------------+----------------+----------------+------------------------+-------------------------------+
+       |     Modifier        | Applicable to           | Current Class  | Derived Class  | Outside Namespace /    | Outside Namespace but         |
+       |                     | Application             |                |                | Assembly               | in Derived Class              |
+       +---------------------+-------------------------+----------------+----------------+------------------------+-------------------------------+
+       | public              | Yes                     | Yes            | Yes            | Yes                    | Yes                           |
+       | private             | No                      | Yes            | No             | No                     | No                            |
+       | protected           | No                      | Yes            | Yes            | No                     | Yes                           |
+       | internal            | Yes (same assembly)     | Yes            | Yes            | No                     | No                            |
+       | private             |                         |                |                |                        |                               |
+       | protected           | No                      | Yes            | Yes (in asm)   | No                     | No                            |
+       | protected           |                         |                |                |                        |                               |
+       | internal            | Yes (in assembly)       | Yes            | Yes            | No                     | Yes                           |
+       +---------------------+-------------------------+----------------+----------------+------------------------+-------------------------------+
+
+     
+
+Question-  What is inheritance ?
+Answer-   it is one of the four piller of the OOPs .
+           Inheritance is a mechanism in which one class (child class) acquires all the properties and behaviour of the other class (parent class) automatically by help of ':' symbol.
+          In such way , we can reuse extend or modify the attributes/properties and behaviours which is define in the other class.
+          The inheritance concept is based ont he base class(paerent class) and derived class(child class).
+       
+          Base Class- this class whose member are inherited is called base class or super class or parent class
+          Derived class- the class which inherits the member of another class called Derived/sub class or child class.
+
+         Code Reusability - Now You can reuse the members of your parent class. so, there is no need to define the member again. so less code is required in the class.
+
+          Type of Inheritance- 
+          1- Single        -  base and derived class
+          2- Multi-Level   - base and derived class1 , and derived class1 is in  derived class2
+          3- Hierarchial   - Base class into two different derived class
+          4- Hybrid        - Base class into two different derived class and both 2 different class is derived in single class after
+          5- Multiple      - Base class1,base class2 in single derived class
+
+
+
+Question- What is single Inheritance?
+Answer-   It is the type of inheritance in which there is one Base class and one derived class.
+           Exp-
+            using System;
+            public class Parent
+             {
+                public void DisplayParent()
+                {
+                 Console.WriteLine("This is Parent class.");
+                }
+             }
+           public class Child : Parent
+            {
+              public void DisplayChild()
+               {
+                Console.WriteLine("This is Child class.");
+               }
+           }
+
+       class Program
+      {
+         static void Main(string[] args)
+         {
+           Child obj = new Child();
+
+           obj.DisplayParent(); // Accessing method from Parent class
+           obj.DisplayChild();  // Accessing method from Child class
+         }
+      }
+          
+        
+ 
+
+Question- What is Multi Level Inheritance?
+Answer-   when one class is derived from another derived class then this is called multi-level inheritance.
+          Exp-
+            using System;
+
+           public class parent
+            {
+              public void Show1()
+              {
+               Console.WriteLine("This is Grandparent class.");
+              }
+            }
+
+         public class child1 : Parent
+          {
+             public void Show2()
+             {
+              Console.WriteLine("This is Parent class.");
+             }
+          }
+
+        public class child2 : child1
+          {
+           public void Show3()
+           {
+             Console.WriteLine("This is Child class.");
+           }
+         }
+
+        class Program
+          {
+           static void Main(string[] args)
+           {
+            Child obj = new Child();
+            obj.Show1();
+           
+          }
+        }
+
+
+Question- What is Hierarchial Inheritance?
+Answer-   This is the type of inheritance in which there  are multiple classes derived from one base class.
+          This type of inheritance is used when there is a requirement of one class feature that is needed in multiple classes. 
+
+       Exp- 
+           using System;
+
+          public class Parent
+           {
+             public void ShowParent()
+               {
+                  Console.WriteLine("This is Parent class.");
+                }
+           }
+
+          public class Child1 : Parent
+           {
+             public void ShowChild1()
+             {
+               Console.WriteLine("This is Child1 class.");
+             }
+           }
+
+        public class Child2 : Parent
+        {
+            public void ShowChild2()
+             {
+                Console.WriteLine("This is Child2 class.");
+             }
+        }
+
+        class Program
+           {
+             static void Main(string[] args)
+             {
+               Child1 obj1 = new Child1();
+               obj1.ShowParent();
+               obj1.ShowChild1();
+
+               Child2 obj2 = new Child2();
+               obj2.ShowParent();
+                obj2.ShowChild2();
+            }
+          }
+
+
+Question- What is Abstraction?
+Answer-   Abstraction is one of the four pille of OOPs.
+          It is use to display only neccessory and essential feature of an object to outside the world .
+          it means displaying what is necessary and encapsulating unnecessary thing to outside the world.
+          Hiding can be achieved by using "Private" access modifier.
+          Abstraction is a process of hiding the implementation details from the user , only the functionality will be provided to the user.
+          In other words , the user will hae the information on what the object does instead of how it does.
+       Note- outside the world means when we use reference of object then it will show only necessary method and properties(abstraction) and hide methods which are not necessary(Encapsulation).
+       Point to remember - 
+         i)  Abstraction is to represent the essential feature without representing the background details .
+        ii)  Abstraction let you focus on what the object does insted of how it does.
+       iii)  Abstraction provide you a generalized view of your classes or object  by providing relevant information.
+       iv)   Abstraction is the process of hiding the working style of an object and showing the information of an object in an understandable manner.
+            
+       Exp- 
+        using System;
+
+namespace Abstraction
+{
+    class Person
+    {
+        public string EmpName;
+        public int EmpId;
+        public double EmpGrossPay;
+        private double taxDeduction = 1000;  // Example value
+        private double netSalary;
+
+        public Person(string name, int id, double grossPay)
+        {
+            this.EmpName = name;
+            this.EmpId = id;
+            this.EmpGrossPay = grossPay;
+        }
+
+        private void CalculateNetSalary()
+        {
+            netSalary = EmpGrossPay - taxDeduction;
+            Console.WriteLine("Employee net salary is: " + netSalary);
+        }
+
+        public void ShowEmpDetails()
+        {
+            Console.WriteLine("Employee name is: " + EmpName);
+            Console.WriteLine("Employee ID is: " + EmpId);
+            CalculateNetSalary();  // Abstraction: hiding internal calculation
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Person obj = new Person("Alok", 11, 5000);
+            obj.ShowEmpDetails();
+        }
+    }
+}
+
+
+
+Question- What is Abstract in c Sharp?
+Answer-   THE ABSTRACT means a concept or and idea not associated with any specific instance.
+          In programming we apply the same meaning of abstraction by making class not associated with any specific instance.
+          the abstraction is done when we need t only inherit from a certain class but not need to instantiate objects of class
+          In c sharp abstraction is achieved using Abstract classes and interfaces.
+
+          
+          Abstract Class- 
+                          i) C # abstract classes are used to declare common characteristic of subclasses.
+                         ii) A class which contain the abstract keyword in its declaration is known as abstract classes.
+                        iii) It can only be used as a Base Class for other classes that extend the abstract class.
+                         iv) Abstract classes may or may no contain abstract method , and abstract method does not contain body like- public abstract void show();
+                         v)  Like other class , an abstract class can contain fields that describe the characteristics and method that describe actions that a calss can perform.
+                         vi) but if a class has at least one abstract method, then the class must be declared abstract.
+                         vii) if a class declared abstract it cannot be inherited.
+                         viii) To use an abstract class you have to inherit it form another class , provide implementation to the abstract method in it.
+                         ix) if you inherit an abstract class , you have to provide implementation to all the abstract method in it.
+                         x)  an abstract class can implement code with non -abstract  methods.
+                         xi) An abstract class can have modifiers for method and fields
+                         xii) An abstract class can implement a property.
+                        xiii) An abstract class can have constructor or destructors. 
+
+            Exp-
+                using System;
+
+namespace AbstractClass
+{
+    // Abstract base class
+    abstract class Person
+    {
+        public string Name;
+        public int Age;
+        public long Mobile;
+
+        public abstract void Details(); // Abstract method
+    }
+
+    // Derived class: Student
+    class Student : Person
+    {
+        public int RollNo;
+        public string ClassName; // Changed 'class' (reserved word) to ClassName
+
+        public override void Details()
+        {
+            Console.WriteLine("Student Name is: " + Name);
+            Console.WriteLine("Student Roll No is: " + RollNo);
+            Console.WriteLine("Student Class is: " + ClassName);
+            Console.WriteLine("Student Age is: " + Age);
+            Console.WriteLine("Student Mobile No is: " + Mobile);
+        }
+    }
+
+    // Derived class: Teacher
+    class Teacher : Person
+    {
+        public string Qualification;
+        public int Salary;
+
+        public override void Details()
+        {
+            Console.WriteLine("Teacher Name is: " + Name);
+            Console.WriteLine("Teacher Qualification is: " + Qualification);
+            Console.WriteLine("Teacher Salary is: " + Salary);
+            Console.WriteLine("Teacher Age is: " + Age);
+            Console.WriteLine("Teacher Mobile No is: " + Mobile);
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Student studentObj = new Student();
+            studentObj.Name = "Amit";
+            studentObj.Age = 20;
+            studentObj.Mobile = 9876543210;
+            studentObj.RollNo = 101;
+            studentObj.ClassName = "10th";
+            studentObj.Details();
+
+            Console.WriteLine();
+
+            Teacher teacherObj = new Teacher();
+            teacherObj.Name = "Ms. Sharma";
+            teacherObj.Age = 35;
+            teacherObj.Mobile = 9123456789;
+            teacherObj.Qualification = "M.Sc, B.Ed";
+            teacherObj.Salary = 45000;
+            teacherObj.Details();
+        }
+    }
+}
+
+    Output = 
+Student Name is: Amit
+Student Roll No is: 101
+Student Class is: 10th
+Student Age is: 20
+Student Mobile No is: 9876543210
+
+Teacher Name is: Ms. Sharma
+Teacher Qualification is: M.Sc, B.Ed
+Teacher Salary is: 45000
+Teacher Age is: 35
+Teacher Mobile No is: 9123456789
+
+
+
+Question- What is abstract Properties?
+Answer-    The word abstract means incomplete , which means no implimantation in programming.
+           This is a duty of child to implement on abstract member of their parent class.
+           Declare by usin the abstract keyword
+           contain only the declaration of the property without the body of the get and set accessors(which do not contain any statements and can be implemented in the derived class)
+           Are only allowed in an abstract class.
+
+            Exp- 
+        using System;
+
+namespace AbstractProperties
+{
+    // Abstract class with abstract properties
+    abstract class Person
+    {
+        public abstract string Name { get; set; }
+        public abstract int Id { get; set; }
+    }
+
+    // Derived class that implements the abstract properties
+    class Student : Person
+    {
+        private string stdName;
+        private int stdId;
+
+        public override string Name
+        {
+            get { return stdName; }
+            set { stdName = value; }
+        }
+
+        public override int Id
+        {
+            get { return stdId; }
+            set { stdId = value; }
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Student obj = new Student();
+            obj.Name = "Amit";
+            obj.Id = 101;
+
+            Console.WriteLine("Student Name: " + obj.Name);
+            Console.WriteLine("Student ID: " + obj.Id);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Question- What is Properties?
+Answer-    Definition:
+
+Properties allow you to control the accessibility of class variables and are the recommended way to access variables from the outside in C#.
+
+A property is much like a combination of a variable and a method. It doesn’t take any parameters, but you are able to process the value before it’s assigned to an internal field.
+
+Properties are like data fields (variables), but have logic behind them.
+
+From the outside, they look like any other member variable.
+But they act like a function.
+
+Defined like a field with get and set accessors code added.
+
+Properties are also used for encapsulation.
+
+📌 Types of Properties:
+Read and Write Properties
+
+Read-only Properties
+
+Write-only Properties
+
+Auto-implemented Properties
+
+
+1. Read and Write Properties
+When property contains both get and set methods.
+
+csharp
+Copy
+Edit
+using System;
+namespace Property
+{
+    class Employee
+    {
+        private string Name;
+        private int Id;
+
+        public string EmpName
+        {
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    Console.WriteLine("Pls Enter the name");
+                else
+                    Name = value;
+            }
+            get
+            {
+                return Name;
+            }
+        }
+
+        public int EmpID
+        {
+            set
+            {
+                if (value <= 0)
+                    Console.WriteLine("Employee Id could not be negative or zero");
+                else
+                    this.Id = value;
+            }
+            get
+            {
+                return this.Id;
+            }
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Employee E = new Employee();
+            E.EmpName = "Vikas Chouhan";
+            E.EmpID = 10;
+
+            if (string.IsNullOrEmpty(E.EmpName))
+            {
+                // do nothing
+            }
+            else
+            {
+                Console.WriteLine("Employee Name is: " + E.EmpName);
+            }
+
+            if (E.EmpID <= 0)
+            {
+                // do nothing
+            }
+            else
+            {
+                Console.WriteLine("Employee Id is: " + E.EmpID);
+            }
+        }
+    }
+}
+Output:
+
+pgsql
+Copy
+Edit
+Employee Name is: Vikas Chouhan  
+Employee Id is: 10
+
+
+2. Read Only Properties
+When property contains only get method.
+We can use readonly keyword (but it's not mandatory).
+
+csharp
+Copy
+Edit
+using System;
+namespace ReadOnlyProperty
+{
+    class RollNo
+    {
+        private readonly int Roll_NO = 242;
+
+        public int Student
+        {
+            get
+            {
+                return Roll_NO;
+            }
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            RollNo ab = new RollNo();
+            Console.WriteLine("My Roll no is : " + ab.Student);
+        }
+    }
+}
+Output:
+
+nginx
+Copy
+Edit
+My Roll no is : 242
+
+
+3. Write Only Properties
+When property contains only set method.
+There is no keyword like writeonly.
+
+csharp
+Copy
+Edit
+using System;
+namespace WriteOnlyProperty
+{
+    class Person
+    {
+        private int Deposit_Bal;
+        private int Balance = 50000;
+
+        public int Deposit
+        {
+            set
+            {
+                Deposit_Bal = value;
+            }
+        }
+
+        public void Show()
+        {
+            int Total_Balance = Balance + Deposit_Bal;
+            Console.WriteLine("Your Total Balance is: " + Total_Balance);
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Person Bal = new Person();
+            Bal.Deposit = 10000;
+            Bal.Show();
+        }
+    }
+}
+Output:
+
+csharp
+Copy
+Edit
+Your Total Balance is: 60000
+
+
+4. Auto Implemented Properties
+When there is no additional logic in the property accessors.
+Introduced in C# 3.0.
+
+csharp
+Copy
+Edit
+using System;
+namespace Auto_Implemented_Property
+{
+    class Person
+    {
+        public string Name { get; set; }
+        public int Id { get; set; }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Person obj = new Person();
+            obj.Name = "Vikas Chouhan";
+            obj.Id = 111;
+
+            Console.WriteLine("My Name is: " + obj.Name);
+            Console.WriteLine("My Id is: " + obj.Id);
+        }
+    }
+}
+Output:
+
+pgsql
+Copy
+Edit
+My Name is: Vikas Chouhan  
+My Id is: 111
+
+Note: Property name is a combination of Variable name and Method name
+
+
+
+
+Question- What is interface?
+Answer-   INTERFACE
+
+Interface is a blueprint of class, or we can say an interface is similar to abstract class because all the methods which are declared inside the interface are abstract methods.
+
+It can not have method body and we can not create object of interface.
+
+It is use to achieve multiple inheritance which can’t be achieved by class. It is used to achieve fully abstraction because it can not have method body.
+
+Interface define properties, methods, indexes and events, which are the members of the interface.
+
+Interface contain only the declaration of the members. It is the responsibility of the derived class to define the members.
+
+Interface can not have fields (variables).
+
+An interface is declared using the keyword interface.
+
+By default all the members in interface are public and abstract - we can not use access modifier in interface.
+
+
+Image 1: Code Example (C# Interface)
+csharp
+Copy
+Edit
+using System;
+
+namespace Interface
+{
+    interface Icheck
+    {
+        void Show();
+    }
+
+    class Student : Icheck
+    {
+        public void Show()
+        {
+            Console.WriteLine("This is an interface....");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Icheck obj = new Student();
+            obj.Show();
+        }
+    }
+}
+
+
+
+
+
+Question- what is Interfac Inheritance?
+Answer-   🔸 2. Interface Inheritance
+An interface can inherit from other interfaces.
+
+A class that implements a derived interface must implement all methods from the entire inheritance chain.
+
+An interface reference can hold the object of a class that implements it.
+
+✅ Example:
+csharp
+Copy
+Edit
+using System;
+
+namespace InterfaceInheritance
+{
+    interface I1
+    {
+        void Print1();
+    }
+
+    interface I2
+    {
+        void Print2();
+    }
+
+    interface I3 : I1, I2
+    {
+        void Print3();
+    }
+
+    class InGeek : I3
+    {
+        public void Print1()
+        {
+            Console.WriteLine("This is a method of Interface 1...");
+        }
+
+        public void Print2()
+        {
+            Console.WriteLine("This is a method of Interface 2...");
+        }
+
+        public void Print3()
+        {
+            Console.WriteLine("This is a method of Interface 3...");
+        }
+    }
+}
+
+
+
+
+Question- What is Interface?
+Answer-  🔶 Interface Inheritance
+Interface can inherit from other interface.
+
+A class that inherits this interface must provide implementation for all inherited interface members in the entire interface inheritance chain.
+
+Interface reference variable can have the reference of their child class.
+
+📄 Code Example
+csharp
+Copy
+Edit
+using System;
+
+namespace InterfaceInheritance
+{
+    interface I1
+    {
+        void Print1();
+    }
+
+    interface I2
+    {
+        void Print2();
+    }
+
+    interface I3 : I1, I2
+    {
+        void Print3();
+    }
+
+    class A : I3
+    {
+        public void Print1()
+        {
+            Console.WriteLine("This is a method of interface 1...");
+        }
+
+        public void Print2()
+        {
+            Console.WriteLine("This is a method of interface 2...");
+        }
+
+        public void Print3()
+        {
+            Console.WriteLine("This is a method of interface 3...");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            A obj = new A();
+            obj.Print1();
+            obj.Print2();
+            obj.Print3();
+        }
+    }
+}
+🖨️ Output:
+kotlin
+Copy
+Edit
+This is a method of interface 1...
+This is a method of interface 2...
+This is a method of interface 3...
+
+
+
+
+Question-  How many type of implimantation of inheritance?
+Answer-    There are 2 types of implementations of interfaces
+Implicit Interface Implementation
+
+Explicit Interface Implementation
+
+1. Implicit Interface Implementation
+If the methods in interfaces have name differences in each interface, it is known as Implicit Interface.
+
+We use the public keyword in derived class (access modifier).
+
+Example:
+csharp
+Copy
+Edit
+using System;
+
+namespace Implicit_Interface
+{
+    interface i1
+    {
+        void Print();
+    }
+
+    interface i2
+    {
+        void Show();
+    }
+
+    class Geek : i1, i2
+    {
+        public void Print()
+        {
+            Console.WriteLine("This is a method of Interface Print");
+        }
+
+        public void Show()
+        {
+            Console.WriteLine("This is a method of Interface Show");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Geek obj = new Geek();
+            obj.Print();
+            obj.Show();
+        }
+    }
+}
+Output:
+pgsql
+Copy
+Edit
+This is a method of Interface Print  
+This is a method of Interface Show
+We can use parent reference variable:
+csharp
+Copy
+Edit
+i1 obj = new Geek();
+obj.Print();
+Output:
+
+vbnet
+Copy
+Edit
+This is a method of Interface Print
+csharp
+Copy
+Edit
+i2 obj = new Geek();
+obj.Show();
+Output:
+
+pgsql
+Copy
+Edit
+This is a method of Interface Show
+
+
+
+
+
+2. Explicit Interface Implementation:
+
+A class has to explicitly implement multiple interfaces if these interfaces have methods with identical (same) names.
+
+If an interface has a method name identical to the name of a method declared in the inheriting class, this interface has to be explicitly implemented.
+
+We cannot use the access modifier in the child class.
+
+Example Code:
+csharp
+Copy
+Edit
+using System;
+
+namespace ExplicitlyInheritance
+{
+    interface i1
+    {
+        void Show();
+    }
+
+    interface i2
+    {
+        void Show();
+    }
+
+    class Check : i1, i2
+    {
+        void i1.Show()
+        {
+            Console.WriteLine("This is interface 1...");
+        }
+
+        void i2.Show()
+        {
+            Console.WriteLine("This is interface 2...");
+        }
+    }
+}
+
+
+class Program
+{
+    Check obj = new Check();
+    ((i1)obj).Show();
+    ((i2)obj).Show();
+
+    or
+
+    i1 obj1 = new Check();
+    obj1.Show();
+    i2 obj2 = new Check();
+    obj2.Show();
+}
+Output:
+
+kotlin
+Copy
+Edit
+This is interface 1...
+This is interface 2...
+Similarities b/w Abstract Classes and Interfaces:
+Abstract classes & interfaces both declare methods without implementing them.
+
+Both contain abstract methods.
+
+Abstract methods of both are implemented by the inheriting subclass.
+
+Both can inherit multiple interfaces.
+
+Both can have reference variables.
+
+
+
+
+
+
+Question- Waht id difference between Abstract Class and Interface?
+Answer-   
++---------------------------------------------------------------+---------------------------------------------------------------+
+|                        ABSTRACT CLASS                         |                          INTERFACE                            |
++---------------------------------------------------------------+---------------------------------------------------------------+
+| An abstract class can inherit a class and multiple interfaces.| An interface can inherit multiple interfaces but              |
+|                                                               | cannot inherit a class.                                       |
++---------------------------------------------------------------+---------------------------------------------------------------+
+| An abstract class method is implemented using the             | An interface method is implemented without using the          |
+| 'override' keyword.                                           | 'override' keyword.                                           |
++---------------------------------------------------------------+---------------------------------------------------------------+
+| An abstract class is a better option when you need to         | An interface is a better option when you need to              |
+| implement some methods and declare common abstract methods.   | declare only abstract methods.                                |
++---------------------------------------------------------------+---------------------------------------------------------------+
+| An abstract class can declare constructors and destructors.   | An interface cannot declare constructors or destructors.      |
++---------------------------------------------------------------+---------------------------------------------------------------+
+| If you want to declare an abstract member in an abstract      | If you want to declare an abstract member in an interface,    |
+| class, then 'abstract' keyword is mandatory.                  | the 'abstract' keyword is not mandatory because               |
+|                                                               | members of interfaces are abstract and public by default.     |
++---------------------------------------------------------------+---------------------------------------------------------------+
+
+
+Question-  What is Exception  handling?
+Answer-    EXCEPTION AND EXCEPTION HANDLING
+
+★ What is Exception - 
+• An exception is a problem that arises during 
+  the execution of a program. 
+• A C# exception is a response to an exceptional 
+  circumstance that arises while a program is 
+  running, such as an attempt to divide by zero. 
+• An exception is a ‘C# object’ that 
+  represents an error.
+
+When an exception occurs 3 things happen 
+1. Program terminates or program crashes. 
+2. Ugly kind of error message is displayed 
+   that user can never even understand. 
+3. Statement after exception will not be 
+   executed
+
+Types of Exceptions in C#
+
+• C# can handle different types of exceptions 
+  using exception handling statements.
+• It allows you to handle basically two kinds of 
+  exceptions. These are as follows:
+
+
+★ Types of Exception in C#
+
+1. System-level Exception - These are the exceptions 
+   that are thrown by the system. 
+• These are thrown by the CLR. 
+• For example - exceptions thrown due to failure in 
+  database connection or network connection are 
+  system-level exceptions.
+
+2. Application-level Exception - These are thrown 
+   by user-created applications. 
+• For example - exceptions thrown due to arithmetic 
+  operations or referencing any null object are 
+  application-level exceptions.
+
+
+
+              Exception class
+                   ↓
+    ┌────────────────────────────┐
+    ↓                            ↓
+System.ApplicationException   System.SystemException
+    ↓                            ↓
+Exception thrown by        Exception thrown by
+Applications               Common Language Runtime (CLR)
+
+
+Question What is Exceptionhendelng?
+Answer-  ★ What is Exception Handling 
+• Exception handling is one of the powerful 
+  mechanism to handle the run time errors so 
+  that normal flow of the application 
+  can be maintained.
+• We use 4 keywords to perform exception handling: 
+    • try 
+    • catch 
+    • finally 
+    • throw 
+
+In C# Programming, Exception handling is 
+performed by try / catch statement.
+
+• try block - It encloses statements 
+  that might generate exceptions.
+• This block holds the code that may 
+  throw an exception.
+• When these exceptions are thrown, the 
+  required actions are performed using 
+  the catch block.
+• catch block - This block catches the 
+  exception thrown by the try block.
+
+• finally block - finally block is used to execute 
+  important code which is to be executed 
+  whether exception is handled or not. 
+  it must be preceded by catch or try block.
+
+• throw block - Used to throw an exception 
+  manually.
+
+• exception handling is performed by try / catch 
+  statement.
+
+eg - 
+Using System;
+namespace Exception 
+{
+    class Program
+    {
+        static void Main (string [] args)
+        {
+            int a = 10 ;
+            int b = 0 ;
+
+            try
+            {
+                int c = a / b ;
+                Console.WriteLine (c) ;
+            }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine ("you can not divide by zero");
+            }
+        }
+    }
+}
+
+output - you can not divide by zero.
+
+
+Example of finally block -
+
+using System;
+
+namespace finallyblock
+{
+    class Program
+    {
+        public static void Main (string [] args)
+        {
+            try
+            {
+                string s = null + "vikas" ;
+                Console.WriteLine (s.Length) ;
+            }
+            catch (NullReferenceException yz)
+            {
+                Console.WriteLine (" " + yz.Message) ;
+            }
+            finally
+            {
+                Console.WriteLine ("Finally block is executed") ;
+            }
+        }
+    }
+}
+
+output –   5  
+           Finally block is executed.
+
+
+
+
+There are 4 ways of Exception
+
+1. Default Throw and Default Catch
+2. Default Throw and Own Catch
+3. Own Throw and Default Catch
+4. Own Throw and Own Catch
+
+1. Default Throw and Default catch - C# create 
+   object of exception itself and 
+   throwing itself by CLR and then 
+   catch itself
+
+eg - 
+using System;
+
+namespace Exception
+{
+    class Program
+    {
+        public static void Main (string [] args)
+        {
+            string name = "vikas" ;
+            int x = int.Parse(name);
+        }
+    }
+}
+
+output –
+• Program will crash
+• It will show ugly message, user can't understand
+• Statement after exception will not be executed.
+
+2. Default Throw and User Catch
+Object of exception is created and thrown by CLR, and caught by user using try-catch blocks.
+
+csharp
+Copy
+Edit
+using System;
+namespace Exception
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            try
+            {
+                string name = "Vikas";
+                int x = int.Parse(name);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+    }
+}
+Output: Input string was not in a correct format.
+
+
+
+ . Single Try, Multiple Catch Blocks
+We can use multiple catch blocks with a single try block.
+
+csharp
+Copy
+Edit
+using System;
+namespace Exception
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                int a = 10;
+                int b = 0;
+                int c = a / b;
+                Console.WriteLine(c);
+
+                int[] ab = new int[2];
+                ab[0] = 2;
+                ab[1] = 5;
+                ab[2] = 6;
+                ab[3] = 2;
+
+                foreach (var i in ab)
+                {
+                    Console.WriteLine(i);
+                }
+
+                string name = null;
+                Console.WriteLine(name.Length);
+string s = "vikas";
+int x = int.Parse(s);
+Console.WriteLine(x);
+
+            }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+    }
+}
+
+
+Outpt - Attemptd to divide by zero 
+
+
+
+
+3.1. User-Throw and Default Catch
+Object of Exception is created by the user (manually) and then it is thrown by the user, caught by the system.
+We use the throw keyword.
+
+csharp
+Copy
+Edit
+using System;
+namespace Exception
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter your age");
+            int age = int.Parse(Console.ReadLine());
+            if (age >= 18)
+            {
+                Console.WriteLine("You are eligible for vote");
+            }
+            else
+            {
+                throw new Exception("You are not eligible for vote");
+            }
+        }
+    }
+}
+Notes:
+If age >= 18, then:
+➤ You are eligible for vote
+
+If age < 18, then:
+➤ Program will crash
+➤ Statement after exception will not be executed
+➤ Shows ugly message
+
+4.Old Throw and Our Catch (Voting Program)
+csharp
+Copy
+Edit
+using System;
+namespace Exception
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter your age");
+            int age = int.Parse(Console.ReadLine());
+
+            try
+            {
+                if (age >= 18)
+                {
+                    Console.WriteLine("You are eligible for vote");
+                }
+                else
+                {
+                    throw new Exception("You are not eligible for vote");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+    }
+}
+Output:
+If age >= 18 → You are eligible for vote
+
+If age < 18 → You are not eligible for vote
+
+
+
+
+
+Qurstion- What is throw and throw ex?
+Answer-   throw vs throw ex
+Concept:
+throw – shows the exception from the origin
+
+throw ex – does not show the origin (only the message)
+
+csharp
+Copy
+Edit
+using System;
+namespace Throw
+{
+    class Program
+    {
+        public void Show()
+        {
+            int a, b, c;
+            a = 10;
+            b = 0;
+            try
+            {
+                c = a / b;
+                Console.WriteLine(c);
+            }
+            catch (Exception ex)
+            {
+                throw;  // or throw ex;
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            Program obj = new Program();
+            try
+            {
+                obj.Show();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+          
+
+
+
+
+Question- What is Polymorphism and how many types of polymorphism?
+Answer-   Polimorphism is one of the four piller of OOPs.
+          Polymorphism is the combination of two Greek word one is poly means many and other is morphi means form . so " whose meaning is same object having different behaviour."
+          Exp- A man has different behaviour like - son,father,husband etc..
+          There are two type of polymorphism - i) Static Polymorphism(compile time polymorphism)
+                                             ii)Dynamic Polymorphism(Run time Polymorphism)
+
+            Static type Polymorphism(compile time polymorphism)-
+               i) Compile time Polymorphism is achived by during compile time.
+              ii) The mechanism of linking a function with an object during compile time is called compile time polymorphism or static polymorphism or static binding.
+             iii) C sharp Provide two Technic to implement static Polymorphism. They are- a) Method overloading / Function overloading
+                                                                                          b) Operator Overloading
+            Dynamic Ploymorphism (runtime Polymorphism)-
+              i) Run time Polymorphism is achived by run time 
+             ii) the mechanism of linking a function with an object during run time is called Dynamic Ploymorphism or RunTime polymorphism or late binding.
+             iii) In C sharp it is achived method overriding.
+
+Question- What is Method Overloading?
+Answer-   There might be two or more method in a class with the same name but different number,types and order of  Parameter , it is called method overloading.
+          Method overloading is an example of the compile polymorphism feature of an objaect oriented programming language.
+         
+           Exp- 
+                Void display()
+                Void display(int a)
+                Void display(double a)
+                Void display( int a , float b)
+                Void display (float a, int b)
+
+               Hence the display method is overloaded , these method are not the same , they have the same name but different argument.
+               Notes- The return type of the above method are not the same . it is because the method overloading is not associate with return type , nut must have different parameter.
+              
+Question- How method Overloading can be achieved?
+Answer-   Method overloading can be achived by the following ways-
+          i) by changing Number of Parameters in method 
+         ii) by changing Order of Parameters in method 
+        iii) by using different datatype of Parameters in method 
+ 
+          i) By changing Number of Parameters in method - we can overload the method if the number of parameter in the method is different.
+              Exp-  
+                      using system;
+                      namespace MethodOverload
+                      {
+                        class Program
+                          {
+                            void display(int a)
+                              {
+                                Console.WriteLine("Argument : " + a);
+                              }
+                            void display(int a, int b)
+                              {
+                                Console.WriteLine("Argument : " + a + " and " + b);
+                              }
+                            static void main(string[] args)
+                              {
+                                Program obj = new Program();
+                                obj.display(100);
+                                obj.display(100,200);
+                          }
+                       }          output-   Argument : 100
+                                            Argument : 100 and 200
+
+                      Here- In the above example we have overloded display() method.
+                            one method has one parameter
+                            another method has two parameter
+                         Based on the number of the argument passed during the method call , the corressponding method is called .
+                           obj.display(100) - call the method with single parameter
+                           obj.display(100,200) - call the method with two parameter. 
+
+
+           ii) By changing the datatype of parameter - we can overloadd the method if the datatypes of the parameter in the ethod is different.
+               Exp-  
+                      using system;
+                      namespace MethodOverload
+                      {
+                        class Program
+                          {
+                            void display(int a)
+                              {
+                                Console.WriteLine("int type : " + a);
+                              }
+                            void display(string a)
+                              {
+                                Console.WriteLine("string type : " + a);
+                              }
+                            static void main(string[] args)
+                              {
+                                Program obj = new Program();
+                                obj.display(100);
+                                obj.display("Alok");
+                                Console.ReadLine();
+                          }
+                       }          output-   int type : 100
+                                            string type : Alok
+                      Here- In the above example we have overloaded display() method with different types of parameter
+                            Based on the type of the argument passed during the method call , the corresponding method is called .
+                           obj.display(100) - call the method with int type parameter
+                           obj.display("Alok") - call the method with string type parameter. 
+
+
+            iii) By changing the order of the parameters- we can achive the method overloading if the order of the parameter in the method is different.
+       
+                   Exp-  
+                      using system;
+                      namespace MethodOverload
+                      {
+                        class Program
+                          {
+                            void display(int a, string b)
+                              {
+                                Console.WriteLine("int : " + a);
+                                Console.WriteLine("string : " + b);
+                              }
+                            void display(string a ,int b)
+                              {
+                                Console.WriteLine("string : " + a);
+                                Console.WriteLine("int : " + b);
+                              }
+                            static void main(string[] args)
+                              {
+                                Program obj = new Program();
+                                obj.display(100,"Programming");
+                                obj.display("Alok", 30);
+                                Console.ReadLine();
+                          }
+                       }        
+                                   
+                                     output- int : 100
+                                            string : Alok
+                                            string : Alok
+                                            int :100
+                      Here- In the above example we have overloaded display() method with different Order of parameter
+                            Based on the order of the argument passed during the method call , the corresponding method is called .
+                           obj.display(100,"Alok") - call the method with int and string respectivilly .
+                           obj.display("Alok",100) - call the method with string and int parameter respectivilly. 
+
+      
+Question- What is Operator Overloading?
+Answer-   operator overloading is an example of compile time polymorphism. 
+          the concept of overloading a function can also be applied to operators.
+          operator overloading gives the ability to use the same operator to do various operations.
+          it provide the additional capabilities to C sharp operations when they applied to user defined data types
+          it enable to make user definied implimantation of various operation  where one or both of the operands are of a user defined class.
+          only the predefines sets of the c sharp operator can be overloaded
+          to make operations on a user defined data type is not as simple as the operations on a built in data type .
+          to use operator with user-defined data types they need to be overloaded according to a programmers requirement.
+          an operator can be overloaded by defining a function to it .
+          The function of the operator is declared by using the operator keyword.
+          Operator may be considered as function internal to the compiler.
+
+          Operator                          Description
+      +,-,!,~,++,--                     unary operators take one operand and can be overloaded
+      +,-,*,/,%                         binary operator take two operand and can be overloaded.
+      == , != , =                        Comparision operator can be overloaded.
+      && , ||                            Conditional logical operators can not be overloaded directly
+      +=,-=,*=,/=,%=,=                  assignment operator can not be overloaded
+ 
+           Exp-  
+                      using system;
+                      namespace operatorOverloading
+                      {
+                       class abc
+                        {
+                          public string str;
+                          public int num;
+       
+                          public static abc operator +(abc obj1,abc obj2)
+                           {
+                              abc obj3 = new abc();
+                              obj3.str = obj1.str+obj2.str;
+                              obj3.num = obj1.num + obj2.num;
+                              return obj3;
+                           }
+                         } 
+
+                       class  Program 
+                         {
+                          static void Main(string[] args)
+                           {
+                             abc obj1 = new abc;
+                             obj1.str = "Alok";
+                             obj1.num = 10;
+                                
+                             abc obj2 = new abc;
+                             obj2.str = "Kumar";
+                             obj2.num = 20;
+                             
+                              abc obj3 = new abc;
+                             obj3 = obj1+ obj2;
+
+                              Console.WriteLine(obj3.str);
+                              Console.WriteLine(obj3.num);
+                            }
+                          }
+                        }
+                                Output- Alok Kumar
+                                        30
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Question- What is Dynamic Or Run time Polymorphism?
+Answer-   Run time Polymorphism is achieved by method overriding.
+          Method overriding allows us to have Virtual and Abstract method in the base using derived class with the same name and the same parameter.
+
+Question- What is Method overriding?
+Answer-   If derivied class defines same method as defined in its base class, it is known as method overriding.
+          It is use to achieve runtime polymorphism.
+          It enable you to provide specific implement of the method in child class which is already provided by its base class.
+          To perform method overriding in c sharp you need to use virtual keyword with base class method and override keyword with derived class method.
+          A method is declared using virtual keyword is referred to as a virtual method.
+          In the derived class you need to declare the inherited virtual method using the override keyword which is mandatory for any virtual method that is inherited in the derived class.
+          The override keyword overrides the base class method in the derived class.
+   
+           
+                Exp-1  
+                      using system;
+                      namespace overriding
+                      {
+                        class Parent
+                          {
+                            Public virtual void print()
+                              {
+                                Console.WriteLine("This is a parent class");
+                              }
+                           }
+                          class child:Parent
+                           {
+                              public override void print()
+                                {
+                                  Console.WriteLine("This is a child class");
+                                }
+                           }
+                         class Program
+                          {
+                            static void Main(string[] args)
+                              {
+                                Parent p = new child();
+                                p.print();
+                              }
+                          }
+                       }               output- This is a child class.
+
+
+                     Exp-2  
+                      using system;
+                      namespace Methoidoverriding
+                      {
+                        class Animal
+                          {
+                            Public virtual void eat()
+                              {
+                                Console.WriteLine("Eating....");
+                              }
+                           }
+                          class Dog:Parent
+                           {
+                              public override void eat()
+                                {
+                                  Console.WriteLine("Eating Bread");
+                                }
+                           }
+                         class Program
+                          {
+                            static void Main()
+                              {
+                                Dog d = new Dog();
+                                d.eat();
+                                  Console.ReadLine();
+                              }
+                          }
+                       }               output- Eating Bread
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+                           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
+    
+      
+
+
+
+
+  
+
+
+
+ 
+
+
+  
