@@ -1,0 +1,16 @@
+
+CREATE TABLE bnq_group_mst (
+    id INT NOT NULL AUTO_INCREMENT,          -- Primary Key (auto-incrementing)
+    
+    Group_Code VARCHAR(12),                  -- Code for the group
+    Group_Desc VARCHAR(40),                  -- Description of the group
+    Group_Rate DOUBLE,                       -- Rate of the group
+    Remark VARCHAR(60),                      -- Any remarks
+    Rate_Restricted TINYINT(1),              -- 0 or 1 flag for rate restriction
+    Grp_PrntOrd SMALLINT,                    -- Parent order
+
+    PRIMARY KEY (id)                         -- Defining 'id' as the Primary Key
+);
+
+
+
