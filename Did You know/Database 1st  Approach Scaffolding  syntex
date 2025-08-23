@@ -1,0 +1,25 @@
+
+
+
+MSSQL-
+
+Scaffold-DbContext "Server=localhost;User ID=root;Password=admin@123;Database=csatcloud_alok001" MySql.EntityFrameworkCore -OutputDir Models -f -Context CsatcloudTestingContext
+
+
+
+SQL-
+
+Scaffold-DbContext "Server=localhost;Database=Alok;Integrated Security=True;Encrypt=False;Trust Server Certificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context MyDbContext -f
+
+
+
+
+
+
+
+
+
+
+
+
+
