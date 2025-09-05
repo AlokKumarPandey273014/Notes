@@ -434,3 +434,21 @@ Que 19- What are HTML entities? Give examples.
 
 
 //-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+Que 20- What is the role of the <form> tag and its attributes like action, method?
+
+⬤ The <form> tag is used to collect user input and send it to a server.  
+⬤ It contains input elements like text fields, checkboxes, radio buttons, and submit buttons.  
+⬤ Action attribute - tells the browser where (URL) to send the form data.  
+⬤ Method attribute - defines how the data is sent:  
+   GET → Sends data in the URL (good for search, not secure).  
+   POST → Sends data in the request body (secure and used for sensitive data).  
+⬤ Other attributes:  
+   name → gives the form a unique name.  
+   target → decides where the response will appear (_self, _blank).  
+   enctype → used when uploading files.
+
+
+
