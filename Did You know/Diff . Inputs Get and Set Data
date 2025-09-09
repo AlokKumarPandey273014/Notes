@@ -1,0 +1,34 @@
+
+//--------------------- 1.  TO GET VALUE FOR SAVE AND TO SHOW VALUE AFTER GET   ------------------------//
+ -------      Input and Dropdown     --------
+
+⬤<input type="text" id="username">              $("#username").val(),
+                                                $("#username").val(result.username);
+
+⬤ <select id="fsdropdown">
+   <option value="1">Manager</option>
+   <option value="2">Team Lead</option>         $("#fsdropdown").val(),
+   <option value="3">Developer</option>         $("#fsdropdown").val(result.fsdropdown);
+  </select>
+													   
+ -------      checkbox      --------
+ 
+⬤ <input type="checkbox" id="isageeighteen">    $("#isageeighteen").is(":checked") ? 1 : 0 ,                                                           				   
+                                               $("#isageeighteen").prop("checked", !!result.fieldname);
+														   
+ -------      Radio       --------
+ 
+⬤ <label><input type="radio" name="role" value="Manager"> Manager</label>
+⬤ <label><input type="radio" name="role" value="TeamLead"> Team Lead</label>                  $('input[name="role"]:checked').val(),
+⬤ <label><input type="radio" name="role" value="Developer"> Developer</label>                 $('input[name="role"][value="' + result.role + '"]').prop("checked", true);
+ 
+ -------      Multi-select  --------
+
+<select id="skills" multiple>
+  <option value="js">JavaScript</option>                     $("#skills").val(),  
+  <option value="csharp">C#</option>                         $("#skills").val(result.skills); 
+  <option value="sql">SQL</option>
+</select>
+
+
+ 
