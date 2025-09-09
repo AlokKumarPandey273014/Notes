@@ -1,0 +1,769 @@
+Que:- What is C#?
+Answer - 
+• C# (Pronounced "C-Sharp") is type-safe, object-oriented programming language developed by Microsoft that runs on the .NET Framework.
+• Anders Hejlsberg is the developer of the C# language.
+• C# is a case-sensitive language.
+• C# adopts almost all the features of C, C++, and Java programming languages, but it also includes some advanced features that are available only in C#.
+• The file extension for a C# file is .cs
+• C# is based on the concept of “objects” which have properties (data) and methods (functions).
+• Feature of C# is : Encapsulation,Inheritance,Polymorphism,Abstractions.
+• C# is widely used for building:Mobile Applications,Desktop Applications,Web Services,Websites,Games,Database Applications 
+• C# was created for software development in the .NET Framework.
+• C# runs on the .NET platform, which provides a runtime environment called the Common Language Runtime (CLR) to execute the code.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+Que:- What is Object?
+Answer -
+• Object is a real-world entity.                                                                   
+• An object is an instance of a class.                                                             
+• It has Property , Behavior, and a Unique Identity.                                               
+• An object occupies memory.                                                                         
+• An object has data (called fields or properties), like name, color, or size.                     
+• An object has behaviors (called methods), like moving, speaking, or calculating.                
+• example, imagine a Car class: The class says every car has a color, brand, and a method to drive.
+   
+  Example - 
+  Car myCar = new Car();
+  myCar.Color = "Red";
+  myCar.Drive();
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- What is Class?
+Answer -
+• A class is not a real-world entity.                                                                                                
+• It is a blueprint, prototype, or template used to create objects.                                                                  
+• A class does not occupy memory , until an object is created from it.                                                               
+• A class is a collection of objects or data members.                                                                                
+• It defines the data (called fields or properties) and behaviors (called methods) that the objects created from it will have.       
+• Classes help organize code into modular, reusable, and structured units.                                                           
+🔹 Example:
+class Car {
+    public string Color;
+    public void Drive() {
+        Console.WriteLine("Driving...");
+    }
+}
+• This Car class defines a property `Color` and a method `Drive()`.
+• You can then create an object from it:
+  Car myCar = new Car();
+  myCar.Color = "Red";
+  myCar.Drive();
+
+Notes-  
+• Class is a definition, and  object is the real thing you create from that definition.
+Example - "Animal" is a class. "eat" and "run" are methods. "Dog" and "Cat" are objects.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Que:- Difference between Class and Object ?
+Answer- 
++------------------------------------------------------------+------------------------------------------------------------+
+| 🧍 Object                                                 | 🧱 Class                                                   |
++------------------------------------------------------------+------------------------------------------------------------+
+| Object is a real-world entity                              | Class is a blueprint or prototype                          |
++------------------------------------------------------------+------------------------------------------------------------+
+| Occupies memory                                            | Does not occupy memory until object is created             |
++------------------------------------------------------------+------------------------------------------------------------+
+| Can perform actions (methods)                              | Describes what actions (methods) are possible              |
++------------------------------------------------------------+------------------------------------------------------------+
+| Holds real data like color, size, etc.                     | Declares what data (fields/properties) exist               |
++------------------------------------------------------------+------------------------------------------------------------+
+| Created using `new` keyword                                | Created using `class` keyword                              |
++------------------------------------------------------------+------------------------------------------------------------+
+| It is an instance of a class                               | It is a definition used to create objects                  |
++------------------------------------------------------------+------------------------------------------------------------+
+| Has state, behavior, and unique identity                   | Defines structure and behavior for objects                 |
++------------------------------------------------------------+------------------------------------------------------------+
+| Example: `Car myCar = new Car();`                          | Example: `class Car { public void Drive(); }`              |
++------------------------------------------------------------+------------------------------------------------------------+
+| "myCar" is an object                                       | "Car" is a class definition                                |
++------------------------------------------------------------+------------------------------------------------------------+
+| Object = Usable, real instance                             | Class = Logical design or template                         |
++------------------------------------------------------------+------------------------------------------------------------+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- What is an Identifier?
+Answer: An identifier is the name we give in our program, like a class name , variable name , or method name.
+Rules:
+• It should start with a letter or underscore (_)
+• It cannot start with a number.
+• It should not be a C# keyword like int, class, etc.
+• C# treats capital and small letters as different (Name ≠ name)
+
+For example:
+int age = 25;
+Here, "age" is the identifier.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- What is a Punctuator and Separator?
+Answer:-  Punctuators and separators are symbols used to organize the code. 
+          They help the compiler to understand where a statement ends  or where values are separated.
+
+The symbol are used to punctuate -  
+Semicolon (;) - Marks the end of a statement.  
+Comma (,)     - Separates variables, values, or parameters.
+
+Example:
+int a = 10;  
+int → keyword  
+a → identifier  
+= → operator  
+10 → literal  
+; → punctuator
+
+Another example:
+int x = 5, y = 10;  
+→ Comma (,) separates the variables x and y.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- What are Comments?
+Answer:
+Comments are lines in a program which are not executed.  
+They are written only to explain the code.  
+The computer skips comments while running the program.
+
+There are two types of comments -
+1. Single-line comment - Starts with // 
+                         Used to write small notes in one line  
+                         Example:   // This is a single-line comment
+
+2. Multi-line comment -  Starts with /* and ends with */ 
+                         Used - to write long notes in many lines  
+                         Example:  
+                               /*
+                               This is a
+                               multi-line comment
+                               */
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Que:- What is a Variable?
+Answer:-  It is a name given to a memory location.
+          A variable is a container for storing data.
+          It is used to store data like numbers, text, etc.   
+          The value of a variable can change during the program.  
+          You can use the same variable again and again.  
+
+          Example in C#:
+          int age = 25;         
+          string name = "John"; 
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- What is a Data Type?
+Answer:
+A data type decides the type and size of data store in a variable.
+A data type defines what kind of data a variable can hold,like a number, text, true/false, or a character.  
+It also tells how much memory the data will use.
+
+Common Data Types in C#:
++------------+-------------------+-------------------------------------------+
+| Data Type  |     Size          | Description / Example                     |
++------------+-------------------+-------------------------------------------+
+| int        | 4 bytes           | Whole numbers like 100, -247              |
+| long       | 8 bytes           | Large numbers like 9876543210             |
+| float      | 4 bytes           | Decimal values like 3.14f, 45.6f          |
+| double     | 8 bytes           | Accurate decimals like 123.456789         |
+| bool       | 1 bit             | true, false                               |
+| char       | 2 bytes           | Single character like 'A', 'Z'            |
+| string     | 2 bytes/character | Text like "Alok", "Hello", "Vikash"       |
++------------+-------------------+-------------------------------------------+
+
+Notes:
+• float stores approximate decimal values  
+• double stores more accurate decimal values  
+• char holds only one character  
+• string stores a group of characters (text)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- What is used for Input and Output in C#?
+Answer:
+● Input:-Console.ReadLine() 
+     → Used to take input from the user
+     → Always returns the input as a string
+
+● Output:-Console.WriteLine()
+     → Displays output on the screen
+     → Moves to the next line after printing
+         - Console.Write()
+     → Displays output but stays on the same line
+
+Example:
+   Console.WriteLine("Enter your name:");
+   string name = Console.ReadLine();
+   Console.WriteLine("Hello " + name);
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- What is the basic syntax of a C# program?
+Answer:-It is the basic structure or format to write a C# program.
+
+   using System;
+   namespace HelloWorld
+   {
+       class Program
+       {
+           static void Main(string[] args)
+           {
+               Console.WriteLine("Hello World");
+           }
+       }
+   }
+Output:
+   Hello World
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- What is an Operator?
+Answer:
+Operator is a symbol which performs action on operands.  
+Operator is used to do tasks like calculation or comparison between values.
+We use operators to do things like add, subtract, compare, etc.
+
+Examples of operators:
++  (Addition)  
+-  (Subtraction)  
+*  (Multiplication)  
+/  (Division)  
+%  (Remainder)  
+== (Equal to)  
+<  (Less than)  
+>  (Greater than)
+
+Example in C#:
+int a = 10;  
+int b = 5;  
+int sum = a + b;  
+
+There are 7 types of operators in C#:
+
+   1) Arithmetic Operators                  ------------------------------
+   2) Relational / Comparison                                            |
+   3) Boolean Logical Operators                              Binary Operators
+   4) Assignment Operators                                               |
+   5) Bitwise Operators                     ------------------------------
+   6) Unary Operators                --> Works on a single operand
+   7) Ternary Operator               --> Uses ?: symbol (conditional)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- What are Arithmetic Operators?
+Answer:- Arithmetic operators are used to perform basic math operations in C#.
+         Example - add, subtract, multiply, divide, or find the remainder.
+
+Explanation:
+1- % (Modulus Operator):- Gives the remainder after division.               
+                            Example:   10 % 3 = 1   , 10 % 7 = 3
+   
+
+2- / (Division Operator):- Returns only the whole number (quotient).   
+                           Example:  10 / 3 = 3   ,   20 / 4 = 5
+    
+Note:- C# does not use `**` for power like some other languages.
+       Math.Pow(base, exponent)
+       Math.Pow(5, 2)         - Output: 25
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- What is a Relational Operator?
+
+Answer:- Relational operators are used to compare two values.
+         They return the result in the form of true or false (Boolean output).
+
++--------+-----------------------------+--------------------------+
+| Symbol | Meaning                     | Example                  |
++--------+-----------------------------+--------------------------+
+| >      | Greater than                | 10 > 5   → true          |
+| <      | Less than                   | 3 < 2    → false         |
+| >=     | Greater than or equal to    | 8 >= 8   → true          |
+| <=     | Less than or equal to       | 4 <= 3   → false         |
+| ==     | Equal to                    | 5 == 5   → true          |
+| !=     | Not equal to                | 6 != 4   → true          |
++--------+-----------------------------+--------------------------+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- What is a Boolean Logical Operator?
+Answer:-Boolean logical operators are used to perform logical operations in C#.
+        They return results in true or false (Boolean values).
+
++--------+-------------+
+| Symbol | Meaning     |
++--------+-------------+
+| &&     | Logical AND |
+| ||     | Logical OR  |
+| !      | Logical NOT |
++--------+-------------+
+
+1. AND Operator (&&) — returns true only if both conditions are true.
++--------+--------+----------------+
+|   A    |   B    | A && B         |
++--------+--------+----------------+
+| false  | false  | false          |
+| false  | true   | false          |
+| true   | false  | false          |
+| true   | true   | true           |
++--------+--------+----------------+
+
+2. OR Operator (||) — returns true if at least one condition is true.
++--------+--------+----------------+
+|   A    |   B    | A || B         |
++--------+--------+----------------+
+| false  | false  | false          |
+| false  | true   | true           |
+| true   | false  | true           |
+| true   | true   | true           |
++--------+--------+----------------+
+
+3. NOT Operator (!) — returns the opposite of the boolean value.
++--------+------------+
+|   A    | !A         |
++--------+------------+
+| false  | true       |
+| true   | false      |
++--------+------------+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- What is an Assignment Operator?
+
+Answer:-The assignment operator is used to assign a value from the right-hand side (RHS) to a variable on the left-hand side (LHS). 
+        The basic assignment operator is `=`.
+
+Example:
+int a = 10;
+int b = 20;
+int c = a;      Now, c holds the value of a (i.e., 10)
+
+There are also compound assignment operators in C#:
++------------+------------------------------+--------------------------+
+| Operator   | Description                  | Example                  |
++------------+------------------------------+--------------------------+
+| =          | Assigns value                | a = 5                    |
+| +=         | Adds and assigns             | a += 3  (a = a + 3)      |
+| -=         | Subtracts and assigns        | a -= 2  (a = a - 2)      |
+| *=         | Multiplies and assigns       | a *= 4  (a = a * 4)      |
+| /=         | Divides and assigns          | a /= 2  (a = a / 2)      |
+| %=         | Modulus and assigns          | a %= 3  (a = a % 3)      |
++------------+------------------------------+--------------------------+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- What are Math Operations in C#?
+Answer:-C# provides a built-in Math class that includes many useful methods to perform mathematical tasks on numbers.
+
++-------------------+------------------------------+--------------------------+
+| Method            | Description                  | Example                  |
++-------------------+------------------------------+--------------------------+
+| Math.Max(x, y)    | Returns the higher value     | Math.Max(5, 10) → 10     |
+| Math.Min(x, y)    | Returns the lower value      | Math.Min(5, 10) → 5      |
+| Math.Sqrt(x)      | Returns square root of x     | Math.Sqrt(64) → 8        |
+| Math.Abs(x)       | Returns absolute value of x  | Math.Abs(-4.7) → 4.7     |
+| Math.Round(x)     | Rounds to nearest whole num  | Math.Round(5.43) → 5     |
++-------------------+------------------------------+--------------------------+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- What is a String in C#?
+Answer:   A string is used to store text in C# variables.
+          It is a collection of characters enclosed in double quotes (" ").
+          • Strings are written like:  "Hello", "C#", "Welcome"  
+          • Single quotes (' ') are for single characters (char), not strings.
+
+Common String Operations in C#:
++-------------------+---------------------------------------------+------------------------------+
+| Operation         | Description                                 | Example                      |
++-------------------+---------------------------------------------+------------------------------+
+| Length            | Returns the number of characters            | text.Length                  |
+| ToUpper()         | Converts string to uppercase                | text.ToUpper()               |
+| ToLower()         | Converts string to lowercase                | text.ToLower()               |
+| Contains()        | Checks if a string contains another string  | text.Contains("world")       |
+| Substring()       | Extracts part of the string                 | text.Substring(0, 5)         |
+| Replace()         | Replaces text in a string                   | text.Replace("Hi", "Hello")  |
+| Trim()            | Removes spaces from both ends               | text.Trim()                  |
+| StartsWith()      | Checks if string starts with a value        | text.StartsWith("Hello")     |
+| EndsWith()        | Checks if string ends with a value          | text.EndsWith("world")       |
++-------------------+---------------------------------------------+------------------------------+
+
+Examples in C#:
+1. String Length:
+string text = "abcdefghijklmnopqrstuvwxyz";
+Console.WriteLine("The Length of the text is: " + text.Length);
+Output: The Length of the text is: 26
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- What is String Concatenation in C#?
+Answer:-  String concatenation means joining two or more strings together to form a single string.  
+          It is commonly used to create full names, messages, or formatted outputs.
+
+You can concatenate strings in C# using:
+• The `+` operator  
+• The `String.Concat()` method  
+
++----------------------+----------------------------------------------+----------------------------+
+| Method               | Description                                  | Example                    |
++----------------------+----------------------------------------------+----------------------------+
+| + Operator           | Combines strings using +                     | name = first + last        |
+| String.Concat()      | Combines strings using built-in method       | name = String.Concat(a, b) |
++----------------------+----------------------------------------------+----------------------------+
+
+Examples:
+
+1. Using + operator:
+string firstName = "Alok";  
+string secondName = "Kumar";  
+string fullName = firstName + " " + secondName;  
+Console.WriteLine(fullName);  
+Output: Alok Kumar
+
+2. Using String.Concat():
+string firstName = "Alok";  
+string secondName = "Kumar";  
+string fullName = String.Concat(firstName, " ", secondName);  
+Console.WriteLine(fullName);  
+Output: Alok Kumar
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- What is String Interpolation in C#?
+Answer:
+String interpolation is a way to combine variables and text inside a string using placeholders.  
+It makes your code cleaner and easier to read than using `+` for concatenation.
+In string interpolation, spacing is automatically managed. No need to add spaces manually.
+It uses:
+• The `$` symbol before the string  
+• `{}` curly braces to insert variable values  
+
++-------------------------+-----------------------------------------------+
+| Feature                 | Description                                   |
++-------------------------+-----------------------------------------------+
+| Symbol used             | $ (before the string)                         |
+| Placeholder format      | {variableName}                                |
+| Benefit                 | Easier to read and manage than concatenation  |
++-------------------------+-----------------------------------------------+
+
+✅ Example:
+string firstName = "Alok";  
+string lastName = "Kumar";  
+string fullName = $"My Name is: {firstName} {lastName}";  
+Console.WriteLine(fullName);  
+Output: My Name is: Alok Kumar
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- How to Access Characters in a String in C#?
+
+Answer:
+In C#, you can access individual characters from a string using their index number inside square brackets `[ ]`.  
+Indexing starts from 0 (zero-based indexing).
+Indexing ends to (n-1).
++----------------------------+-----------------------------------------------+
+| Method                     | Description                                   |
++----------------------------+-----------------------------------------------+
+| str[index number]          | Access character at a specific position       |
+| str.IndexOf('char')        | Find position (index) of a character          |
++----------------------------+-----------------------------------------------+
+
+✅ Example 1: Accessing a character using index  
+string firstName = "Alok";  
+Console.WriteLine(firstName[0]);  
+// Output: A
+
+✅ Example 2: Finding index of a character  
+string firstName = "Alok";  
+Console.WriteLine(firstName.IndexOf('o'));  
+// Output: 2
+
+Note:
+- Indexing starts from 0.
+- If the character is not found, IndexOf() returns -1.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- Difference between Addition and Concatenation?
+Answer:
+• Addition is used with numbers. 
+• It performs mathematical addition and Returns numeric result .
+  Example:
+  int a = 5;
+  int b = 10;
+  int result = a + b;    // result = 15
+
+• Concatenation is used with strings.
+•  It joins two or more strings together and Returns combined text.
+  Example:
+  string firstName = "Alok";
+  string lastName = "Pandey";
+  string fullName = firstName + " " + lastName;   // fullName = "Alok Pandey"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- C# Booleans?
+Answer:
+• In C#, `bool` is a data type used to store two possible values: true or false.
+• It is use for making decisions in code.
+•  It is also used in Conditional Statement , like:
+   - Yes / No
+   - True / False
+   - On / Off
+
+• Often used in comparisons and conditions.
+Example:
+int x = 9;
+int y = 10;
+bool result = x > y;     Console.WriteLine(result);   // Output: False
+
+Example 2 (used in if condition):
+if (x < y)
+{
+    Console.WriteLine("x is less than y");
+}
+// Output: x is less than y
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- Write a program to take two numbers and add them.
+Answer:
+Method 1: Using user input
+
+using System;
+namespace Addition
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter two numbers:");
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+            int c = a + b;
+
+            Console.WriteLine("The addition of the two numbers is: " + c);
+        }
+    }
+}
+
+Output:
+Enter two numbers:
+20
+10
+The addition of the two numbers is: 30
+
+-------------------------------------------------------
+
+Method 2: Using fixed values
+
+using System;
+namespace Addition
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = 20;
+            int b = 10;
+            int c = a + b;
+
+            Console.WriteLine("The addition of the two numbers is: " + c);
+        }
+    }
+}
+
+Output:
+The addition of the two numbers is: 30
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- What is OOPs? Whta are the Main pillers of OOPs?
+Answer -
+• OOPs stands for Object-Oriented Programming System.
+• It is a programming concept used in modern languages like C#, Java, and C++.
+• OOPs is based on the idea of objects, which contain:
+   - Data (in the form of fields/properties)
+   - Code (in the form of methods/functions)
+• The first object-oriented programming language was Smalltalk.
+• OOPs helps to organize code based on real-world entities.
+• It allows developers to create reusable, clean, and modular code.
+• We Can Re-use the code without writing the same code again and again by - Inheritance.
+• Hiding internal details and showing only the essential features of an object by - Abstraction.
+• We Can hide the method for Security purpose by - Encapsulation.
+Key Benefits of OOPs:
+i) Faster and easier to execute and debug  
+ii) Cleaner structure for large programs  
+iii) Helps to keep code DRY (Don’t Repeat Yourself)  
+iv) Reduces development time using reusable components  
+v) Easier to maintain and modify
+
+The Main Features (Pillars) of OOPs:
+- Object 
+- Class 
+- Encapsulation  
+- Abstraction  
+- Inheritance  
+- Polymorphism
+ 
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- Describe Pillars of OOPs
+Answer -
+
+There are 4 main pillars of Object-Oriented Programming (OOPs). Each plays an important role in building robust, reusable, and maintainable code.
+
+1. Encapsulation  
+• Definition: Bundling data (fields) and methods (functions) into a single unit (class).  
+• Purpose: Restricts direct access to internal data and ensures controlled access.  
+• Example: Private variables accessed using public getter and setter methods.
+
+2. Abstraction  
+• Definition: Hiding complex internal details and showing only necessary features.  
+• Purpose: Reduces complexity and focuses on essential parts.  
+• Example: Car class with Start() and Brake() methods without exposing engine logic.
+
+3. Inheritance  
+• Definition: One class (child) inherits properties and behavior from another class (parent).  
+• Purpose: Promotes code reusability and supports hierarchical classification.  
+• Example: Dog class inherits from Animal class.
+
+4. Polymorphism  
+• Definition: One method or function behaves differently based on the context.  
+• Types:
+   - Compile-time Polymorphism → Method Overloading  
+   - Run-time Polymorphism → Method Overriding  
+• Purpose: Adds flexibility and extensibility to the code.  
+• Example: draw() method works differently in Circle, Square, and Triangle classes.
+
+Summary Table:
+
++------------------+-----------------------------------------------+--------------------------------------------+
+|     Pillar       |                 Description                   |                  Benefit                   |
++------------------+-----------------------------------------------+--------------------------------------------+
+| Encapsulation    | Data hiding using access modifiers            | Provides security and modular structure    |
+| Abstraction      | Shows only relevant and essential features    | Simplifies code and reduces complexity     |
+| Inheritance      | Shares code from parent to child class        | Promotes code reuse                        |
+| Polymorphism     | One interface, many implementations           | Adds flexibility and dynamic behavior      |
++------------------+-----------------------------------------------+--------------------------------------------+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- What is Return Type?
+Answer -
+Return Type defines the type of value that a method returns after it finishes running.
+It tells the compiler and the programmer what kind of value will come back from the method.
+If a method does not return any value, then the return type is written as 'void'.
+It define the datatype returned by the method. It depend upon User as it may also return void value i.e. return nothing.
+
+Examples:
+1. int Add(int a, int b)
+{
+    return a + b;
+}
+// This method returns an integer (int)
+
+2. string Greet()
+{
+    return "Hello!";
+}
+// This method returns a string
+
+3. void DisplayMessage()
+{
+    Console.WriteLine("Welcome!");
+}
+// This method returns nothing (void)
+
+You can use any data type as a return type — like int, float, string, bool, object, or even a class type.
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Que:- What is Return Value?
+Answer:
+• In C#, if a method needs to give back a result, you must specify its return type (like int, string, bool, etc.).  
+• Use the `return` keyword inside the method to send a value back to the caller.  
+• If the method doesn't return anything, use `void`.
+
+
+📌 Example 1: Return single value
+
+using System;  
+namespace ReturnValue  
+{  
+  class Program  
+  {  
+    static int MyMethod(int x)  
+    {  
+      return (5 + x);  
+    }  
+
+    static void Main(string[] args)  
+    {  
+      Console.WriteLine(MyMethod(3));  
+    }  
+  }  
+}  
+
+🔸 Output:  
+8
+
+
+📌 Example 2: Return sum of two numbers
+
+using System;  
+namespace ReturnValue  
+{  
+  class Program  
+  {  
+    public static int Add(int x, int y)  
+    {  
+      int z = x + y;  
+      return z;  
+    }  
+
+    static void Main(string[] args)  
+    {  
+      int a = Program.Add(5, 7);  
+      Console.WriteLine(a);  
+    }  
+  }  
+}  
+
+🔸 Output:  
+12
+
+
+📌 Example 3: Short version
+
+public static int Add(int x, int y)  
+{  
+  return x + y;  
+}  
+
+static void Main(string[] args)  
+{  
+  Console.WriteLine(Add(10, 30));  
+}  
+
+🔸 Output:  
+40
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
