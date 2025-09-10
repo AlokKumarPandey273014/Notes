@@ -65,3 +65,56 @@ class Program
      Console.WriteLine(b);
    }
 }
+
+-----------------------------------------------------------------------------
+
+Que 5- Find the largest of three numbers using if-else.
+
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter first number: ");
+        int a = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter second number: ");
+        int b = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter third number: ");
+        int c = int.Parse(Console.ReadLine());
+
+        if (a >= b && a >= c)
+            Console.WriteLine("Largest number is: " + a);
+        else if (b >= a && b >= c)
+            Console.WriteLine("Largest number is: " + b);
+        else
+            Console.WriteLine("Largest number is: " + c);
+    }
+}
+
+-----------------------------------------------------------------------------
+
+Que 6- Calculate the factorial of a number using a loop.
+
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int num = int.Parse(Console.ReadLine());
+
+        long fact = 1;
+
+        for (int i = 1; i <= num; i++)
+        {
+            fact *= i;
+        }
+
+        Console.WriteLine("Factorial of " + num + " is " + fact);
+    }
+}
+
+-----------------------------------------------------------------------------
+
