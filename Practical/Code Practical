@@ -455,5 +455,71 @@ class Program
     }
 }
 
+-------------------------------------------------------------------------- 
+
+Que- Create a class BankAccount with methods to deposit and withdraw money. Display the balance.
+using System;
+
+class BankAccount
+{
+    private double balance;
+
+    public void Deposit(double amount)
+    {
+        balance += amount;
+        Console.WriteLine("Deposited: " + amount);
+    }
+
+    public void Withdraw(double amount)
+    {
+        if (amount <= balance)
+        {
+            balance -= amount;
+            Console.WriteLine("Withdrawn: " + amount);
+        }
+        else
+        {
+            Console.WriteLine("Insufficient balance.");
+        }
+    }
+
+    public void ShowBalance()
+    {
+        Console.WriteLine("Current Balance: " + balance);
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        BankAccount acc = new BankAccount();
+        acc.Deposit(1000);
+        acc.Withdraw(300);
+        acc.ShowBalance();
+    }
+}
+
+-------------------------------------------------------------------------- 
+
+Que- Show the use of a foreach loop to print each item in a list of strings.
+
+using System;
+using System.Collections.Generic;
+class Program
+{
+    static void Main()
+    {
+        List<string> names = new List<string> { "Alice", "Bob", "Charlie", "Diana" };
+
+        Console.WriteLine("Names in the list:");
+        foreach (string name in names)
+        {
+            Console.WriteLine(name);
+        }
+    }
+}
+
+-------------------------------------------------------------------------- 
 
 
