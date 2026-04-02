@@ -1,167 +1,196 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
-    <title>For My Love ❤️</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Love Story ❤️</title>
 
-```
 <style>
-    body {
-        margin: 0;
-        overflow: hidden;
-        font-family: Arial;
-        text-align: center;
-        background: linear-gradient(to top, #ff758c, #ff7eb3);
-    }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    h1 {
-        color: white;
-    }
+.container {
+    width: 90%;
+    max-width: 500px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    text-align: center;
+    transition: 0.3s;
+}
 
-    #score {
-        font-size: 20px;
-        color: white;
-    }
+h2 {
+    color: #ff4d6d;
+}
 
-    #startBtn {
-        margin-top: 40vh;
-        padding: 15px 30px;
-        font-size: 22px;
-        background: red;
-        border: none;
-        color: white;
-        border-radius: 10px;
-    }
+.shayari {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+    font-style: italic;
+}
 
-    .heart {
-        position: absolute;
-        font-size: 30px;
-        cursor: pointer;
-        animation: fall 5s linear;
-    }
+textarea {
+    width: 100%;
+    height: 90px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    resize: none;
+}
 
-    @keyframes fall {
-        from { top: -50px; }
-        to { top: 100vh; }
-    }
+.buttons {
+    margin-top: 15px;
+}
 
-    #gameArea {
-        display: none;
-    }
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
 
-    #finalMessage {
-        display: none;
-        position: fixed;
-        top: 20%;
-        width: 100%;
-        text-align: center;
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-    }
+.progress {
+    height: 6px;
+    background: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
 
-    #photo {
-        width: 200px;
-        border-radius: 10px;
-        margin-top: 10px;
-    }
+.progress-bar {
+    height: 100%;
+    background: #ff4d6d;
+    width: 0%;
+    transition: 0.3s;
+}
 
-    button {
-        padding: 10px 20px;
-        border: none;
-        background: red;
-        color: white;
-        font-size: 18px;
-        border-radius: 10px;
-    }
+#final {
+    display: none;
+}
 </style>
-```
 
 </head>
 
 <body>
 
-<button id="startBtn" onclick="startGame()">Tap to Start ❤️</button>
+<div class="container">
 
-<div id="gameArea">
-    <h1>Catch My Love ❤️</h1>
-    <div id="score">Score: 0</div>
+<div class="progress">
+    <div class="progress-bar" id="bar"></div>
 </div>
 
-<div id="finalMessage">
-    <h2>You Caught My Heart 💖</h2>
+<h2 id="question"></h2>
+<div class="shayari" id="shayari"></div>
+<textarea id="answer" placeholder="Write here ❤️"></textarea>
 
-```
-<p>
-    PUJA ❤️<br><br>
-    850 km door ho... par dil se kabhi door nahi 💕<br><br>
-    Har click me bas tum hi thi 😘<br><br>
-    I Love You Forever ❤️
-</p>
-
-<!-- 🔥 Add your photo link here -->
-<img id="photo" src="https://www.paisawapas.com/p-huppme-i-love-you-pooja-inner-red-350-ml-ceramic-coffee-mug350-ml-9132098" />
-```
-
+<div class="buttons">
+    <button onclick="prev()">Back</button>
+    <button onclick="next()">Next</button>
 </div>
 
-<!-- 🎵 Music -->
+<div id="final">
+    <h2>❤️ Thank You My Love ❤️</h2>
+    <p>
+        Tumne sab answers likhe…<br>
+        par mera answer sirf ek hai —<br><br>
+        <b>I Love You Forever 💖</b>
+    </p>
+    <button onclick="download()">Download Answers 💾</button>
+</div>
 
-<audio id="music" src="https://www.bensound.com/bensound-music/bensound-romantic.mp3"></audio>
+</div>
 
 <script>
-let score = 0;
+let current = 0;
 
-function startGame() {
-    document.getElementById("startBtn").style.display = "none";
-    document.getElementById("gameArea").style.display = "block";
-    document.getElementById("music").play();
+let questions = [
+"Tum mujhe sabse zyada kab miss karti ho?",
+"Hamari sabse pyari memory kaunsi hai?",
+"Meri kaunsi baat tumhe sabse zyada pasand hai?",
+"Jab hum milte hain to tumhe kaisa feel hota hai?",
+"Agar main paas hota abhi, to kya karti?",
+"Tumhare liye main kya hoon?",
+"Hamara future tum kaise imagine karti ho?",
+"Kya kabhi meri yaad me royi ho?",
+"Meri kaunsi baat tumhe sabse special lagti hai?",
+"Mere liye ek message likho ❤️"
+];
 
-    setInterval(createHeart, 700);
+let shayari = [
+"Door rehkar bhi dil ke kareeb ho tum…",
+"Waqt ruk jata hai un lamhon me…",
+"Teri har aadat se mohabbat ho gayi…",
+"Tujhe dekhte hi sab bhool jata hoon…",
+"Kaash tu paas hota iss pal me…",
+"Tu hi meri zindagi, tu hi meri jaan…",
+"Har kal me bas tera hi haath chahiye…",
+"Aansu bhi muskurane lagte hain…",
+"Teri choti choti baatein bhi khaas lagti hain…",
+"Tu ehsaas hai mera…"
+];
+
+let answers = [];
+
+function loadQuestion() {
+    document.getElementById("question").innerText = questions[current];
+    document.getElementById("shayari").innerText = shayari[current];
+    document.getElementById("answer").value = answers[current] || "";
+
+    let progress = ((current + 1) / questions.length) * 100;
+    document.getElementById("bar").style.width = progress + "%";
 }
 
-function createHeart() {
-    let heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = "❤️";
+function next() {
+    answers[current] = document.getElementById("answer").value;
 
-    heart.style.left = Math.random() * 100 + "vw";
+    if (current < questions.length - 1) {
+        current++;
+        loadQuestion();
+    } else {
+        showFinal();
+    }
+}
 
-    document.body.appendChild(heart);
-
-    heart.onclick = function() {
-        score++;
-        document.getElementById("score").innerText = "Score: " + score;
-        heart.remove();
-
-        if (score >= 10) {
-            showFinal();
-        }
-    };
-
-    setTimeout(() => {
-        heart.remove();
-    }, 5000);
+function prev() {
+    if (current > 0) {
+        current--;
+        loadQuestion();
+    }
 }
 
 function showFinal() {
-    document.getElementById("finalMessage").style.display = "block";
-    launchConfetti();
+    document.getElementById("question").style.display = "none";
+    document.getElementById("shayari").style.display = "none";
+    document.getElementById("answer").style.display = "none";
+    document.querySelector(".buttons").style.display = "none";
+    document.getElementById("final").style.display = "block";
 }
 
-function launchConfetti() {
-    for (let i = 0; i < 100; i++) {
-        let conf = document.createElement("div");
-        conf.innerHTML = "🎉";
-        conf.style.position = "fixed";
-        conf.style.left = Math.random() * 100 + "vw";
-        conf.style.top = Math.random() * 100 + "vh";
-        document.body.appendChild(conf);
+function download() {
+    let data = JSON.stringify(answers, null, 2);
+    let blob = new Blob([data], { type: "application/json" });
 
-        setTimeout(() => conf.remove(), 3000);
-    }
+    let a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "love_answers.json";
+    a.click();
 }
+
+loadQuestion();
 </script>
 
 </body>
