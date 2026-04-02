@@ -10,15 +10,8 @@
 body {
     margin: 0;
     font-family: 'Segoe UI';
-    
-    /* 🔥 Smooth pink gradient */
-    background: linear-gradient(180deg, #f6728a 0%, #e85d9a 50%, #d94f9f 100%);
-    
-    /* ✅ important for full screen */
+       background: #d94f9f;
     min-height: 100vh;
-    
-    /* ❌ remove this (problem create karta hai) */
-    /* overflow: hidden; */
 }
 
 /* container center */
@@ -88,7 +81,8 @@ button {
 /* floating hearts */
 .heart {
     position: absolute;
-    color: rgba(255,255,255,0.7);
+   color: red;
+    text-shadow: 0 0 10px rgba(255,0,0,0.7);
     font-size: 20px;
     animation: float 6s linear infinite;
 }
