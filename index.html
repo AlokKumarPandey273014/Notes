@@ -174,12 +174,12 @@ function loadQuestion() {
 
 function next() {
     let ans = document.getElementById("answer").value;
-    let lines = ans.trim().split("\n").filter(l => l.trim() !== "");
+    let lines = ans.trim().split("\n").filter(l => l.trim().length > 10);
 
-    if (lines.length < 3) {
-        alert("💖 Dear 3 se 4 likho...\nकम से कम 3-4 lines chahiye 😘");
-        return;
-    }
+if (lines.length < 2) {
+    alert("💖 Please 2 Full lines  likho 😘");
+    return;
+}
 
     answers[current] = ans;
 
