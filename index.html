@@ -10,14 +10,16 @@
 body {
     margin: 0;
     font-family: 'Segoe UI';
-    overflow: hidden;
     background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    overflow: hidden;
 }
 
-/* container */
+/* container center */
 .container {
-    position: relative;
-    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 90%;
     max-width: 500px;
     background: rgba(255,255,255,0.95);
@@ -25,12 +27,15 @@ body {
     padding: 25px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.3);
     text-align: center;
-    margin: auto;
-    top: 50%;
-    transform: translateY(-50%);
+    z-index: 2;
 }
 
-h2 { color: #ff4d6d; }
+/* question */
+#question {
+    color: #ff2e63;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
 
 /* shayari */
 .shayari {
@@ -65,7 +70,7 @@ button {
     height: 6px;
     background: #eee;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 .progress-bar {
     height: 100%;
@@ -101,9 +106,8 @@ button {
 <h2 id="question"></h2>
 <div class="shayari" id="shayari"></div>
 
-<textarea id="answer" placeholder="❤️ 3-4 line likho...
+<textarea id="answer" placeholder="
 💌 Dil se likho...
-😊 Mujhe feel karwao...
 💖 Tumhari feelings important hain..."></textarea>
 
 <br>
@@ -169,11 +173,10 @@ function loadQuestion() {
 
 function next() {
     let ans = document.getElementById("answer").value;
-
     let lines = ans.trim().split("\n").filter(l => l.trim() !== "");
 
     if (lines.length < 3) {
-        alert("💖 Baby thoda aur likho na...\nकम से कम 3-4 lines chahiye 😘");
+        alert("💖 Dear 3 se 4 likho...\nकम से कम 3-4 lines chahiye 😘");
         return;
     }
 
@@ -195,9 +198,9 @@ function prev() {
 }
 
 function showFinal() {
-    document.querySelector("textarea").style.display = "none";
     document.getElementById("question").style.display = "none";
     document.getElementById("shayari").style.display = "none";
+    document.getElementById("answer").style.display = "none";
     document.querySelectorAll("button")[0].style.display = "none";
     document.querySelectorAll("button")[1].style.display = "none";
     document.getElementById("final").style.display = "block";
