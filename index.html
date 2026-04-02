@@ -1,34 +1,128 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-    <title>For You ❤️</title>
-    <style>
-        body {
-            text-align: center;
-            font-family: Arial;
-            background-color: #ffe6e6;
-        }
-        h1 {
-            color: red;
-            margin-top: 100px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 18px;
-        }
-    </style>
+    <title>Only For You ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: black;
+        color: white;
+        text-align: center;
+        font-family: 'Segoe UI';
+        overflow: hidden;
+    }
+
+    #startBtn {
+        margin-top: 40vh;
+        padding: 15px 30px;
+        font-size: 20px;
+        background: red;
+        border: none;
+        color: white;
+        border-radius: 10px;
+    }
+
+    #content {
+        display: none;
+        margin-top: 20vh;
+    }
+
+    h1 {
+        color: pink;
+    }
+
+    .heart {
+        position: fixed;
+        color: red;
+        font-size: 20px;
+        animation: float 5s linear infinite;
+    }
+
+    @keyframes float {
+        from {transform: translateY(100vh);}
+        to {transform: translateY(-10vh);}
+    }
+
+    #letter {
+        display: none;
+        background: white;
+        color: black;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 10px;
+    }
+</style>
+```
+
 </head>
+
 <body>
 
-<h1>Click Below ❤️</h1>
+<button id="startBtn" onclick="start()">Click Me ❤️</button>
 
-<button onclick="showMessage()">Click Me</button>
+<div id="content">
+    <h1 id="typing"></h1>
 
-<h2 id="msg"></h2>
+```
+<button onclick="showLetter()">Open My Heart 💌</button>
+
+<div id="letter">
+    <h2>For You ❤️</h2>
+    <p>
+        800 km door ho... par dil se kabhi door nahi ❤️<br><br>
+        Har din bas ek hi wish hoti hai... tum paas hoti 💕<br><br>
+        I Love You 😘
+    </p>
+</div>
+```
+
+</div>
+
+<audio id="music" src="https://www.bensound.com/bensound-music/bensound-romantic.mp3"></audio>
 
 <script>
-function showMessage() {
-    document.getElementById("msg").innerText = "I Miss You ❤️ 800 km bhi kam lagta hai tumhare bina 😘";
+function start() {
+    document.getElementById("startBtn").style.display = "none";
+    document.getElementById("content").style.display = "block";
+
+    document.getElementById("music").play();
+
+    typeText();
+    createHearts();
+}
+
+let text = "Hey ❤️ I have something for you...";
+let i = 0;
+
+function typeText() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeText, 80);
+    }
+}
+
+function createHearts() {
+    setInterval(() => {
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }, 300);
+}
+
+function showLetter() {
+    document.getElementById("letter").style.display = "block";
 }
 </script>
 
