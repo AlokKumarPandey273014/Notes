@@ -9,25 +9,12 @@
 <style>
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    font-family: 'Segoe UI';
     overflow: hidden;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
 }
 
-/* Floating Hearts */
-.heart {
-    position: fixed;
-    bottom: -20px;
-    font-size: 20px;
-    animation: floatUp 6s linear infinite;
-    opacity: 0.7;
-}
-
-@keyframes floatUp {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-110vh); }
-}
-
+/* container */
 .container {
     position: relative;
     z-index: 2;
@@ -36,61 +23,69 @@ body {
     background: rgba(255,255,255,0.95);
     border-radius: 20px;
     padding: 25px;
-    margin: 40px auto;
     box-shadow: 0 15px 40px rgba(0,0,0,0.3);
     text-align: center;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-h2 {
-    color: #ff4d6d;
-}
+h2 { color: #ff4d6d; }
 
+/* shayari */
 .shayari {
-    font-size: 15px;
-    color: #444;
-    margin-bottom: 12px;
     font-weight: bold;
-    line-height: 1.6;
+    color: #444;
+    margin-bottom: 10px;
+    white-space: pre-line;
 }
 
+/* textarea */
 textarea {
     width: 100%;
-    height: 90px;
+    height: 100px;
     border-radius: 10px;
-    border: 1px solid #ccc;
     padding: 10px;
-    resize: none;
+    border: 1px solid #ccc;
 }
 
+/* buttons */
 button {
     padding: 10px 20px;
     margin: 5px;
-    border: none;
     background: #ff4d6d;
     color: white;
+    border: none;
     border-radius: 10px;
-    font-size: 16px;
     cursor: pointer;
 }
 
+/* progress */
 .progress {
     height: 6px;
     background: #eee;
     border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
-
 .progress-bar {
     height: 100%;
     background: #ff4d6d;
     width: 0%;
-    transition: 0.3s;
 }
 
-#final {
-    display: none;
+/* floating hearts */
+.heart {
+    position: absolute;
+    color: rgba(255,255,255,0.7);
+    font-size: 20px;
+    animation: float 6s linear infinite;
 }
+@keyframes float {
+    from { transform: translateY(100vh); }
+    to { transform: translateY(-10vh); }
+}
+
+#final { display: none; }
 </style>
 
 </head>
@@ -105,20 +100,19 @@ button {
 
 <h2 id="question"></h2>
 <div class="shayari" id="shayari"></div>
-<textarea id="answer" placeholder="Write your feelings ❤️"></textarea>
 
-<div>
-    <button onclick="prev()">Back</button>
-    <button onclick="next()">Next</button>
-</div>
+<textarea id="answer" placeholder="❤️ 3-4 line likho...
+💌 Dil se likho...
+😊 Mujhe feel karwao...
+💖 Tumhari feelings important hain..."></textarea>
+
+<br>
+
+<button onclick="prev()">Back</button> <button onclick="next()">Next ❤️</button>
 
 <div id="final">
     <h2>❤️ Thank You My Love ❤️</h2>
-    <p>
-        Tumne har sawal ka jawab diya...<br><br>
-        Mera har jawab bas tum ho 💖<br><br>
-        <b>I Love You Forever ❤️</b>
-    </p>
+    <p><b>I Love You Forever 💖</b></p>
     <button onclick="download()">Download 💾</button>
 </div>
 
@@ -128,29 +122,38 @@ button {
 let current = 0;
 
 let questions = [
-"Tum mujhe sabse zyada kab miss karti ho ,Dear?",
-"Hamari sabse pyari memory kaunsi hai ,Dear?",
-"Meri kaunsi baat tumhe sabse zyada pasand hai ,Dear?",
-"Jab hum milte hain to tumhe kaisa feel hota hai,Dear ?",
-"Agar main paas hota abhi, to kya karti ,Dear?",
-"Tumhare liye main kya hoon ,Dear ?",
-"Hamara future tum kaise imagine karti ho ,Dear ?",
-"Kya kabhi meri yaad me royi ho ,Dear ?",
-"Meri kaunsi baat tumhe sabse special lagti hai ,Dear ?",
+"Tum mujhe sabse zyada kab miss karti ho?",
+"Hamari sabse pyari memory kaunsi hai?",
+"Meri kaunsi baat tumhe sabse zyada pasand hai?",
+"Jab hum milte hain to tumhe kaisa feel hota hai?",
+"Agar main paas hota abhi, to kya karti?",
+"Tumhare liye main kya hoon?",
+"Hamara future tum kaise imagine karti ho?",
+"Kya kabhi meri yaad me royi ho?",
+"Meri kaunsi baat tumhe sabse special lagti hai?",
 "Mere liye ek message likho ❤️"
 ];
 
 let shayari = [
-"Door rehkar bhi dil ke kareeb ho tum... \nHar dhadkan me bas tera hi naam hai... \nTujhse hi meri duniya roshan hai... \nTu hi meri subah aur shaam hai ❤️",
-"Waqt ruk jata hai un lamhon me... \nJahan sirf tu aur main hote hain... \nHar yaad me bas tera hi chehra hai... \nAur wo pal sabse khoobsurat hote hain 💖",
-"Teri har aadat se mohabbat ho gayi... \nTeri har baat me sukoon milta hai... \nTu paas ho ya door... \nMujhe har pal tera ehsaas hota hai ❤️",
-"Tujhe dekhte hi sab bhool jata hoon... \nJaise duniya wahi ruk jati hai... \nBas tu aur main reh jate hain... \nAur wo pal hamesha ke liye khaas ban jata hai 💕",
-"Kaash tu paas hota iss pal me... \nTo waqt ko wahi rok leta... \nTeri baahon me sukoon milta... \nAur duniya ko bhool jata ❤️",
-"Tu hi meri zindagi hai... \nTu hi meri har khushi hai... \nTere bina sab adhura hai... \nTu hi meri poori duniya hai 💖",
-"Har kal me bas tera hi saath chahiye... \nHar sapne me tera hi haath chahiye... \nZindagi ke har mod pe... \nMujhe sirf tera hi saath chahiye ❤️",
-"Aansu bhi muskurane lagte hain... \nJab tera naam aata hai... \nTeri yaadon me bhi sukoon milta hai... \nTu hi meri sabse pyari aadat hai 💕",
-"Teri choti choti baatein bhi khaas lagti hain... \nTera har andaaz dil ko choo jata hai... \nTu bas tu hai... \nAur wahi sabse special hai ❤️",
-"Alfaaz kam pad jate hain... \nTujhe bayan karne me... \nTu ehsaas hai mera... \nJo har lafz se upar hai 💖"
+"Door rehkar bhi dil ke kareeb ho tum,\nHar pal mere khayalon me base ho tum,\nFaasle chahe jitne bhi ho jaaye,\nMere dil ke sabse paas ho tum ❤️",
+
+"Waqt ruk jata hai un lamhon me,\nJahan sirf tu aur main hote hain,\nHar yaad me bas tera hi chehra,\nAur wo pal hamesha zinda rehte hain 💖",
+
+"Teri har aadat se mohabbat ho gayi,\nTeri har baat se ibadat ho gayi,\nNa jaane kaise hua ye sab,\nTu meri zindagi ki zarurat ho gayi ❤️",
+
+"Tujhe dekhte hi sab bhool jata hoon,\nJaise har gham door ho jata hoon,\nTeri muskaan me hi meri duniya,\nTujh me hi khud ko paata hoon 💞",
+
+"Kaash tu paas hota iss pal me,\nTo duniya ruk jaati ek pal me,\nBas tujhe dekhte rehte hum,\nAur kho jaate uss kal me ❤️",
+
+"Tu hi meri zindagi, tu hi meri jaan,\nTere bina sab kuch lagta suna sa samaan,\nHar dhadkan me tera hi naam,\nTu hi meri duniya, tu hi meri pehchaan 💓",
+
+"Har kal me bas tera hi haath chahiye,\nZindagi bhar tera saath chahiye,\nNa kuch aur chahiye mujhe,\nBas tu aur tera pyar chahiye ❤️",
+
+"Aansu bhi muskurane lagte hain,\nJab tera naam yaad aata hai,\nDard bhi meetha lagta hai,\nJab tu dil me samata hai 💧❤️",
+
+"Teri choti choti baatein bhi khaas lagti hain,\nTeri har aadat meri jaan lagti hai,\nNa jaane kya jaadu hai tujh me,\nTu har pal mere paas lagti hai 💖",
+
+"Alfaaz kam pad jaate hain,\nTujhe bayan karne ke liye,\nTu ehsaas hai mera,\nHar lafz se upar hai ❤️"
 ];
 
 let answers = [];
@@ -160,12 +163,21 @@ function loadQuestion() {
     document.getElementById("shayari").innerText = shayari[current];
     document.getElementById("answer").value = answers[current] || "";
 
-    let progress = ((current + 1) / questions.length) * 100;
-    document.getElementById("bar").style.width = progress + "%";
+    document.getElementById("bar").style.width =
+        ((current + 1) / questions.length) * 100 + "%";
 }
 
 function next() {
-    answers[current] = document.getElementById("answer").value;
+    let ans = document.getElementById("answer").value;
+
+    let lines = ans.trim().split("\n").filter(l => l.trim() !== "");
+
+    if (lines.length < 3) {
+        alert("💖 Baby thoda aur likho na...\nकम से कम 3-4 lines chahiye 😘");
+        return;
+    }
+
+    answers[current] = ans;
 
     if (current < questions.length - 1) {
         current++;
@@ -183,30 +195,28 @@ function prev() {
 }
 
 function showFinal() {
+    document.querySelector("textarea").style.display = "none";
     document.getElementById("question").style.display = "none";
     document.getElementById("shayari").style.display = "none";
-    document.getElementById("answer").style.display = "none";
-    document.querySelector("button").style.display = "none";
+    document.querySelectorAll("button")[0].style.display = "none";
+    document.querySelectorAll("button")[1].style.display = "none";
     document.getElementById("final").style.display = "block";
 }
 
 function download() {
-    let data = JSON.stringify(answers, null, 2);
-    let blob = new Blob([data], { type: "application/json" });
-
+    let blob = new Blob([JSON.stringify(answers, null, 2)], { type: "application/json" });
     let a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
     a.download = "love_answers.json";
     a.click();
 }
 
-/* Floating hearts generator */
+/* floating hearts */
 setInterval(() => {
     let heart = document.createElement("div");
     heart.className = "heart";
     heart.innerHTML = "❤️";
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = (15 + Math.random() * 20) + "px";
     document.body.appendChild(heart);
 
     setTimeout(() => heart.remove(), 6000);
