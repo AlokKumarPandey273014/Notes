@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For You ❤️</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            background-color: #ffe6e6;
+        }
+        h1 {
+            color: red;
+            margin-top: 100px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Click Below ❤️</h1>
+
+<button onclick="showMessage()">Click Me</button>
+
+<h2 id="msg"></h2>
+
+<script>
+function showMessage() {
+    document.getElementById("msg").innerText = "I Miss You ❤️ 800 km bhi kam lagta hai tumhare bina 😘";
+}
+</script>
+
+</body>
+</html>
